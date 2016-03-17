@@ -15,7 +15,7 @@ date: 2015-06-29 10:43:37
 2、建造者模式：AlertDialog.Builder
 
 简介：可以分步地构造每一部分。
-
+<!-- more -->
 &nbsp;
 
 3、命令模式：Handler.post后Handler.handleMessage

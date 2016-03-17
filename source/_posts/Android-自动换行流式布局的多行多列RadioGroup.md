@@ -3,7 +3,7 @@ title: Android 自动换行流式布局的多行多列RadioGroup
 tags: []
 date: 2015-07-12 23:05:56
 ---
-
+<!-- more -->
 ![04155106-9f598b9f5ed34195ab7482d69729fb26.png](http://www.mandroid.cn/zb_users/upload/2015/07/201507121436713650204443.png "201507121436713650204443.png")
 
 <pre class="brush:java;toolbar:false">import&nbsp;android.content.Context;

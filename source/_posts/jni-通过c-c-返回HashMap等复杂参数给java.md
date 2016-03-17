@@ -26,7 +26,7 @@ date: 2015-07-02 16:15:11
 <pre class="brush:cpp;toolbar:false;">&nbsp;&nbsp;&nbsp;&nbsp;//类似于map.put(&quot;key&quot;,&quot;value&quot;);
 &nbsp;&nbsp;&nbsp;&nbsp;//(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;)不能直接用&quot;key值&quot;替代
 &nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value值&quot;));</pre>
-
+<!-- more -->
 全部代码：
 
 &nbsp;&nbsp;&nbsp;&nbsp;JniClient.java

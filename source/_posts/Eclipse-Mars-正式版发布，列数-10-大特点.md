@@ -7,7 +7,7 @@ date: 2015-06-27 23:48:23
 代号 Mars 的 Eclipse 4.5 版本发布了，这一版本在 Linux 工具中结合了额外的 Docker 工具，更好地支持 
 Maven 和 Gradle （包括对嵌入工具的更新），提升了 Java 8 的特性，并通过 Eclipse Marketplace 支持对 
 Java 9 早期访问。主要更新内容有以下几个方面：
-
+<!-- more -->
 *   新 Java IDE 特性， 包括对嵌套的项目层次视图，可自定义 perspectives，并提升了文本搜索的速度。
 
 *   集成的工具，用于建立和维护 Docker 容器，可在 Linux Tools 项目获取.

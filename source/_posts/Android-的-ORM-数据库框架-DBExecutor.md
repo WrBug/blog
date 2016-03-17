@@ -11,7 +11,7 @@ date: 2015-06-17 20:38:37
 boolean isSuccess = db.updateById(person);
 boolean isSuccess&nbsp;&nbsp;= db.deleteById(Person.class,1);
 List&lt;Person&gt; persons = db.findAll(Person.class);</span>
-
+<!-- more -->
 *   ---library_DB02 是项目的源码。
 
 *   ---DBLibrary_TestCase 是项目的测试用例，主要介绍该类库详细的用法

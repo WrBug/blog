@@ -3,7 +3,7 @@ title: EditSpinner 一款结合EditText和Spinner的开源控件
 tags: []
 date: 2016-02-28 18:05:09
 ---
-
+<!-- more -->
 <span style="font-size: 20px;">效果演示：</span>
 
 ![201602281456654040118978.gif](http://www.mandroid.cn/zb_users/upload/2016/02/201602281456654040118978.gif "201602281456654040118978.gif")

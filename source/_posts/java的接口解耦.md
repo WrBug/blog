@@ -5,6 +5,7 @@ date: 2015-10-22 14:30:49
 ---
 
 <span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 18px; line-height: 26px; background-color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp;学过java的人都知道，java是单继承的，也就是说一个class只能继承一个类。</span>
+<!-- more -->
 <span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 18px; line-height: 26px; background-color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp;例如我们想制作一台有播放器的手机，那么我们先得制作一个播放器吧，再把播放器放进手机里。在java会怎么实现呢？如果使用继承，我们会先创建一个播放器类，播放器类里面含有播放歌曲功能（方法），创建一个手机类继承播放器类，重写播放器的播歌功能（不重写的话，会直接使用播放器自己定制的播放功能），这样，我们就可以使用手机的播歌功能了。</span>
 <span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 18px; line-height: 26px; background-color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp;现在，我们想制作一台既有播歌功能，又有收音机功能的手机，那么我们该怎么办？难道我们又要让继承了播放器的手机再继承收音机？但是java是单继承的，行不通，这时，接口应运而生！</span>
 

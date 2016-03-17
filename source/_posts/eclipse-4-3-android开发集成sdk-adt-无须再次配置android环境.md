@@ -9,7 +9,7 @@ date: 2015-06-12 17:31:02
 ![](http://www.mandroid.cn/zb_users/upload/2015/06/201506121434101916133811.png "201506121434101916133811.png")
 
 Eclipse的本身只是一个框架平台，但是众多插件的支持使得Eclipse拥有其他功能相对固定的IDE软件很难具有的灵活性。许多软件开发商以Eclipse为框架开发自己的IDE。
-
+<!-- more -->
 Eclipse
 最初是由IBM公司开发的替代商业软件Visual Age for 
 Java的下一代IDE开发环境，2001年11月贡献给开源社区，现在它由非营利软件供应商联盟Eclipse基金会（Eclipse 

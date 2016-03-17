@@ -3,7 +3,7 @@ title: ViewHolder的简洁写法
 tags: []
 date: 2015-06-24 15:57:04
 ---
-
+<!-- more -->
 <pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;ViewHolder&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;I&nbsp;added&nbsp;a&nbsp;generic&nbsp;return&nbsp;type&nbsp;to&nbsp;reduce&nbsp;the&nbsp;casting&nbsp;noise&nbsp;in&nbsp;client&nbsp;code
 &nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unchecked&quot;)

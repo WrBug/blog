@@ -7,7 +7,7 @@ date: 2015-06-17 00:47:59
 <span style="font-size: 24px;">先上效果：</span>
 
 <span style="font-size: 20px;">![QQ截图20150617010130.png](http://www.mandroid.cn/zb_users/upload/2015/06/201506171434474172281858.png "201506171434474172281858.png")</span>
-
+<!-- more -->
 <span style="font-size: 24px;">布局文件<span style="color: rgb(255, 0, 0);">_main.xml_</span>：</span>
 <span style="font-size: 20px;"><pre class="brush:java;toolbar:false">&lt;RelativeLayout&nbsp;xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools=&quot;http://schemas.android.com/tools&quot;

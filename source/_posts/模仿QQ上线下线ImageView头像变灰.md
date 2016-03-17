@@ -6,8 +6,8 @@ date: 2015-06-22 21:18:08
 
 <span style="font-size: 24px; color: rgb(255, 0, 0);">效果图</span>
 
-![QQ截图20150622211643.png](http://www.mandroid.cn/zb_users/upload/2015/06/201506221434979262141789.png "201506221434979262141789.png")
-
+!(http://www.mandroid.cn/zb_users/upload/2015/06/201506221434979262141789.png "201506221434979262141789.png")
+<!-- more -->
 <span style="font-size: 24px; color: rgb(255, 0, 0);">主要代码</span>
 <pre class="brush:java;toolbar:false">ColorMatrix&nbsp;matrix&nbsp;=&nbsp;new&nbsp;ColorMatrix();
 matrix.setSaturation(0);

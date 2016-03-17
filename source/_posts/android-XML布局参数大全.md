@@ -3,7 +3,7 @@ title: android XML布局参数大全
 tags: []
 date: 2015-07-10 23:39:38
 ---
-
+<!-- more -->
 第一类:属性值为true或false
 android:layout_centerHrizontal &nbsp;水平居中
 android:layout_centerVertical &nbsp; 垂直居中

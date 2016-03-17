@@ -8,7 +8,7 @@ KJFrameForAndroid 又叫KJLibrary，是一个帮助快速开发的框架。使�
 KJFrameForAndroid 包含了几乎全部Android开发中必须的工具类。
 KJFrameForAndroid 参考了许多国际上著名的Android框架如Volley、sync-http，上手使用门槛更低，更全面的http请求，考虑周全的bitmap网络加载，完善的功能且不受混淆影响...
 KJFrameForAndroid 最低兼容android 3.0
-
+<!-- more -->
 很多朋友在问，KJFrameForAndroid与xUtils、afinal、thinkAndroid这类框架有什么区别，在你看过了这类框架的源代码后就会很直观的发现：**KJFrameForAndroid的项目结构与代码更加直观明了易懂，项目demo与API文档更加齐全，更关键的是使用起来更加简单易用，容易上手。**
 
 ===========================各模块介绍======================

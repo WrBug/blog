@@ -7,7 +7,7 @@ date: 2015-06-17 01:37:59
 <span style="font-size: 18px;">根据银行卡号判断是哪个银行的卡，依据是银行卡号的前6位数，称之为bin号。</span>
 
 <span style="font-size: 18px;">我们把bin号转化为长整形，再把各个银行卡的bin号做成有序表。通过二分查找的方法，找到bin号在有序表的位置，然后读出银行卡的信息。</span>
-
+<!-- more -->
 <span style="font-size: 18px;">我把这个封装成一个java类：</span>
 <pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;BankInfo&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//BIN号

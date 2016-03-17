@@ -5,6 +5,7 @@ date: 2015-08-25 14:09:09
 ---
 
 移动开发中个人认为最重要的就是应用的用户体验度,其中最重要的就是流畅度,而Android的Adapter优化就是很重要的一个方面,下面的代码就是一个Adapter的优化,当然从网上学习了很多大神写的代码,贴出来分享,大家共同进步,有什么好的建议可以留言评论
+<!-- more -->
 <pre class="brush:java;toolbar:false">import&nbsp;android.content.Context;
 import&nbsp;android.util.SparseArray;
 import&nbsp;android.view.LayoutInflater;

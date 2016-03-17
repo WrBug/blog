@@ -9,7 +9,7 @@ ViewStub经常用在ListView中，用来隐藏一些操作，使用起来也很�
 效果图如下：
 
 ![](http://www.mandroid.cn/zb_users/upload/2015/07/201507311438274262700084.gif)
-
+<!-- more -->
 MainActivity.java:&nbsp;
 <pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;Activity&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ListView&nbsp;lvList;

@@ -3,7 +3,7 @@ title: android退出所有的activity
 tags: []
 date: 2015-06-22 21:35:41
 ---
-
+<!-- more -->
 <span style="font-size: 20px;"><span style="color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);">Android经典完美退出方法，使用单例模式创建一个Activity管理对象，该对象中有一个Activity容器（具体实现自己处理，使用LinkedList等）专门负责存储新开启的每一个Activity，并且容易理解、易于操作，非常不错！</span>
  <span style="color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;">AppUtils类（储存每一个Activity，并实现关闭所有Activity的操作）</span></span>
 

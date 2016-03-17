@@ -5,6 +5,7 @@ date: 2015-08-25 14:12:03
 ---
 
 在[Android开发](http://www.eoeandroid.com/)过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:
+<!-- more -->
 1,adapter的内容:
 <pre class="brush:java;toolbar:false">import&nbsp;java.util.ArrayList;
 import&nbsp;android.content.Context;

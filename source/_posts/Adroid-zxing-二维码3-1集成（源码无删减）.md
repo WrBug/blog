@@ -13,7 +13,7 @@ _引子：最近项目中用到二维码，找到了最新的3.1版本_<span sty
 _<span style="color:#9b00d3">求点击：博客访问9.9k+了，距离初步期望1w很近了。&nbsp;&nbsp; 一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。</span>_
 
 _<span style="color:#9b00d3">&nbsp;&nbsp;&nbsp; 特此版本去掉了下载时需要积分的情况</span>_
-
+<!-- more -->
 实现效果：
 
 &nbsp;&nbsp;&nbsp; ![19115112_23fw.png](http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788417101357.png "201507131436788417101357.png")
