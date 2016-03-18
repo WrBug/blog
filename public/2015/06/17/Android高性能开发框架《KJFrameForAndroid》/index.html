@@ -60,10 +60,10 @@
 <meta name="description" content="KJFrameForAndroid 又叫KJLibrary，是一个帮助快速开发的框架。使用KJFrameForAndroid，你可以只用一行代码就完成http请求、网络图片加载、数据库数据保存或读取。KJFrameForAndroid 包含了几乎全部Android开发中必须的工具类。KJFrameForAndroid 参考了许多国际上著名的Android框架如Volley、sync-http，上手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android高性能开发框架《KJFrameForAndroid》">
-<meta property="og:url" content="http://mandroid.cn/2015/06/17/Android高性能开发框架《KJFrameForAndroid》/index.html">
-<meta property="og:site_name" content="测试">
+<meta property="og:url" content="http://www.mandroid.cn/2015/06/17/Android高性能开发框架《KJFrameForAndroid》/index.html">
+<meta property="og:site_name" content="慢啄">
 <meta property="og:description" content="KJFrameForAndroid 又叫KJLibrary，是一个帮助快速开发的框架。使用KJFrameForAndroid，你可以只用一行代码就完成http请求、网络图片加载、数据库数据保存或读取。KJFrameForAndroid 包含了几乎全部Android开发中必须的工具类。KJFrameForAndroid 参考了许多国际上著名的Android框架如Volley、sync-http，上手">
-<meta property="og:updated_time" content="2016-03-18T04:02:25.942Z">
+<meta property="og:updated_time" content="2016-03-18T11:23:20.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android高性能开发框架《KJFrameForAndroid》">
 <meta name="twitter:description" content="KJFrameForAndroid 又叫KJLibrary，是一个帮助快速开发的框架。使用KJFrameForAndroid，你可以只用一行代码就完成http请求、网络图片加载、数据库数据保存或读取。KJFrameForAndroid 包含了几乎全部Android开发中必须的工具类。KJFrameForAndroid 参考了许多国际上著名的Android框架如Volley、sync-http，上手">
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Android高性能开发框架《KJFrameForAndroid》 | 测试 </title>
+  <title> Android高性能开发框架《KJFrameForAndroid》 | 慢啄 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -92,6 +92,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a9787bd5df8b0335e028edc8c47da89c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -115,11 +125,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">测试</span>
+      <span class="site-title">慢啄</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">子标签</p>
+  <p class="site-subtitle">android开发点滴</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -284,6 +294,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/17/Android高性能开发框架《KJFrameForAndroid》/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/17/Android高性能开发框架《KJFrameForAndroid》/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -303,12 +320,14 @@
 
       
         <p>KJFrameForAndroid 又叫KJLibrary，是一个帮助快速开发的框架。使用KJFrameForAndroid，你可以只用一行代码就完成http请求、网络图片加载、数据库数据保存或读取。<br>KJFrameForAndroid 包含了几乎全部Android开发中必须的工具类。<br>KJFrameForAndroid 参考了许多国际上著名的Android框架如Volley、sync-http，上手使用门槛更低，更全面的http请求，考虑周全的bitmap网络加载，完善的功能且不受混淆影响…<br>KJFrameForAndroid 最低兼容android 3.0<br><a id="more"></a><br>很多朋友在问，KJFrameForAndroid与xUtils、afinal、thinkAndroid这类框架有什么区别，在你看过了这类框架的源代码后就会很直观的发现：<strong>KJFrameForAndroid的项目结构与代码更加直观明了易懂，项目demo与API文档更加齐全，更关键的是使用起来更加简单易用，容易上手。</strong></p>
-<p>===========================各模块介绍======================<br><strong>UILibrary模块</strong><br>UILibrary包含两个部分Widget(控件)、Topology(Android框架结构继承链)</p>
+<p>===========================各模块介绍======================</p>
+<h2 id="UILibrary模块"><a href="#UILibrary模块" class="headerlink" title="UILibrary模块"></a><strong>UILibrary模块</strong></h2><p>UILibrary包含两个部分Widget(控件)、Topology(Android框架结构继承链)</p>
 <p>UILibrary -&gt; Widget控件部分<br>主要封装了常用的UI控件，为了不让项目jar包过大，我们只引入了开发中一定会用到的控件，例如：可上下拉的KJListView、可上下拉的<br>KJScrollView、可以双指缩放双击缩放双指旋转的ScaleImageView、等等……更多内容请自行查看项目文件中<br>org.kymjs.aframe.widget包下的内容<br>UILibrary -&gt; Topology拓扑部分<br>包含一个使用IOC设计思想的控件初始化方式：可通过注解的方式进行UI绑定，与设置监听，在Activity和Fragment中均可以通过一行代码绑<br>定控件并实现点击监听；还包含了在目前应用开发中常见的布局界面，如侧滑效果，高效的底部TAB导航，3D效果的切换。同时UILibrary为开发者定<br>义了完善的BaseActivity和BaseFragment，开发者只需手动继承就可以获得Topology部分的全部功能。</p>
-<p><strong>BitmapLibrary模块</strong><br>一行代码实现网络图片加载（可以是imageview或任何View）：kjb.display(view, &quot;<a href="http://xxx.xxx.xxx&amp;quot" target="_blank" rel="external">http://xxx.xxx.xxx&amp;quot</a>;);<br>任何View(ImageView设置src，普通View设置bg)加载图片的时候都无需考虑图片加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象，同时无需考虑图片加载过程中出现的OOM。默认使用内存lru算法+磁盘lru算法缓存图片</p>
-<p><strong>HttpLibrary模块</strong><br>可以一行代码实现Http请求：kjh.urlPost(&quot;<a href="http://www.eoeandroid.com&amp;quot" target="_blank" rel="external">http://www.eoeandroid.com&amp;quot</a>;, params, callback);<br>还可以一行代码实现文件或图片的上传与下载。 kjh.download( url, params, callback);<br>KJLibrary默认对所有Http通信的数据做了缓存处理，缓存时间为5分钟。这么做的目的不仅是为了节省用户手机流量，同时是为了减少服务器压力<br>HttpLibrary模块使用HttpClient与HttpUrlConnection两种实现方式实现网络通信、数据上传、多线程断点下载。</p>
-<p><strong>DBLibrary模块</strong><br>可以一行代码对数据库进行增删改查等操作：kjdb.update(); kjdb.add(); …….<br>包含了android中的orm框架，使用了线程池对sqlite进行操作，一行代码就可以进行增删改查。支持一对多，多对一等查询。</p>
-<p>github项目地址：<br><a href="https://github.com/kymjs/KJFrameForAndroid" target="_blank" rel="external">https://github.com/kymjs/KJFrameForAndroid</a><br>备用项目地址：<br><a href="http://git.oschina.net/kymjs/KJFrameForAndroid" target="_blank" rel="external">http://git.oschina.net/kymjs/KJFrameForAndroid</a></p>
+<h2 id="BitmapLibrary模块"><a href="#BitmapLibrary模块" class="headerlink" title="BitmapLibrary模块"></a><strong>BitmapLibrary模块</strong></h2><p>一行代码实现网络图片加载（可以是imageview或任何View）：kjb.display(view, &quot;<a href="http://xxx.xxx.xxx&amp;quot" target="_blank" rel="external">http://xxx.xxx.xxx&amp;quot</a>;);<br>任何View(ImageView设置src，普通View设置bg)加载图片的时候都无需考虑图片加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象，同时无需考虑图片加载过程中出现的OOM。默认使用内存lru算法+磁盘lru算法缓存图片</p>
+<h2 id="HttpLibrary模块"><a href="#HttpLibrary模块" class="headerlink" title="HttpLibrary模块"></a><strong>HttpLibrary模块</strong></h2><p>可以一行代码实现Http请求：kjh.urlPost(&quot;<a href="http://www.eoeandroid.com&amp;quot" target="_blank" rel="external">http://www.eoeandroid.com&amp;quot</a>;, params, callback);<br>还可以一行代码实现文件或图片的上传与下载。 kjh.download( url, params, callback);<br>KJLibrary默认对所有Http通信的数据做了缓存处理，缓存时间为5分钟。这么做的目的不仅是为了节省用户手机流量，同时是为了减少服务器压力<br>HttpLibrary模块使用HttpClient与HttpUrlConnection两种实现方式实现网络通信、数据上传、多线程断点下载。</p>
+<h2 id="DBLibrary模块"><a href="#DBLibrary模块" class="headerlink" title="DBLibrary模块"></a><strong>DBLibrary模块</strong></h2><p>可以一行代码对数据库进行增删改查等操作：kjdb.update(); kjdb.add(); …….<br>包含了android中的orm框架，使用了线程池对sqlite进行操作，一行代码就可以进行增删改查。支持一对多，多对一等查询。</p>
+<h2 id="github项目地址："><a href="#github项目地址：" class="headerlink" title="github项目地址："></a>github项目地址：</h2><p><a href="https://github.com/kymjs/KJFrameForAndroid" target="_blank" rel="external">https://github.com/kymjs/KJFrameForAndroid</a></p>
+<h2 id="备用项目地址："><a href="#备用项目地址：" class="headerlink" title="备用项目地址："></a>备用项目地址：</h2><p><a href="http://git.oschina.net/kymjs/KJFrameForAndroid" target="_blank" rel="external">http://git.oschina.net/kymjs/KJFrameForAndroid</a></p>
 
       
     </div>
@@ -351,6 +370,12 @@
 
     <div class="post-spread">
       
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -361,6 +386,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/06/17/Android高性能开发框架《KJFrameForAndroid》/"
+           data-title="Android高性能开发框架《KJFrameForAndroid》" data-url="http://www.mandroid.cn/2015/06/17/Android高性能开发框架《KJFrameForAndroid》/">
+      </div>
     
   </div>
 
@@ -399,7 +428,7 @@
                src="/images/default_avatar.jpg"
                alt="wangtao" />
           <p class="site-author-name" itemprop="name">wangtao</p>
-          <p class="site-description motion-element" itemprop="description">描述</p>
+          <p class="site-description motion-element" itemprop="description">android</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -455,7 +484,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UILibrary模块"><span class="nav-number">1.</span> <span class="nav-text">UILibrary模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitmapLibrary模块"><span class="nav-number">2.</span> <span class="nav-text">BitmapLibrary模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpLibrary模块"><span class="nav-number">3.</span> <span class="nav-text">HttpLibrary模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DBLibrary模块"><span class="nav-number">4.</span> <span class="nav-text">DBLibrary模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github项目地址："><span class="nav-number">5.</span> <span class="nav-text">github项目地址：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备用项目地址："><span class="nav-number">6.</span> <span class="nav-text">备用项目地址：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -717,9 +746,28 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mandroid"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 

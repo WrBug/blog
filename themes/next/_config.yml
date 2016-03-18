@@ -164,10 +164,10 @@ mathjax:
 swiftype_key: qdNsEWcSTkF6PQukM7N7
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: a9787bd5df8b0335e028edc8c47da89c
 
 # Duoshuo ShortName
-#duoshuo_shortname:
+duoshuo_shortname: mandroid
 
 # Disqus
 #disqus_shortname:
@@ -175,8 +175,8 @@ swiftype_key: qdNsEWcSTkF6PQukM7N7
 # Baidu Share
 # Available value:
 #    button | slide
-#baidushare:
-##  type: button
+baidushare: true
+##   type: button
 
 # Share
 #jiathis:

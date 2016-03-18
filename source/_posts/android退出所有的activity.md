@@ -44,7 +44,7 @@ date: 2015-06-22 21:35:41
              } 
  }</pre>
 
-activity实现：
+## activity实现：
 
 <pre class="brush:java;toolbar:false">public class MainActivity extends ActionBarActivity {
     private  AppUtils appUtils;

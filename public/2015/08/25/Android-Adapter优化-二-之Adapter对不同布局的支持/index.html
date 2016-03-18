@@ -60,10 +60,10 @@
 <meta name="description" content="在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Adapter优化(二)之Adapter对不同布局的支持">
-<meta property="og:url" content="http://mandroid.cn/2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/index.html">
-<meta property="og:site_name" content="测试">
+<meta property="og:url" content="http://www.mandroid.cn/2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/index.html">
+<meta property="og:site_name" content="慢啄">
 <meta property="og:description" content="在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:">
-<meta property="og:updated_time" content="2016-03-18T04:00:38.467Z">
+<meta property="og:updated_time" content="2016-03-18T11:23:20.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Adapter优化(二)之Adapter对不同布局的支持">
 <meta name="twitter:description" content="在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:">
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Android Adapter优化(二)之Adapter对不同布局的支持 | 测试 </title>
+  <title> Android Adapter优化(二)之Adapter对不同布局的支持 | 慢啄 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -92,6 +92,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a9787bd5df8b0335e028edc8c47da89c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -115,11 +125,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">测试</span>
+      <span class="site-title">慢啄</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">子标签</p>
+  <p class="site-subtitle">android开发点滴</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -284,6 +294,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -302,8 +319,8 @@
       
 
       
-        <p>在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:<br><a id="more"></a><br>1,adapter的内容:</p>
-<pre class="brush:java;toolbar:false">import java.util.ArrayList;
+        <p>在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:<br><a id="more"></a></p>
+<h2 id="1-adapter的内容"><a href="#1-adapter的内容" class="headerlink" title="1,adapter的内容:"></a>1,adapter的内容:</h2><pre class="brush:java;toolbar:false">import java.util.ArrayList;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -369,8 +386,7 @@ public class MyAdapter extends BaseArrayListAdapter&lt;MyBean&gt; {
                 return mViewHolder;
         }</pre>
 
-<p>2，activity内容:</p>
-<pre class="brush:java;toolbar:false">import java.util.ArrayList;
+<h2 id="2，activity内容"><a href="#2，activity内容" class="headerlink" title="2，activity内容:"></a>2，activity内容:</h2><pre class="brush:java;toolbar:false">import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -422,7 +438,7 @@ public class MainActivity extends Activity {
                         &quot;http://h.hiphotos.baidu.com/image/pic/item/4e4a20a4462309f77ff6d318700e0cf3d7cad61b.jpg&quot; };
 }</pre>
 
-<p>4，XMl布局：<br>activity_main.xml</p>
+<h2 id="3，XMl布局："><a href="#3，XMl布局：" class="headerlink" title="3，XMl布局："></a>3，XMl布局：</h2><p>activity_main.xml</p>
 <pre class="brush:xml;toolbar:false">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
     xmlns:tools=&quot;http://schemas.android.com/tools&quot;
     android:layout_width=&quot;match_parent&quot;
@@ -528,6 +544,12 @@ public class MainActivity extends Activity {
 
     <div class="post-spread">
       
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -538,6 +560,10 @@ public class MainActivity extends Activity {
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/"
+           data-title="Android Adapter优化(二)之Adapter对不同布局的支持" data-url="http://www.mandroid.cn/2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/">
+      </div>
     
   </div>
 
@@ -576,7 +602,7 @@ public class MainActivity extends Activity {
                src="/images/default_avatar.jpg"
                alt="wangtao" />
           <p class="site-author-name" itemprop="name">wangtao</p>
-          <p class="site-description motion-element" itemprop="description">描述</p>
+          <p class="site-description motion-element" itemprop="description">android</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -632,7 +658,7 @@ public class MainActivity extends Activity {
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-adapter的内容"><span class="nav-number">1.</span> <span class="nav-text">1,adapter的内容:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2，activity内容"><span class="nav-number">2.</span> <span class="nav-text">2，activity内容:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3，XMl布局："><span class="nav-number">3.</span> <span class="nav-text">3，XMl布局：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -894,9 +920,28 @@ public class MainActivity extends Activity {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mandroid"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 

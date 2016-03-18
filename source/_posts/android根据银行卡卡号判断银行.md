@@ -2184,6 +2184,6 @@ date: 2015-06-17 01:37:59
     }
 }</pre>
 
-使用例子:
+## 使用例子:
 <pre class="brush:java;toolbar:false">char[] cardNumber = {&#39;6&#39;, &#39;2&#39;, &#39;2&#39;, &#39;8&#39;, &#39;2&#39;, &#39;5&#39;, &#39;0&#39;};//卡号
 Sring bankName = BankInfo.getNameOfBank(cardNumber, 0);//获取银行卡的信息</pre>

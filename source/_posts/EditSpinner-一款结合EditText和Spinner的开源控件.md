@@ -12,13 +12,13 @@ date: 2016-02-28 18:05:09
 
 ![201602281456654040118978.gif](/upload/2016/02/201602281456654040118978.gif "201602281456654040118978.gif")
 
-项目地址：[https://github.com/wangtao2132/EditSpinner](https://github.com/wangtao2132/EditSpinner)
+## 项目地址：[https://github.com/wangtao2132/EditSpinner](https://github.com/wangtao2132/EditSpinner)
 
 <span style="font-size: 20px;">项目介绍：</span>
 
 EditSpinner是一款结合EditText和Spinner的控件，可以自行输入和下拉选择，类似于AutoCompleteTextView
 
-使用说明：
+## 使用说明：
 <pre class="brush:java;toolbar:false">&lt;cn.mandroid.widget.editspinner.EditSpinner
     android:id=&quot;@+id/editSpinner1&quot;
     android:layout_width=&quot;match_parent&quot;

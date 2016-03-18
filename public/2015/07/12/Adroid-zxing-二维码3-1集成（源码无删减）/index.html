@@ -62,24 +62,24 @@
     特此版本去掉了下载时需要积分的情况">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Adroid zxing 二维码3.1集成（源码无删减）">
-<meta property="og:url" content="http://mandroid.cn/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/index.html">
-<meta property="og:site_name" content="测试">
+<meta property="og:url" content="http://www.mandroid.cn/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/index.html">
+<meta property="og:site_name" content="慢啄">
 <meta property="og:description" content="Adroid zxing 二维码3.1集成文章转自：http://my.oschina.net/gluoyer/blog/315947
 引子：最近项目中用到二维码，找到了最新的3.1版本 zxing-GitHub，进行了集成、调整，同时笔记以备忘。
     特此版本去掉了下载时需要积分的情况">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788496442797.jpg">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788506598227.jpg">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788519124077.jpg">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788593429629.jpg">
-<meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788571117265.jpg">
-<meta property="og:updated_time" content="2016-03-18T07:25:01.982Z">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788496442797.jpg">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788506598227.jpg">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788519124077.jpg">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788593429629.jpg">
+<meta property="og:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788571117265.jpg">
+<meta property="og:updated_time" content="2016-03-18T11:23:20.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adroid zxing 二维码3.1集成（源码无删减）">
 <meta name="twitter:description" content="Adroid zxing 二维码3.1集成文章转自：http://my.oschina.net/gluoyer/blog/315947
 引子：最近项目中用到二维码，找到了最新的3.1版本 zxing-GitHub，进行了集成、调整，同时笔记以备忘。
     特此版本去掉了下载时需要积分的情况">
-<meta name="twitter:image" content="http://mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
+<meta name="twitter:image" content="http://www.mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
 
 
 
@@ -97,7 +97,7 @@
   };
 </script>
 
-  <title> Adroid zxing 二维码3.1集成（源码无删减） | 测试 </title>
+  <title> Adroid zxing 二维码3.1集成（源码无删减） | 慢啄 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -105,6 +105,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a9787bd5df8b0335e028edc8c47da89c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -128,11 +138,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">测试</span>
+      <span class="site-title">慢啄</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">子标签</p>
+  <p class="site-subtitle">android开发点滴</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -297,6 +307,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -329,23 +346,23 @@
 <li><p>修改竖屏后，修改的地方找起来比较麻烦。</p>
 </li>
 </ul>
-<h3 id="未使用简化版本，直接引用zxing源码"><a href="#未使用简化版本，直接引用zxing源码" class="headerlink" title="未使用简化版本，直接引用zxing源码"></a>未使用简化版本，直接引用zxing源码</h3><pre><code>由于网上的简化版本，对功能扩展比较麻烦，因此，直接将zxing放到了工程目录下的extras/zxing下，只在项目中加入了目录，复制、修改了必要的文件，其他均引用源码文件
+<h2 id="未使用简化版本，直接引用zxing源码"><a href="#未使用简化版本，直接引用zxing源码" class="headerlink" title="# 未使用简化版本，直接引用zxing源码"></a># 未使用简化版本，直接引用zxing源码</h2><pre><code>由于网上的简化版本，对功能扩展比较麻烦，因此，直接将zxing放到了工程目录下的extras/zxing下，只在项目中加入了目录，复制、修改了必要的文件，其他均引用源码文件
 </code></pre><p><img src="/upload/2015/07/201507131436788453805554.jpg" alt="19115113_8oXJ.jpg" title="201507131436788453805554.jpg"></p>
-<h3 id="修改竖屏后所需调整"><a href="#修改竖屏后所需调整" class="headerlink" title="修改竖屏后所需调整"></a>修改竖屏后所需调整</h3><pre><code>集成过程中，发现网文提到的修改竖屏，还是有点分散的，找起还是有点麻烦。故在&lt;span style=&quot;color:#0000ff&quot;&gt;CameraConfigurationManager&lt;/span&gt;加了一个标识方法：&lt;span style=&quot;color:#0000ff&quot;&gt;isPortrait()&lt;/span&gt;，返回&lt;span style=&quot;color:#ff0000&quot;&gt;true&lt;/span&gt;
+<h2 id="修改竖屏后所需调整"><a href="#修改竖屏后所需调整" class="headerlink" title="# 修改竖屏后所需调整"></a># 修改竖屏后所需调整</h2><pre><code>集成过程中，发现网文提到的修改竖屏，还是有点分散的，找起还是有点麻烦。故在&lt;span style=&quot;color:#0000ff&quot;&gt;CameraConfigurationManager&lt;/span&gt;加了一个标识方法：&lt;span style=&quot;color:#0000ff&quot;&gt;isPortrait()&lt;/span&gt;，返回&lt;span style=&quot;color:#ff0000&quot;&gt;true&lt;/span&gt;
 
 例如，&lt;span style=&quot;color:#0000ff&quot;&gt;DecodeHandler.java&lt;/span&gt;的&lt;span style=&quot;color:#0000ff&quot;&gt;decode&lt;/span&gt;方法中需要调整，如下条件实现：
 </code></pre><p><img src="/upload/2015/07/201507131436788496442797.jpg" alt="19115114_4eQr.jpg" title="201507131436788496442797.jpg"></p>
 <p>其他需要修改的地方，也如此使用<span style="color:#0000ff">isPortrait()</span>条件，所以，只需要看下<span style="color:#0000ff">isPortrait()</span>的<span style="color:#ccb400">Call Hierarchy</span>，就比较清晰得看到所需修改。</p>
 <p>同时，返回<span style="color:#ff0000">false</span>，就可以恢复到源码处理。</p>
-<h3 id="绘制扫描框"><a href="#绘制扫描框" class="headerlink" title="绘制扫描框"></a>绘制扫描框</h3><pre><code>根据项目需求，需要重新绘制扫描框框，主要在&lt;span style=&quot;color:#0000ff&quot;&gt;ViewfinderView.java&lt;/span&gt;实现绘制方法，同样条件控制，&lt;span style=&quot;color:#0000ff&quot;&gt;drawScanFrame&lt;/span&gt;局部如下：
+<h2 id="绘制扫描框"><a href="#绘制扫描框" class="headerlink" title="# 绘制扫描框"></a># 绘制扫描框</h2><pre><code>根据项目需求，需要重新绘制扫描框框，主要在&lt;span style=&quot;color:#0000ff&quot;&gt;ViewfinderView.java&lt;/span&gt;实现绘制方法，同样条件控制，&lt;span style=&quot;color:#0000ff&quot;&gt;drawScanFrame&lt;/span&gt;局部如下：
 </code></pre><p><img src="/upload/2015/07/201507131436788506598227.jpg" alt="19115116_xCkn.jpg" title="201507131436788506598227.jpg"></p>
-<h3 id="灯光的设置"><a href="#灯光的设置" class="headerlink" title="灯光的设置"></a>灯光的设置</h3><pre><code>根据源码中，音量键对灯光的开关，添加了新接口，支持标题右上角对灯光的控制：
+<h2 id="灯光的设置"><a href="#灯光的设置" class="headerlink" title="# 灯光的设置"></a># 灯光的设置</h2><pre><code>根据源码中，音量键对灯光的开关，添加了新接口，支持标题右上角对灯光的控制：
 </code></pre><p><span style="color:#0000ff">CameraManager.java</span>中：</p>
 <p><img src="/upload/2015/07/201507131436788519124077.jpg" alt="19115116_gKwu.jpg" title="201507131436788519124077.jpg"></p>
 <p>以及<span style="color:#0000ff">CameraConfigurationManager.java</span>中：</p>
 <p><img src="/upload/2015/07/201507131436788593429629.jpg" alt="19115117_ue4m.jpg" title="201507131436788593429629.jpg"></p>
 <p>在Activity中进行必要的调用处理即可。</p>
-<h3 id="QrCaptureActivity-中扫描成功的处理"><a href="#QrCaptureActivity-中扫描成功的处理" class="headerlink" title="QrCaptureActivity 中扫描成功的处理"></a><span style="color:#0000ff">QrCaptureActivity</span> 中扫描成功的处理</h3><p>   根据实际需求，扫描成功后，跳转并将数据传递给新页面，因此，只在<span style="color:#0000ff">handleDecode</span>方法中，</p>
+<h2 id="QrCaptureActivity-中扫描成功的处理"><a href="#QrCaptureActivity-中扫描成功的处理" class="headerlink" title="# QrCaptureActivity 中扫描成功的处理"></a># <span style="color:#0000ff">QrCaptureActivity</span> 中扫描成功的处理</h2><p>   根据实际需求，扫描成功后，跳转并将数据传递给新页面，因此，只在<span style="color:#0000ff">handleDecode</span>方法中，</p>
 <p><img src="/upload/2015/07/201507131436788571117265.jpg" alt="19115119_Ehb6.jpg" title="201507131436788571117265.jpg"></p>
 <pre><code>在注释信息下面，将新页面的跳转就可以了。  
 </code></pre><p>如果有其他需求，也在这里自行处理，应该就没有问题了。</p>
@@ -400,6 +417,12 @@
 
     <div class="post-spread">
       
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -410,6 +433,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/"
+           data-title="Adroid zxing 二维码3.1集成（源码无删减）" data-url="http://www.mandroid.cn/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/">
+      </div>
     
   </div>
 
@@ -448,7 +475,7 @@
                src="/images/default_avatar.jpg"
                alt="wangtao" />
           <p class="site-author-name" itemprop="name">wangtao</p>
-          <p class="site-description motion-element" itemprop="description">描述</p>
+          <p class="site-description motion-element" itemprop="description">android</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -504,7 +531,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Adroid-zxing-二维码3-1集成"><span class="nav-number">1.</span> <span class="nav-text">Adroid zxing 二维码3.1集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#未使用简化版本，直接引用zxing源码"><span class="nav-number">1.0.1.</span> <span class="nav-text">未使用简化版本，直接引用zxing源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改竖屏后所需调整"><span class="nav-number">1.0.2.</span> <span class="nav-text">修改竖屏后所需调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制扫描框"><span class="nav-number">1.0.3.</span> <span class="nav-text">绘制扫描框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灯光的设置"><span class="nav-number">1.0.4.</span> <span class="nav-text">灯光的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QrCaptureActivity-中扫描成功的处理"><span class="nav-number">1.0.5.</span> <span class="nav-text">QrCaptureActivity 中扫描成功的处理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Adroid-zxing-二维码3-1集成"><span class="nav-number">1.</span> <span class="nav-text">Adroid zxing 二维码3.1集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#未使用简化版本，直接引用zxing源码"><span class="nav-number">1.1.</span> <span class="nav-text"># 未使用简化版本，直接引用zxing源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改竖屏后所需调整"><span class="nav-number">1.2.</span> <span class="nav-text"># 修改竖屏后所需调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制扫描框"><span class="nav-number">1.3.</span> <span class="nav-text"># 绘制扫描框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灯光的设置"><span class="nav-number">1.4.</span> <span class="nav-text"># 灯光的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QrCaptureActivity-中扫描成功的处理"><span class="nav-number">1.5.</span> <span class="nav-text"># QrCaptureActivity 中扫描成功的处理</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -766,9 +793,28 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mandroid"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 

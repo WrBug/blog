@@ -10,7 +10,7 @@ date: 2016-02-29 14:47:07
 
 hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙。shadowsocks需要使用自己的服务器，当然选择不同价格的服务器决定了服务的质量:-)
 <!-- more -->
-优点：
+##  优点：
 
 1.  可以免费：shadowsocks可以利用免费的Aws EC2，公有服务器还是不考虑吧，毕竟时间更宝贵。
 
@@ -20,7 +20,7 @@ hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙
 
 4.  多平台支持：感谢开源，无论Linux，win*，MacOS，iOS，Android平台均可以安装shadowsocks客户端
 
-<span style="font-size: 20px;">1.注册</span>
+## 注册
 
 1.  注册AWS账号，需要信用卡（淘宝上有1美元账户，或者申请[全球付虚拟信用卡](https://www.globalcash.hk/))
 
@@ -28,8 +28,7 @@ hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙
 
 3.  之后选择_Amazon Support Plan_，这里选择_Basic（Free）_，注册成功后会进入欢迎界面，选择_“启动Aws管理控制台”_。
 
-<span style="font-size: 20px;"></span><span style="font-size: 20px;">2.创建实例（推荐东京节点）</span>
-
+##  2.创建实例（推荐东京节点）
 ![awsec201.png](/upload/2016/02/201602291456728783308021.png "201602291456728783308021.png")
 
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">选择</span>_Amazon系统映像_<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">(AMI)，这里选择</span>_“Ubuntu Server 14.04 LTS”_<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">，如下图：</span>
@@ -56,7 +55,7 @@ _<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-siz
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">
 </span>
 
-<span style="color: rgb(85, 85, 85); line-height: 26px; font-size: 20px; font-family: &#39;Microsoft YaHei&#39;; background-color: rgb(255, 255, 255);">3.配置shadowsocks</span>
+##  3.配置shadowsocks
 
 <span style="color: rgb(85, 85, 85); line-height: 26px; font-size: 20px; font-family: &#39;Microsoft YaHei&#39;; background-color: rgb(255, 255, 255);">
 </span>
@@ -85,7 +84,7 @@ _
     &quot;fast_open&quot;:false
 }</pre><pre class="brush:cf;toolbar:false">ssserver -c /etc/shadowsocks.json -d start //启动shadowsocks</pre>
 
-<span style="font-size: 20px;">4.shadowsocks客户端下载：</span>
+## 4.shadowsocks客户端下载：
 
 [https://shadowsocks.org/en/index.html](https://shadowsocks.org/en/index.html)
 

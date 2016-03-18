@@ -29,13 +29,13 @@ _<span style="color:#9b00d3">    特此版本去掉了下载时需要积分的�
 
 *   修改竖屏后，修改的地方找起来比较麻烦。
 
-### 未使用简化版本，直接引用zxing源码
+## # 未使用简化版本，直接引用zxing源码
 
     由于网上的简化版本，对功能扩展比较麻烦，因此，直接将zxing放到了工程目录下的extras/zxing下，只在项目中加入了目录，复制、修改了必要的文件，其他均引用源码文件
 
 ![19115113_8oXJ.jpg](/upload/2015/07/201507131436788453805554.jpg "201507131436788453805554.jpg")
 
-### 修改竖屏后所需调整
+## # 修改竖屏后所需调整
 
     集成过程中，发现网文提到的修改竖屏，还是有点分散的，找起还是有点麻烦。故在<span style="color:#0000ff">CameraConfigurationManager</span>加了一个标识方法：<span style="color:#0000ff">isPortrait()</span>，返回<span style="color:#ff0000">true</span>
 
@@ -47,13 +47,13 @@ _<span style="color:#9b00d3">    特此版本去掉了下载时需要积分的�
 
 同时，返回<span style="color:#ff0000">false</span>，就可以恢复到源码处理。
 
-### 绘制扫描框
+## # 绘制扫描框
 
     根据项目需求，需要重新绘制扫描框框，主要在<span style="color:#0000ff">ViewfinderView.java</span>实现绘制方法，同样条件控制，<span style="color:#0000ff">drawScanFrame</span>局部如下：
 
 ![19115116_xCkn.jpg](/upload/2015/07/201507131436788506598227.jpg "201507131436788506598227.jpg")
 
-### 灯光的设置
+## # 灯光的设置
 
     根据源码中，音量键对灯光的开关，添加了新接口，支持标题右上角对灯光的控制：
 
@@ -67,7 +67,7 @@ _<span style="color:#9b00d3">    特此版本去掉了下载时需要积分的�
 
 在Activity中进行必要的调用处理即可。
 
-### <span style="color:#0000ff">QrCaptureActivity</span> 中扫描成功的处理
+## # <span style="color:#0000ff">QrCaptureActivity</span> 中扫描成功的处理
 
    根据实际需求，扫描成功后，跳转并将数据传递给新页面，因此，只在<span style="color:#0000ff">handleDecode</span>方法中，
 

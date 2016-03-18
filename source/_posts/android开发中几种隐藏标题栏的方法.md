@@ -12,7 +12,7 @@ date: 2015-06-21 19:07:37
 <span style="font-size: 24px;">1\. <span style="font-size: 24px; color: rgb(255, 0, 0);"><span style="font-size: 24px;">推荐</span>！</span><span style="font-size: 24px; color: rgb(255, 0, 0);">（因为现在工程都默认的为AppTheme）</span>
 </span>
 
-在value/styles.xml里面添加自定义属性
+## 在value/styles.xml里面添加自定义属性
 <pre class="brush:xml;toolbar:false">&lt;resources xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
     &lt;!-- Application theme. --&gt;
     &lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;
@@ -21,7 +21,7 @@ date: 2015-06-21 19:07:37
 
 <span class="exp-album-enter-mask"></span>
 
-<span style="font-size: 24px;">2.</span>
+## 2.
 <pre class="brush:java;toolbar:false">public class MainActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -36,8 +36,7 @@ date: 2015-06-21 19:07:37
     }
 }</pre>
 
-<span style="font-size: 24px;">3.</span>
-
+## 3.
 <pre class="brush:xml;toolbar:false">&lt;!-- Application theme. --&gt;
 &lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;
     &lt;!-- All customizations that are NOT specific to a particular API-level can go here. --&gt;
@@ -59,8 +58,8 @@ date: 2015-06-21 19:07:37
         &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
     &lt;/intent-filter&gt;
 &lt;/activity&gt;</pre>
-
-<span style="font-size: 24px;">5.</span>打开项目文件AndroidManifest.xml ，打开Application选择TAB页，在页面下方的Application Nodes中点选择相应的类,   配置右侧的Theme属性。
+## 4.
+打开项目文件AndroidManifest.xml ，打开Application选择TAB页，在页面下方的Application Nodes中点选择相应的类,   配置右侧的Theme属性。
 <div class="content-list-media"><div class="content-list-image clearfix">![d058ccbf6c81800ab49240c9b33533fa838b4786.jpg](/upload/2015/06/201506211434885529850695.jpg "201506211434885529850695.jpg")<span class="exp-album-enter-mask"></span></div></div><div class="content-list-text">
 
 在弹出选择框中点选&quot;system Resources&quot;，选择Theme.NoTitleBar项目，然后重新打开页面就行了。

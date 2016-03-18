@@ -44,13 +44,13 @@ date: 2015-07-23 16:57:43
 <div style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
 </div>
 
-## 1、关于图片的压缩
+##  1、关于图片的压缩
 
 不管是从网络还是本地的图片，加载都需要进行压缩，然后显示：
 
 用户要你压缩显示，会给我们什么？一个imageview，一个path，我们的职责就是压缩完成后显示上去。
 
-### 1、本地图片的压缩
+## # 1、本地图片的压缩
 <div style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
 </div>
 
@@ -183,7 +183,7 @@ date: 2015-07-23 16:57:43
 
 上述是本地图片的压缩，那么如果是网络图片呢？
 
-### 2、网络图片的压缩
+## # 2、网络图片的压缩
 <div style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
 </div>
 
@@ -254,7 +254,7 @@ date: 2015-07-23 16:57:43
 
 到此，图片压缩说完了。
 
-## <a name="t6"></a><a target="_blank" style="color:rgb(51,102,153)" name="t6"></a>2、图片加载框架的架构
+##  <a name="t6"></a><a target="_blank" style="color:rgb(51,102,153)" name="t6"></a>2、图片加载框架的架构
 
 我们的图片压缩加载完了，那么就应该放入我们的LruCache，然后设置到我们的ImageView上。
 
@@ -275,7 +275,7 @@ date: 2015-07-23 16:57:43
 <div style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
 </div>
 
-## <a name="t8"></a><a target="_blank" style="color:rgb(51,102,153)" name="t8"></a>1、构造方法
+##  <a name="t8"></a><a target="_blank" style="color:rgb(51,102,153)" name="t8"></a>1、构造方法
 <pre class="brush:java;toolbar:false">    public static ImageLoader getInstance(int threadCount, Type type)  
         {  
             if (mInstance == null)  
@@ -420,7 +420,7 @@ date: 2015-07-23 16:57:43
 
 接下来就是初始化mLruCache  ， mThreadPool ，mTaskQueue 等；
 
-## <a name="t9"></a><a target="_blank" style="color:rgb(51,102,153)" name="t9"></a>2、loadImage
+##  <a name="t9"></a><a target="_blank" style="color:rgb(51,102,153)" name="t9"></a>2、loadImage
 
 构造完成以后，当然是使用了，用户调用loadImage传入(final String path, final ImageView imageView,final boolean isFromNet)就可以完成本地或者网络图片的加载。
 <pre class="brush:java;toolbar:false"> /** 

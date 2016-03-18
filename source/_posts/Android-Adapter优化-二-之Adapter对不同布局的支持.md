@@ -9,7 +9,7 @@ date: 2015-08-25 14:12:03
 
 在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:
 <!-- more -->
-1,adapter的内容:
+## 1,adapter的内容:
 <pre class="brush:java;toolbar:false">import java.util.ArrayList;
 import android.content.Context;
 import android.view.View;
@@ -76,7 +76,7 @@ public class MyAdapter extends BaseArrayListAdapter&lt;MyBean&gt; {
                 return mViewHolder;
         }</pre>
 
-2，activity内容:
+## 2，activity内容:
 <pre class="brush:java;toolbar:false">import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
                         &quot;http://h.hiphotos.baidu.com/image/pic/item/4e4a20a4462309f77ff6d318700e0cf3d7cad61b.jpg&quot; };
 }</pre>
 
-4，XMl布局：
+## 3，XMl布局：
 activity_main.xml
 <pre class="brush:xml;toolbar:false">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
     xmlns:tools=&quot;http://schemas.android.com/tools&quot;
