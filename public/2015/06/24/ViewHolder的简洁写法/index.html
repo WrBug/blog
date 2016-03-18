@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -57,26 +57,32 @@
 
 
 
-<meta name="description" content="public&amp;nbsp;class&amp;nbsp;ViewHolder&amp;nbsp;{
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;I&amp;nbsp;added&amp;nbsp;a&amp;nbsp;generic&amp;nbsp;return&amp;nbsp;type&amp;nbsp;to&amp;nbsp;reduce&amp;nbsp;the&amp;nbsp;casting&amp;nbsp;noise&amp;nbsp;in&amp;nbsp;clien">
+<meta name="description" content="public class ViewHolder {
+    // I added a generic return type to reduce the casting noise in client code
+    @SuppressWarnings(&amp;quot;unchecked&amp;quot;)
+    public static &amp;lt;T extends View&amp;gt; T get(V">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ViewHolder的简洁写法">
 <meta property="og:url" content="http://mandroid.cn/2015/06/24/ViewHolder的简洁写法/index.html">
 <meta property="og:site_name" content="测试">
-<meta property="og:description" content="public&amp;nbsp;class&amp;nbsp;ViewHolder&amp;nbsp;{
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;I&amp;nbsp;added&amp;nbsp;a&amp;nbsp;generic&amp;nbsp;return&amp;nbsp;type&amp;nbsp;to&amp;nbsp;reduce&amp;nbsp;the&amp;nbsp;casting&amp;nbsp;noise&amp;nbsp;in&amp;nbsp;clien">
-<meta property="og:updated_time" content="2016-03-17T11:30:20.266Z">
+<meta property="og:description" content="public class ViewHolder {
+    // I added a generic return type to reduce the casting noise in client code
+    @SuppressWarnings(&amp;quot;unchecked&amp;quot;)
+    public static &amp;lt;T extends View&amp;gt; T get(V">
+<meta property="og:updated_time" content="2016-03-18T02:34:17.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ViewHolder的简洁写法">
-<meta name="twitter:description" content="public&amp;nbsp;class&amp;nbsp;ViewHolder&amp;nbsp;{
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;I&amp;nbsp;added&amp;nbsp;a&amp;nbsp;generic&amp;nbsp;return&amp;nbsp;type&amp;nbsp;to&amp;nbsp;reduce&amp;nbsp;the&amp;nbsp;casting&amp;nbsp;noise&amp;nbsp;in&amp;nbsp;clien">
+<meta name="twitter:description" content="public class ViewHolder {
+    // I added a generic return type to reduce the casting noise in client code
+    @SuppressWarnings(&amp;quot;unchecked&amp;quot;)
+    public static &amp;lt;T extends View&amp;gt; T get(V">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -247,37 +253,37 @@
 
       
         <a id="more"></a>
-<pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;ViewHolder&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;I&nbsp;added&nbsp;a&nbsp;generic&nbsp;return&nbsp;type&nbsp;to&nbsp;reduce&nbsp;the&nbsp;casting&nbsp;noise&nbsp;in&nbsp;client&nbsp;code
-&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unchecked&quot;)
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;&lt;T&nbsp;extends&nbsp;View&gt;&nbsp;T&nbsp;get(View&nbsp;view,&nbsp;int&nbsp;id)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SparseArray&lt;View&gt;&nbsp;viewHolder&nbsp;=&nbsp;(SparseArray&lt;View&gt;)&nbsp;view.getTag();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(viewHolder&nbsp;==&nbsp;null)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewHolder&nbsp;=&nbsp;new&nbsp;SparseArray&lt;View&gt;();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view.setTag(viewHolder);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;childView&nbsp;=&nbsp;viewHolder.get(id);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(childView&nbsp;==&nbsp;null)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childView&nbsp;=&nbsp;view.findViewById(id);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewHolder.put(id,&nbsp;childView);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(T)&nbsp;childView;
-&nbsp;&nbsp;&nbsp;&nbsp;}
+<pre class="brush:java;toolbar:false">public class ViewHolder {
+    // I added a generic return type to reduce the casting noise in client code
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public static &lt;T extends View&gt; T get(View view, int id) {
+        SparseArray&lt;View&gt; viewHolder = (SparseArray&lt;View&gt;) view.getTag();
+        if (viewHolder == null) {
+            viewHolder = new SparseArray&lt;View&gt;();
+            view.setTag(viewHolder);
+        }
+        View childView = viewHolder.get(id);
+        if (childView == null) {
+            childView = view.findViewById(id);
+            viewHolder.put(id, childView);
+        }
+        return (T) childView;
+    }
 }</pre>
 
 <p><span style="color:#333333"><span style="font-family:Arial">ViewHolder这么写（只提供一个静态方法，其实可以加一个私有构造函数防止外部实例化），代码很简单，看过就明白了</span></span></p>
-<pre class="brush:java;toolbar:false">public&nbsp;View&nbsp;getView(int&nbsp;position,&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent)
-&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(convertView&nbsp;==&nbsp;null)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convertView&nbsp;=&nbsp;LayoutInflater.from(context)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.inflate(R.layout.banana_phone,&nbsp;parent,&nbsp;false);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;ImageView&nbsp;bananaView&nbsp;=&nbsp;ViewHolder.get(convertView,&nbsp;R.id.banana);
-&nbsp;&nbsp;&nbsp;&nbsp;TextView&nbsp;phoneView&nbsp;=&nbsp;ViewHolder.get(convertView,&nbsp;R.id.phone);
-&nbsp;&nbsp;&nbsp;&nbsp;BananaPhone&nbsp;bananaPhone&nbsp;=&nbsp;getItem(position);
-&nbsp;&nbsp;&nbsp;&nbsp;phoneView.setText(bananaPhone.getPhone());
-&nbsp;&nbsp;&nbsp;&nbsp;bananaView.setImageResource(bananaPhone.getBanana());
-&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;convertView;
+<pre class="brush:java;toolbar:false">public View getView(int position, View convertView, ViewGroup parent)
+ {
+    if (convertView == null) {
+        convertView = LayoutInflater.from(context)
+          .inflate(R.layout.banana_phone, parent, false);
+    }
+    ImageView bananaView = ViewHolder.get(convertView, R.id.banana);
+    TextView phoneView = ViewHolder.get(convertView, R.id.phone);
+    BananaPhone bananaPhone = getItem(position);
+    phoneView.setText(bananaPhone.getPhone());
+    bananaView.setImageResource(bananaPhone.getBanana());
+    return convertView;
 }</pre>
       
     </div>
@@ -460,7 +466,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -513,13 +519,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

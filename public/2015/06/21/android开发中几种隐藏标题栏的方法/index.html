@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -57,26 +57,26 @@
 
 
 
-<meta name="description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources&amp;nbsp;xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;!–&amp;nbsp;Application&amp;nbs">
+<meta name="description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;    &amp;lt;!– Application theme. –&amp;gt;    &amp;lt;style name=&amp;q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android开发中几种隐藏标题栏的方法">
 <meta property="og:url" content="http://mandroid.cn/2015/06/21/android开发中几种隐藏标题栏的方法/index.html">
 <meta property="og:site_name" content="测试">
-<meta property="og:description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources&amp;nbsp;xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;!–&amp;nbsp;Application&amp;nbs">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2015/06/201506211434885529850695.jpg">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2015/06/201506211434885550436342.jpg">
-<meta property="og:updated_time" content="2016-03-17T11:26:14.352Z">
+<meta property="og:description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;    &amp;lt;!– Application theme. –&amp;gt;    &amp;lt;style name=&amp;q">
+<meta property="og:image" content="http://mandroid.cn/upload/2015/06/201506211434885529850695.jpg">
+<meta property="og:image" content="http://mandroid.cn/upload/2015/06/201506211434885550436342.jpg">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android开发中几种隐藏标题栏的方法">
-<meta name="twitter:description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources&amp;nbsp;xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;!–&amp;nbsp;Application&amp;nbs">
-<meta name="twitter:image" content="http://www.mandroid.cn/zb_users/upload/2015/06/201506211434885529850695.jpg">
+<meta name="twitter:description" content="1. 推荐！（因为现在工程都默认的为AppTheme）在value/styles.xml里面添加自定义属性&amp;lt;resources xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;amp;gt;    &amp;lt;!– Application theme. –&amp;gt;    &amp;lt;style name=&amp;q">
+<meta name="twitter:image" content="http://mandroid.cn/upload/2015/06/201506211434885529850695.jpg">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -247,9 +247,9 @@
 
       
         <a id="more"></a>
-<div class="content-list-text"><br><br><span style="font-size: 24px;"></span><br><br><span style="font-size: 24px;">1. <span style="font-size: 24px; color: rgb(255, 0, 0);"><span style="font-size: 24px;">推荐</span>！</span><span style="font-size: 24px; color: rgb(255, 0, 0);">（因为现在工程都默认的为AppTheme）</span><br></span><br><br>在value/styles.xml里面添加自定义属性<br><pre class="brush:xml;toolbar:false">&lt;resources&nbsp;xmlns:android=&quot;<a href="http://schemas.android.com/apk/res/android&quot;&amp;gt" target="_blank" rel="external">http://schemas.android.com/apk/res/android&quot;&amp;gt</a>;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!–&nbsp;Application&nbsp;theme.&nbsp;–&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&nbsp;name=&quot;AppTheme&quot;&nbsp;parent=&quot;AppBaseTheme&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;<br>&lt;/resources&gt;</pre></div><div class="content-list-media"><div class="content-list-image clearfix"><br><br><span class="exp-album-enter-mask"></span><br><br><span style="font-size: 24px;">2.</span><br><pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;Activity{<br>&nbsp;&nbsp;&nbsp;&nbsp;@Override<br>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onCreate(Bundle&nbsp;savedInstanceState){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;隐藏标题栏<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestWindowFeature(Window.FEATURE_NO_TITLE);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;隐藏状态栏<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WindowManager.LayoutParams.FLAG_FULLSCREEN);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//一定要放在setContentView()之前！<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</pre><br><br><span style="font-size: 24px;">3.</span><br><br><pre class="brush:xml;toolbar:false">&lt;!–&nbsp;Application&nbsp;theme.&nbsp;–&gt;<br>&lt;style&nbsp;name=&quot;AppTheme&quot;&nbsp;parent=&quot;AppBaseTheme&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!–&nbsp;All&nbsp;customizations&nbsp;that&nbsp;are&nbsp;NOT&nbsp;specific&nbsp;to&nbsp;a&nbsp;particular&nbsp;API-level&nbsp;can&nbsp;go&nbsp;here.&nbsp;–&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!–&nbsp;隐藏状态栏&nbsp;–&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!–&nbsp;隐藏标题栏&nbsp;–&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;<br>&lt;/style&gt;</pre><br><br><span class="exp-album-enter-mask"></span><span style="font-size: 24px;">4.</span><br><br></div></div><pre class="brush:xml;toolbar:false">&lt;!–&nbsp;同时隐藏状态栏和标题栏&nbsp;&nbsp;–&gt;<br>&lt;activity<br>&nbsp;&nbsp;&nbsp;&nbsp;android:name=&quot;com.ysj.demo.MainActivity&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;android:label=&quot;@string/app_name&quot;&nbsp;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;intent-filter&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;android:name=&quot;android.intent.action.MAIN&quot;&nbsp;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category&nbsp;android:name=&quot;android.intent.category.LAUNCHER&quot;&nbsp;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/intent-filter&gt;<br>&lt;/activity&gt;</pre><br><br><span style="font-size: 24px;">5.</span>打开项目文件AndroidManifest.xml ，打开Application选择TAB页，在页面下方的Application Nodes中点选择相应的类,&nbsp;&nbsp; 配置右侧的Theme属性。<br><div class="content-list-media"><div class="content-list-image clearfix"><img src="http://www.mandroid.cn/zb_users/upload/2015/06/201506211434885529850695.jpg" alt="d058ccbf6c81800ab49240c9b33533fa838b4786.jpg" title="201506211434885529850695.jpg"><span class="exp-album-enter-mask"></span></div></div><div class="content-list-text"><br><br>在弹出选择框中点选&quot;system Resources&quot;，选择Theme.NoTitleBar项目，然后重新打开页面就行了。<br></div>
+<div class="content-list-text"><br><br><span style="font-size: 24px;"></span><br><br><span style="font-size: 24px;">1. <span style="font-size: 24px; color: rgb(255, 0, 0);"><span style="font-size: 24px;">推荐</span>！</span><span style="font-size: 24px; color: rgb(255, 0, 0);">（因为现在工程都默认的为AppTheme）</span><br></span><br><br>在value/styles.xml里面添加自定义属性<br><pre class="brush:xml;toolbar:false">&lt;resources xmlns:android=&quot;<a href="http://schemas.android.com/apk/res/android&quot;&amp;gt" target="_blank" rel="external">http://schemas.android.com/apk/res/android&quot;&amp;gt</a>;<br>    &lt;!– Application theme. –&gt;<br>    &lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;<br>       &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;<br>&lt;/resources&gt;</pre></div><div class="content-list-media"><div class="content-list-image clearfix"><br><br><span class="exp-album-enter-mask"></span><br><br><span style="font-size: 24px;">2.</span><br><pre class="brush:java;toolbar:false">public class MainActivity extends Activity{<br>    @Override<br>    protected void onCreate(Bundle savedInstanceState){<br>        super.onCreate(savedInstanceState);<br>        // 隐藏标题栏<br>        requestWindowFeature(Window.FEATURE_NO_TITLE);<br>        // 隐藏状态栏<br>        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,<br>        WindowManager.LayoutParams.FLAG_FULLSCREEN);<br>       //一定要放在setContentView()之前！<br>        setContentView(R.layout.activity_main);<br>    }<br>}</pre><br><br><span style="font-size: 24px;">3.</span><br><br><pre class="brush:xml;toolbar:false">&lt;!– Application theme. –&gt;<br>&lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;<br>    &lt;!– All customizations that are NOT specific to a particular API-level can go here. –&gt;<br>    &lt;!– 隐藏状态栏 –&gt;<br>    &lt;item name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;<br>    &lt;!– 隐藏标题栏 –&gt;<br>    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;<br>&lt;/style&gt;</pre><br><br><span class="exp-album-enter-mask"></span><span style="font-size: 24px;">4.</span><br><br></div></div><pre class="brush:xml;toolbar:false">&lt;!– 同时隐藏状态栏和标题栏  –&gt;<br>&lt;activity<br>    android:name=&quot;com.ysj.demo.MainActivity&quot;<br>    android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;<br>    android:label=&quot;@string/app_name&quot; &gt;<br>    &lt;intent-filter&gt;<br>        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;<br>        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;<br>    &lt;/intent-filter&gt;<br>&lt;/activity&gt;</pre><br><br><span style="font-size: 24px;">5.</span>打开项目文件AndroidManifest.xml ，打开Application选择TAB页，在页面下方的Application Nodes中点选择相应的类,   配置右侧的Theme属性。<br><div class="content-list-media"><div class="content-list-image clearfix"><img src="/upload/2015/06/201506211434885529850695.jpg" alt="d058ccbf6c81800ab49240c9b33533fa838b4786.jpg" title="201506211434885529850695.jpg"><span class="exp-album-enter-mask"></span></div></div><div class="content-list-text"><br><br>在弹出选择框中点选&quot;system Resources&quot;，选择Theme.NoTitleBar项目，然后重新打开页面就行了。<br></div>
 
-<p><img src="http://www.mandroid.cn/zb_users/upload/2015/06/201506211434885550436342.jpg" alt="5366d0160924ab18767128f037fae6cd7a890b96.jpg" title="201506211434885550436342.jpg"></p>
+<p><img src="/upload/2015/06/201506211434885550436342.jpg" alt="5366d0160924ab18767128f037fae6cd7a890b96.jpg" title="201506211434885550436342.jpg"></p>
 
       
     </div>
@@ -432,7 +432,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -485,13 +485,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

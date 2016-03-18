@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -57,38 +57,44 @@
 
 
 
-<meta name="description" content="&amp;nbsp; 返回其他对象与这个相似，可以自己研究下
+<meta name="description" content="返回其他对象与这个相似，可以自己研究下
 思路：
-&amp;nbsp;&amp;nbsp;&amp;nbsp; 1.创建HashMap对象：
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*C语言版本，下同*/
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//获取java的HashMap类
-&amp;nbsp;&amp;nbsp;&amp;nbsp;jclass&amp;nbsp;class_hashmap&amp;nbsp;=&amp;nbsp;">
+1.创建HashMap对象：
+    /*C语言版本，下同*/
+    //获取java的HashMap类
+   jclass class_hashmap = (*env)-&amp;gt;FindClass(env, &amp;quot;java/util/HashMap&amp;quot;);
+
+   //获取类似于java 的new HashMap();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jni 通过c/c++返回HashMap等复杂参数给java">
 <meta property="og:url" content="http://mandroid.cn/2015/07/02/jni-通过c-c-返回HashMap等复杂参数给java/index.html">
 <meta property="og:site_name" content="测试">
-<meta property="og:description" content="&amp;nbsp; 返回其他对象与这个相似，可以自己研究下
+<meta property="og:description" content="返回其他对象与这个相似，可以自己研究下
 思路：
-&amp;nbsp;&amp;nbsp;&amp;nbsp; 1.创建HashMap对象：
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*C语言版本，下同*/
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//获取java的HashMap类
-&amp;nbsp;&amp;nbsp;&amp;nbsp;jclass&amp;nbsp;class_hashmap&amp;nbsp;=&amp;nbsp;">
-<meta property="og:updated_time" content="2016-03-17T11:30:56.381Z">
+1.创建HashMap对象：
+    /*C语言版本，下同*/
+    //获取java的HashMap类
+   jclass class_hashmap = (*env)-&amp;gt;FindClass(env, &amp;quot;java/util/HashMap&amp;quot;);
+
+   //获取类似于java 的new HashMap();">
+<meta property="og:updated_time" content="2016-03-18T02:34:17.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jni 通过c/c++返回HashMap等复杂参数给java">
-<meta name="twitter:description" content="&amp;nbsp; 返回其他对象与这个相似，可以自己研究下
+<meta name="twitter:description" content="返回其他对象与这个相似，可以自己研究下
 思路：
-&amp;nbsp;&amp;nbsp;&amp;nbsp; 1.创建HashMap对象：
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*C语言版本，下同*/
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//获取java的HashMap类
-&amp;nbsp;&amp;nbsp;&amp;nbsp;jclass&amp;nbsp;class_hashmap&amp;nbsp;=&amp;nbsp;">
+1.创建HashMap对象：
+    /*C语言版本，下同*/
+    //获取java的HashMap类
+   jclass class_hashmap = (*env)-&amp;gt;FindClass(env, &amp;quot;java/util/HashMap&amp;quot;);
+
+   //获取类似于java 的new HashMap();">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -258,83 +264,83 @@
       
 
       
-        <p>&nbsp; 返回其他对象与这个相似，可以自己研究下</p>
+        <p>  返回其他对象与这个相似，可以自己研究下</p>
 <p>思路：</p>
-<p>&nbsp;&nbsp;&nbsp; 1.创建HashMap对象：</p>
-<pre class="brush:cpp;toolbar:false">&nbsp;&nbsp;&nbsp;&nbsp;/*C语言版本，下同*/
-&nbsp;&nbsp;&nbsp;&nbsp;//获取java的HashMap类
-&nbsp;&nbsp;&nbsp;jclass&nbsp;class_hashmap&nbsp;=&nbsp;(*env)-&gt;FindClass(env,&nbsp;&quot;java/util/HashMap&quot;);
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;//获取类似于java&nbsp;的new&nbsp;HashMap();
-&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;hashmap_init&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;&lt;init&gt;&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;()V&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;//初始化。类似于hashMap=new&nbsp;HashMap();
-&nbsp;&nbsp;&nbsp;&nbsp;jobject&nbsp;HashMap&nbsp;=&nbsp;(*env)-&gt;NewObject(env,&nbsp;class_hashmap,&nbsp;hashmap_init,&nbsp;&quot;&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;//获取hashMap.put()的ID
-&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;HashMap_put&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;put&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);</pre>
+<pre><code>1.创建HashMap对象：
+</code></pre><pre class="brush:cpp;toolbar:false">    /*C语言版本，下同*/
+    //获取java的HashMap类
+   jclass class_hashmap = (*env)-&gt;FindClass(env, &quot;java/util/HashMap&quot;);
 
-<p>&nbsp;&nbsp; 2. 赋值：</p>
-<pre class="brush:cpp;toolbar:false;">&nbsp;&nbsp;&nbsp;&nbsp;//类似于map.put(&quot;key&quot;,&quot;value&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;//(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;)不能直接用&quot;key值&quot;替代
-&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value值&quot;));</pre>
+   //获取类似于java 的new HashMap();
+    jmethodID hashmap_init = (*env)-&gt;GetMethodID(env, class_hashmap, &quot;&lt;init&gt;&quot;,
+            &quot;()V&quot;);
+    //初始化。类似于hashMap=new HashMap();
+    jobject HashMap = (*env)-&gt;NewObject(env, class_hashmap, hashmap_init, &quot;&quot;);
+    //获取hashMap.put()的ID
+    jmethodID HashMap_put = (*env)-&gt;GetMethodID(env, class_hashmap, &quot;put&quot;,
+            &quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);</pre>
+
+<p>   2. 赋值：</p>
+<pre class="brush:cpp;toolbar:false;">    //类似于map.put(&quot;key&quot;,&quot;value&quot;);
+    //(*env)-&gt;NewStringUTF(env, &quot;key值&quot;)不能直接用&quot;key值&quot;替代
+  (*env)-&gt;CallObjectMethod(env, HashMap, HashMap_put, (*env)-&gt;NewStringUTF(env, &quot;key值&quot;), (*env)-&gt;NewStringUTF(env, &quot;value值&quot;));</pre>
 <a id="more"></a>
 全部代码：
 
-&nbsp;&nbsp;&nbsp;&nbsp;JniClient.java
-<pre class="brush:java;toolbar:false">package&nbsp;com.ndk.test;
-import&nbsp;java.util.HashMap;
-public&nbsp;class&nbsp;JniClient&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;native&nbsp;HashMap&lt;String,&nbsp;String&gt;&nbsp;setMap();
+    JniClient.java
+<pre class="brush:java;toolbar:false">package com.ndk.test;
+import java.util.HashMap;
+public class JniClient {
+    public static native HashMap&lt;String, String&gt; setMap();
 }</pre>
 
 <p>JniClient.h</p>
-<pre class="brush:cpp;toolbar:false">/*&nbsp;DO&nbsp;NOT&nbsp;EDIT&nbsp;THIS&nbsp;FILE&nbsp;-&nbsp;it&nbsp;is&nbsp;machine&nbsp;generated&nbsp;*/
-#include&nbsp;&lt;jni.h&gt;
-/*&nbsp;Header&nbsp;for&nbsp;class&nbsp;com_ndk_test_JniClient&nbsp;*/
-#ifndef&nbsp;_Included_com_ndk_test_JniClient
-#define&nbsp;_Included_com_ndk_test_JniClient
-#ifdef&nbsp;__cplusplus
-extern&nbsp;&quot;C&quot;&nbsp;{
+<pre class="brush:cpp;toolbar:false">/* DO NOT EDIT THIS FILE - it is machine generated */
+#include &lt;jni.h&gt;
+/* Header for class com_ndk_test_JniClient */
+#ifndef _Included_com_ndk_test_JniClient
+#define _Included_com_ndk_test_JniClient
+#ifdef __cplusplus
+extern &quot;C&quot; {
 #endif
 /*
-&nbsp;*&nbsp;Class:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com_ndk_test_JniClient
-&nbsp;*&nbsp;Method:&nbsp;&nbsp;&nbsp;&nbsp;setMap
-&nbsp;*&nbsp;Signature:&nbsp;()Ljava/util/HashMap;
-&nbsp;*/
-JNIEXPORT&nbsp;jobject&nbsp;JNICALL&nbsp;Java_com_ndk_test_JniClient_setMap
-&nbsp;&nbsp;(JNIEnv&nbsp;*,&nbsp;jclass);
-#ifdef&nbsp;__cplusplus
+ * Class:     com_ndk_test_JniClient
+ * Method:    setMap
+ * Signature: ()Ljava/util/HashMap;
+ */
+JNIEXPORT jobject JNICALL Java_com_ndk_test_JniClient_setMap
+  (JNIEnv *, jclass);
+#ifdef __cplusplus
 }
 #endif
 #endif</pre>
 
 <p>JniClient.c</p>
-<pre class="brush:cpp;toolbar:false">#include&nbsp;&quot;com_ndk_test_JniClient.h&quot;
+<pre class="brush:cpp;toolbar:false">#include &quot;com_ndk_test_JniClient.h&quot;
 #include&lt;stdio.h&gt;
-#ifdef&nbsp;__cplusplus
-extern&nbsp;&quot;C&quot;
+#ifdef __cplusplus
+extern &quot;C&quot;
 {
 #endif
-JNIEXPORT&nbsp;jobject&nbsp;JNICALL&nbsp;Java_com_ndk_test_JniClient_setMap(JNIEnv&nbsp;*env,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;cls)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;class_hashmap&nbsp;=&nbsp;(*env)-&gt;FindClass(env,&nbsp;&quot;java/util/HashMap&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;hashmap_init&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;&lt;init&gt;&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;()V&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;jobject&nbsp;HashMap&nbsp;=&nbsp;(*env)-&gt;NewObject(env,&nbsp;class_hashmap,&nbsp;hashmap_init,&nbsp;&quot;&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;HashMap_put&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;put&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);
-&nbsp;&nbsp;&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key1&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value1&quot;));
-&nbsp;&nbsp;&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key2&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value2&quot;));
-&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;HashMap;
+JNIEXPORT jobject JNICALL Java_com_ndk_test_JniClient_setMap(JNIEnv *env,
+        jclass cls) {
+    jclass class_hashmap = (*env)-&gt;FindClass(env, &quot;java/util/HashMap&quot;);
+    jmethodID hashmap_init = (*env)-&gt;GetMethodID(env, class_hashmap, &quot;&lt;init&gt;&quot;,
+            &quot;()V&quot;);
+    jobject HashMap = (*env)-&gt;NewObject(env, class_hashmap, hashmap_init, &quot;&quot;);
+    jmethodID HashMap_put = (*env)-&gt;GetMethodID(env, class_hashmap, &quot;put&quot;,
+            &quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);
+    (*env)-&gt;CallObjectMethod(env, HashMap, HashMap_put, (*env)-&gt;NewStringUTF(env, &quot;key1&quot;), (*env)-&gt;NewStringUTF(env, &quot;value1&quot;));
+    (*env)-&gt;CallObjectMethod(env, HashMap, HashMap_put,(*env)-&gt;NewStringUTF(env, &quot;key2&quot;), (*env)-&gt;NewStringUTF(env, &quot;value2&quot;));
+    return HashMap;
 }
-#ifdef&nbsp;__cplusplus
+#ifdef __cplusplus
 }
 #endif</pre>
 
 <p>引用方法：</p>
-<pre class="brush:java;toolbar:false">Object&nbsp;object=JniClient.setMap();
-HashMap&lt;String,&nbsp;String&gt;map=(HashMap&lt;String,&nbsp;String&gt;)object;
+<pre class="brush:java;toolbar:false">Object object=JniClient.setMap();
+HashMap&lt;String, String&gt;map=(HashMap&lt;String, String&gt;)object;
 System.out.println(&quot;size:&quot;+map.size()+&quot;;value:&quot;+map.get(&quot;key1&quot;));</pre>
 
 <p>打印信息：</p>
@@ -521,7 +527,7 @@ System.out.println(&quot;size:&quot;+map.size()+&quot;;value:&quot;+map.get(&quo
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -574,13 +580,6 @@ System.out.println(&quot;size:&quot;+map.size()+&quot;;value:&quot;+map.get(&quo
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

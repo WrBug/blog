@@ -14,12 +14,12 @@ Java 9 早期访问。主要更新内容有以下几个方面：
 
 *   Oomph 项目现在能够跨工作区记录和分享个人偏好设置。
 
-*   &nbsp;Gradle 新的集成，使得更加容易管理 Gradle 构建，通过 Buildship 项目。
+*    Gradle 新的集成，使得更加容易管理 Gradle 构建，通过 Buildship 项目。
 
-*   &nbsp;提升对 Maven 支持，包括支持 Maven 3.3.3, 提升 Maven 原型整合和在 pom 编辑器中的自动完成。
+*    提升对 Maven 支持，包括支持 Maven 3.3.3, 提升 Maven 原型整合和在 pom 编辑器中的自动完成。
 
-*   自动错误报告，让 Eclipse 用户可以直接报告错误到Eclipse项目。&nbsp;&nbsp;
-*   &nbsp;新的 Thym 项目提供了使用 Apache Cordova 创建跨平台移动应用的工具。
+*   自动错误报告，让 Eclipse 用户可以直接报告错误到Eclipse项目。  
+*    新的 Thym 项目提供了使用 Apache Cordova 创建跨平台移动应用的工具。
 
 下面，是一篇对 Eclipse Mars 的分析文章：
 

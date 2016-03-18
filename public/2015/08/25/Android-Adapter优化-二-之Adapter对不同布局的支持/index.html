@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://mandroid.cn/2015/08/25/Android-Adapter优化-二-之Adapter对不同布局的支持/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:">
-<meta property="og:updated_time" content="2016-03-17T11:27:12.961Z">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Adapter优化(二)之Adapter对不同布局的支持">
 <meta name="twitter:description" content="在Android开发过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:">
@@ -73,7 +73,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -244,183 +244,183 @@
 
       
         <p>在<a href="http://www.eoeandroid.com/" target="_blank" rel="external">Android开发</a>过程中,用到的控件最多的就是ListView了，相信大家在做应用的过程中展示数据许多时候都需要在一个ListView上展示不同的布局吧,这个Android的Adapter机制本身就是支持的代码如下:<br><a id="more"></a><br>1,adapter的内容:</p>
-<pre class="brush:java;toolbar:false">import&nbsp;java.util.ArrayList;
-import&nbsp;android.content.Context;
-import&nbsp;android.view.View;
-import&nbsp;android.view.ViewGroup;
-import&nbsp;android.widget.ImageView;
-import&nbsp;android.widget.TextView;
-import&nbsp;com.betterandroid.adapter.base.BaseArrayListAdapter;
-import&nbsp;com.betterandroid.bitmap.ajaxbitmap.AjaxBitmap;
-public&nbsp;class&nbsp;MyAdapter&nbsp;extends&nbsp;BaseArrayListAdapter&lt;MyBean&gt;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;Context&nbsp;mContext;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;FinalBitmap&nbsp;ajaxBitmap;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;MyAdapter(Context&nbsp;mContext,&nbsp;ArrayList&lt;MyBean&gt;&nbsp;list)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.mContext&nbsp;=&nbsp;mContext;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data&nbsp;=&nbsp;list;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxBitmap&nbsp;=&nbsp;FinalBitmap&nbsp;.create(mContext);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;getViewTypeCount()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;3;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;getItemViewType(int&nbsp;position)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(data.get(position).getType()&nbsp;==&nbsp;0)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(data.get(position).getType()&nbsp;==&nbsp;1)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;2;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;ViewHolder&nbsp;getViewHolder(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent,&nbsp;int&nbsp;position)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ViewHolder&nbsp;mViewHolder&nbsp;=&nbsp;null;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;type&nbsp;=&nbsp;getItemViewType(position);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(type)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;0:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mViewHolder&nbsp;=&nbsp;ViewHolder.get(mContext,&nbsp;convertView,&nbsp;parent,&nbsp;R.layout.list_item);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextView&nbsp;text&nbsp;=&nbsp;mViewHolder.findViewById(R.id.text);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text.setText(data.get(position).getContent());
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;1:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mViewHolder&nbsp;=&nbsp;ViewHolder.get(mContext,&nbsp;convertView,&nbsp;parent,&nbsp;R.layout.list_item_two);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ImageView&nbsp;imageview&nbsp;=&nbsp;mViewHolder.findViewById(R.id.imageview);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxBitmap.display(imageview,&nbsp;data.get(position).getContent());
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;2:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mViewHolder&nbsp;=&nbsp;ViewHolder.get(mContext,&nbsp;convertView,&nbsp;parent,&nbsp;R.layout.list_item_three);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ImageView&nbsp;image&nbsp;=&nbsp;mViewHolder.findViewById(R.id.image);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ImageView&nbsp;image1&nbsp;=&nbsp;mViewHolder.findViewById(R.id.image1);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxBitmap.display(image,&nbsp;data.get(position).getContent());
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxBitmap.display(image1,&nbsp;data.get(position).getContent());
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;mViewHolder;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+<pre class="brush:java;toolbar:false">import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.betterandroid.adapter.base.BaseArrayListAdapter;
+import com.betterandroid.bitmap.ajaxbitmap.AjaxBitmap;
+public class MyAdapter extends BaseArrayListAdapter&lt;MyBean&gt; {
+        private Context mContext;
+        private FinalBitmap ajaxBitmap;
+        public MyAdapter(Context mContext, ArrayList&lt;MyBean&gt; list) {
+                super();
+                this.mContext = mContext;
+                this.data = list;
+                ajaxBitmap = FinalBitmap .create(mContext);
+        }
+        @Override
+        public int getViewTypeCount() {
+                // TODO Auto-generated method stub
+                return 3;
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+                // TODO Auto-generated method stub
+                if(data.get(position).getType() == 0) {
+                        return 0;
+                }
+                if(data.get(position).getType() == 1) {
+                        return 1;
+                }
+                return 2;
+        }
+
+
+        @Override
+        public ViewHolder getViewHolder(
+                        View convertView, ViewGroup parent, int position) {
+                // TODO Auto-generated method stub
+                ViewHolder mViewHolder = null;
+                int type = getItemViewType(position);
+                switch (type) {
+                case 0:
+                        mViewHolder = ViewHolder.get(mContext, convertView, parent, R.layout.list_item);
+                        TextView text = mViewHolder.findViewById(R.id.text);
+                        text.setText(data.get(position).getContent());
+                        break;
+                case 1:
+                        mViewHolder = ViewHolder.get(mContext, convertView, parent, R.layout.list_item_two);
+                        ImageView imageview = mViewHolder.findViewById(R.id.imageview);
+                        ajaxBitmap.display(imageview, data.get(position).getContent());
+                        break;
+                case 2:
+                        mViewHolder = ViewHolder.get(mContext, convertView, parent, R.layout.list_item_three);
+                        ImageView image = mViewHolder.findViewById(R.id.image);
+                        ImageView image1 = mViewHolder.findViewById(R.id.image1);
+                        ajaxBitmap.display(image, data.get(position).getContent());
+                        ajaxBitmap.display(image1, data.get(position).getContent());
+                        break;
+                default:
+                        break;
+                }
+                return mViewHolder;
+        }</pre>
 
 <p>2，activity内容:</p>
-<pre class="brush:java;toolbar:false">import&nbsp;java.util.ArrayList;
-import&nbsp;android.app.Activity;
-import&nbsp;android.os.Bundle;
-import&nbsp;android.widget.ListView;
-public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;Activity&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ListView&nbsp;listview;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onCreate(Bundle&nbsp;savedInstanceState)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listview&nbsp;=&nbsp;(ListView)&nbsp;this.findViewById(R.id.listview);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyAdapter&nbsp;adapter&nbsp;=&nbsp;new&nbsp;MyAdapter(getApplicationContext(),&nbsp;initData());
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listview.setAdapter(adapter);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ArrayList&lt;MyBean&gt;&nbsp;initData()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ArrayList&lt;MyBean&gt;&nbsp;list&nbsp;=&nbsp;new&nbsp;ArrayList&lt;MyBean&gt;();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;80;&nbsp;i++)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBean&nbsp;bean;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i%3==0)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bean&nbsp;=&nbsp;new&nbsp;MyBean(0,&nbsp;&quot;text&quot;+i);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if(i%3&nbsp;==&nbsp;1){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bean&nbsp;=&nbsp;new&nbsp;MyBean(1,&nbsp;IMAGE_DEMO[i%14]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bean&nbsp;=&nbsp;new&nbsp;MyBean(2,&nbsp;IMAGE_DEMO[i%14]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(bean);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;list;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;测试图片
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;String[]&nbsp;IMAGE_DEMO&nbsp;=&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://g.hiphotos.baidu.com/image/pic/item/0bd162d9f2d3572cb707d6dd8813632763d0c3ce.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://b.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710604224c1c1cec3fdfc03234a.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://g.hiphotos.baidu.com/image/pic/item/3bf33a87e950352a18846f095143fbf2b3118bce.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://h.hiphotos.baidu.com/image/pic/item/b3fb43166d224f4a97ffc6120bf790529822d149.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://b.hiphotos.baidu.com/image/pic/item/e4dde71190ef76c6aeb24e2a9f16fdfaaf51674a.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://c.hiphotos.baidu.com/image/pic/item/4a36acaf2edda3cc9ecc193f03e93901213f9281.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://h.hiphotos.baidu.com/image/pic/item/241f95cad1c8a786beb13e066509c93d70cf501a.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://e.hiphotos.baidu.com/image/pic/item/e824b899a9014c08f25c9da4087b02087bf4f448.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://h.hiphotos.baidu.com/image/pic/item/d788d43f8794a4c23243522a0cf41bd5ad6e394a.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://b.hiphotos.baidu.com/image/pic/item/6609c93d70cf3bc7d6ad8dead300baa1cd112a02.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://h.hiphotos.baidu.com/image/pic/item/b219ebc4b74543a905b7baca1c178a82b9011403.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://d.hiphotos.baidu.com/image/pic/item/c8ea15ce36d3d53955944fc53887e950352ab00f.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://e.hiphotos.baidu.com/image/pic/item/241f95cad1c8a7860504930c6509c93d70cf5082.jpg&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;http://h.hiphotos.baidu.com/image/pic/item/4e4a20a4462309f77ff6d318700e0cf3d7cad61b.jpg&quot;&nbsp;};
+<pre class="brush:java;toolbar:false">import java.util.ArrayList;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ListView;
+public class MainActivity extends Activity {
+        private ListView listview;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+                listview = (ListView) this.findViewById(R.id.listview);
+                MyAdapter adapter = new MyAdapter(getApplicationContext(), initData());
+                listview.setAdapter(adapter);
+        }
+
+        private ArrayList&lt;MyBean&gt; initData() {
+                // TODO Auto-generated method stub
+                ArrayList&lt;MyBean&gt; list = new ArrayList&lt;MyBean&gt;();
+                for (int i = 0; i &lt; 80; i++) {
+                        MyBean bean;
+                        if(i%3==0) {
+                                bean = new MyBean(0, &quot;text&quot;+i);
+                        } else if(i%3 == 1){
+                                bean = new MyBean(1, IMAGE_DEMO[i%14]);
+                        } else {
+                                bean = new MyBean(2, IMAGE_DEMO[i%14]);
+                        }
+                        list.add(bean);
+                }
+                return list;
+        }
+
+        /**
+         * 测试图片
+         */
+        public String[] IMAGE_DEMO = {
+                        &quot;http://g.hiphotos.baidu.com/image/pic/item/0bd162d9f2d3572cb707d6dd8813632763d0c3ce.jpg&quot;,
+                        &quot;http://b.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710604224c1c1cec3fdfc03234a.jpg&quot;,
+                        &quot;http://g.hiphotos.baidu.com/image/pic/item/3bf33a87e950352a18846f095143fbf2b3118bce.jpg&quot;,
+                        &quot;http://h.hiphotos.baidu.com/image/pic/item/b3fb43166d224f4a97ffc6120bf790529822d149.jpg&quot;,
+                        &quot;http://b.hiphotos.baidu.com/image/pic/item/e4dde71190ef76c6aeb24e2a9f16fdfaaf51674a.jpg&quot;,
+                        &quot;http://c.hiphotos.baidu.com/image/pic/item/4a36acaf2edda3cc9ecc193f03e93901213f9281.jpg&quot;,
+                        &quot;http://h.hiphotos.baidu.com/image/pic/item/241f95cad1c8a786beb13e066509c93d70cf501a.jpg&quot;,
+                        &quot;http://e.hiphotos.baidu.com/image/pic/item/e824b899a9014c08f25c9da4087b02087bf4f448.jpg&quot;,
+                        &quot;http://h.hiphotos.baidu.com/image/pic/item/d788d43f8794a4c23243522a0cf41bd5ad6e394a.jpg&quot;,
+                        &quot;http://b.hiphotos.baidu.com/image/pic/item/6609c93d70cf3bc7d6ad8dead300baa1cd112a02.jpg&quot;,
+                        &quot;http://h.hiphotos.baidu.com/image/pic/item/b219ebc4b74543a905b7baca1c178a82b9011403.jpg&quot;,
+                        &quot;http://d.hiphotos.baidu.com/image/pic/item/c8ea15ce36d3d53955944fc53887e950352ab00f.jpg&quot;,
+                        &quot;http://e.hiphotos.baidu.com/image/pic/item/241f95cad1c8a7860504930c6509c93d70cf5082.jpg&quot;,
+                        &quot;http://h.hiphotos.baidu.com/image/pic/item/4e4a20a4462309f77ff6d318700e0cf3d7cad61b.jpg&quot; };
 }</pre>
 
 <p>4，XMl布局：<br>activity_main.xml</p>
-<pre class="brush:xml;toolbar:false">&lt;RelativeLayout&nbsp;xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;&nbsp;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListView
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id=&quot;@+id/listview&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;&nbsp;/&gt;
+<pre class="brush:xml;toolbar:false">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot; &gt;
+    &lt;ListView
+        android:id=&quot;@+id/listview&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot; /&gt;
 &lt;/RelativeLayout&gt;</pre>
 
 <p>list_item.xml</p>
-<pre class="brush:xml;toolbar:false">&lt;RelativeLayout&nbsp;xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_gravity=&quot;center&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:gravity=&quot;center&quot;&nbsp;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id=&quot;@+id/text&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;wrap_content&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:gravity=&quot;center&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text=&quot;aaa&quot;&nbsp;/&gt;
+<pre class="brush:xml;toolbar:false">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_gravity=&quot;center&quot;
+    android:gravity=&quot;center&quot; &gt;
+    &lt;TextView
+        android:id=&quot;@+id/text&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center&quot;
+        android:text=&quot;aaa&quot; /&gt;
 &lt;/RelativeLayout&gt;</pre>
 
 <p>list_item_two.xml</p>
-<pre class="brush:xml;toolbar:false">&lt;RelativeLayout&nbsp;xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_gravity=&quot;center&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:gravity=&quot;center&quot;&nbsp;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id=&quot;@+id/imageview&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;&nbsp;/&gt;
+<pre class="brush:xml;toolbar:false">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_gravity=&quot;center&quot;
+    android:gravity=&quot;center&quot; &gt;
+    &lt;ImageView
+        android:id=&quot;@+id/imageview&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot; /&gt;
 &lt;/RelativeLayout&gt;</pre>
 
 <p>list_item_three.xml</p>
-<pre class="brush:xml;toolbar:false">&lt;LinearLayout&nbsp;xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;match_parent&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:layout_gravity=&quot;center&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:orientation=&quot;horizontal&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;android:gravity=&quot;center&quot;&nbsp;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id=&quot;@+id/image&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;wrap_content&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;wrap_content&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_weight=&quot;1&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id=&quot;@+id/image1&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width=&quot;wrap_content&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height=&quot;wrap_content&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_weight=&quot;1&quot;&nbsp;/&gt;
+<pre class="brush:xml;toolbar:false">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_gravity=&quot;center&quot;
+    android:orientation=&quot;horizontal&quot;
+    android:gravity=&quot;center&quot; &gt;
+    &lt;ImageView
+        android:id=&quot;@+id/image&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_weight=&quot;1&quot; /&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/image1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_weight=&quot;1&quot; /&gt;
 &lt;/LinearLayout&gt;</pre>
       
     </div>
@@ -603,7 +603,7 @@ public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;Activity&nbsp;{
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -656,13 +656,6 @@ public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;Activity&nbsp;{
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

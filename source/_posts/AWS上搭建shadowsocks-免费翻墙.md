@@ -26,11 +26,11 @@ hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙
 
 <span style="font-size: 20px;"></span><span style="font-size: 20px;">2.创建实例（推荐东京节点）</span>
 
-![awsec201.png](http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728783308021.png "201602291456728783308021.png")
+![awsec201.png](/upload/2016/02/201602291456728783308021.png "201602291456728783308021.png")
 
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">选择</span>_Amazon系统映像_<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">(AMI)，这里选择</span>_“Ubuntu Server 14.04 LTS”_<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">，如下图：</span>
 
-<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![QQ截图20160229145350.png](http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728851354710.png "201602291456728851354710.png")</span>
+<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![QQ截图20160229145350.png](/upload/2016/02/201602291456728851354710.png "201602291456728851354710.png")</span>
 
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">
 </span>
@@ -40,14 +40,14 @@ _<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-siz
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">
 </span>
 
-<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![blob.png](http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728901300663.png "正在上传...")</span>
+<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![blob.png](/upload/2016/02/201602291456728901300663.png "正在上传...")</span>
 
 <span style="font-family: &#39;Open Sans&#39;; line-height: 26px; color: rgb(255, 0, 0); font-size: 20px; background-color: rgb(255, 255, 255);">继续步骤创建完成，进入控制面板的弹性ip分配公网地址，绑定刚申请的实例（这步很重要）</span>
 
 <span style="font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);">
 </span>
 
-<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![blob.png](http://www.mandroid.cn/zb_users/upload/2016/02/201602291456729113103878.png "正在上传...")</span>
+<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">![blob.png](/upload/2016/02/201602291456729113103878.png "正在上传...")</span>
 
 <span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">
 </span>
@@ -58,10 +58,10 @@ _<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-siz
 </span>
 
 _<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">登录ssh（</span><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">[ssh使用教程](https://docs.aws.amazon.com/zh_cn/console/ec2/instances/connect/docs)），执行以下命令：</span>_
-<pre class="brush:cf;toolbar:false">1.&nbsp;sudo&nbsp;-s&nbsp;//获取超级管理员权限
-2.&nbsp;apt-get&nbsp;update&nbsp;//更新apt-get
-3.&nbsp;apt-get&nbsp;install&nbsp;python-pip&nbsp;//安装python包管理工具pip
-4.&nbsp;pip&nbsp;install&nbsp;shadowsocks&nbsp;//&nbsp;安装shadowsocks</pre><pre class="brush:cf;toolbar:false">nano&nbsp;/etc/shadowsocks.json&nbsp;&nbsp;//配置文件</pre>
+<pre class="brush:cf;toolbar:false">1. sudo -s //获取超级管理员权限
+2. apt-get update //更新apt-get
+3. apt-get install python-pip //安装python包管理工具pip
+4. pip install shadowsocks // 安装shadowsocks</pre><pre class="brush:cf;toolbar:false">nano /etc/shadowsocks.json  //配置文件</pre>
 
 _
 _
@@ -71,15 +71,15 @@ _添加以下代码：_
 _
 _
 <pre class="brush:cf;toolbar:false">{
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;server&quot;:&quot;0.0.0.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;server_port&quot;:在创建实例安全组时添加的端口号（比如443）,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;local_address&quot;:&quot;127.0.0.1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;local_port&quot;:1080,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;password&quot;:&quot;连接密码&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;timeout&quot;:300,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;method&quot;:&quot;aes-256-cfb&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;fast_open&quot;:false
-}</pre><pre class="brush:cf;toolbar:false">ssserver&nbsp;-c&nbsp;/etc/shadowsocks.json&nbsp;-d&nbsp;start&nbsp;//启动shadowsocks</pre>
+    &quot;server&quot;:&quot;0.0.0.0&quot;,
+    &quot;server_port&quot;:在创建实例安全组时添加的端口号（比如443）,
+    &quot;local_address&quot;:&quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;连接密码&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;:false
+}</pre><pre class="brush:cf;toolbar:false">ssserver -c /etc/shadowsocks.json -d start //启动shadowsocks</pre>
 
 <span style="font-size: 20px;">4.shadowsocks客户端下载：</span>
 
@@ -87,4 +87,4 @@ _
 
 配置截图：
 
-![blob.png](http://www.mandroid.cn/zb_users/upload/2016/02/201602291456738265125261.png "正在上传...")
+![blob.png](/upload/2016/02/201602291456738265125261.png "正在上传...")

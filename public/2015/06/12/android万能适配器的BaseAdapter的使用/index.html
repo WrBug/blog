@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://mandroid.cn/2015/06/12/android万能适配器的BaseAdapter的使用/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="Android BaseAdapter(基础适配器）的用法，适配器的作用主要是用来给诸如(Spinner、ListView、GridView)来填充数据的。而(Spinner、ListView、GridView)都有自己的适配器。">
-<meta property="og:updated_time" content="2016-03-17T11:29:03.171Z">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android万能适配器的BaseAdapter的使用">
 <meta name="twitter:description" content="Android BaseAdapter(基础适配器）的用法，适配器的作用主要是用来给诸如(Spinner、ListView、GridView)来填充数据的。而(Spinner、ListView、GridView)都有自己的适配器。">
@@ -73,7 +73,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -246,7 +246,7 @@
         <p>Android BaseAdapter(基础适配器）的用法，适配器的作用主要是用来给诸如(Spinner、ListView、GridView)来填充数据的。而(Spinner、<br>ListView、GridView)都有自己的适配器。<br><a id="more"></a><br>但是BaseAdapter对他们是通用的，首<br>先我们看一下API文档：<a href="/doc/reference/android/widget/BaseAdapter.html"><strong>baseAdapter</strong></a></p>
 <p>我们看到Android BaseAdapter已经实现了ListAdapter和SpinnerAdapter的接口，而GridView的适配器是实现了ListAdapter接口，只不过是二维的。所以说BaseAdapter对他们三者来说是通用的。</p>
 <p>就是我们定义一个类(如：MyAdapter)而这个类继承BaseAdapter.因为它是implements了ListAdapter和SpinnerAdapter的接口，所以要实现里面的方法，代码如下(未作任何改动的）：</p>
-<div class="container"><div class="line number1 index0 alt2"></div><div class="line number25 index24 alt2"><pre class="brush:java;toolbar:false">private&nbsp;class&nbsp;MyAdapter&nbsp;extendsBaseAdapter&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;@Override<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;getCount()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;@Override<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getItem(int&nbsp;arg0)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;@Override<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;long&nbsp;getItemId(int&nbsp;position)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;@Override<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;View&nbsp;getView(int&nbsp;position,&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</pre></div></div>
+<div class="container"><div class="line number1 index0 alt2"></div><div class="line number25 index24 alt2"><pre class="brush:java;toolbar:false">private class MyAdapter extendsBaseAdapter {<br>    @Override<br>    public int getCount() {<br>        // TODO Auto-generated method stub<br>        return 0;<br>    }<br><br>    @Override<br>    public Object getItem(int arg0) {<br>        // TODO Auto-generated method stub<br>        return null;<br>    }<br><br>    @Override<br>    public long getItemId(int position) {<br>        // TODO Auto-generated method stub<br>        return 0;<br>    }<br><br>    @Override<br>    public View getView(int position, View convertView, ViewGroup parent) {<br>        // TODO Auto-generated method stub<br>        return null;<br>    }<br>}</pre></div></div>
       
     </div>
 
@@ -428,7 +428,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -481,13 +481,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

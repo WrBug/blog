@@ -13,28 +13,28 @@ ListView、GridView)都有自己的适配器。
 我们看到Android BaseAdapter已经实现了ListAdapter和SpinnerAdapter的接口，而GridView的适配器是实现了ListAdapter接口，只不过是二维的。所以说BaseAdapter对他们三者来说是通用的。
 
 就是我们定义一个类(如：MyAdapter)而这个类继承BaseAdapter.因为它是implements了ListAdapter和SpinnerAdapter的接口，所以要实现里面的方法，代码如下(未作任何改动的）：
-<div class="container"><div class="line number1 index0 alt2"></div><div class="line number25 index24 alt2"><pre class="brush:java;toolbar:false">private&nbsp;class&nbsp;MyAdapter&nbsp;extendsBaseAdapter&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;getCount()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getItem(int&nbsp;arg0)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;long&nbsp;getItemId(int&nbsp;position)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;View&nbsp;getView(int&nbsp;position,&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;
-&nbsp;&nbsp;&nbsp;&nbsp;}
+<div class="container"><div class="line number1 index0 alt2"></div><div class="line number25 index24 alt2"><pre class="brush:java;toolbar:false">private class MyAdapter extendsBaseAdapter {
+    @Override
+    public int getCount() {                   
+        // TODO Auto-generated method stub
+        return 0;
+    }
+ 
+    @Override
+    public Object getItem(int arg0) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+ 
+    @Override
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+ 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }</pre></div></div>

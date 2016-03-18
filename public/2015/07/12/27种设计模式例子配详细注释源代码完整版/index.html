@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://mandroid.cn/2015/07/12/27种设计模式例子配详细注释源代码完整版/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="经过几天时间的努力，整理，设计模式的demo和资料基本整理完成，首先声明，这些资料部分从网上找的，还有部分是用了&amp;lt;&amp;lt;java与模式&amp;gt;&amp;gt;书中的例子，里面的模式也是照着这书上的划分的，很不错的一本书，想学习设计模式的同学可以看看。先说说我的体会，每次看设计模式，总会有新的体会，这是第三次我复习复习这方面的知识了，感觉还不错，但是时间久了估计还是会忘，所以最好的办法还是找个例子，">
-<meta property="og:updated_time" content="2016-03-17T11:25:48.140Z">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="27种设计模式例子配详细注释源代码完整版">
 <meta name="twitter:description" content="经过几天时间的努力，整理，设计模式的demo和资料基本整理完成，首先声明，这些资料部分从网上找的，还有部分是用了&amp;lt;&amp;lt;java与模式&amp;gt;&amp;gt;书中的例子，里面的模式也是照着这书上的划分的，很不错的一本书，想学习设计模式的同学可以看看。先说说我的体会，每次看设计模式，总会有新的体会，这是第三次我复习复习这方面的知识了，感觉还不错，但是时间久了估计还是会忘，所以最好的办法还是找个例子，">
@@ -73,7 +73,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -243,56 +243,56 @@
       
 
       
-        <p>经过几天时间的努力，整理，设计模式的demo和资料基本整理完成，首先声明，这些资料部分从网上找的，还有部分是用了&lt;&lt;java与模<br>式&gt;&gt;书中的例子，里面的模式也是照着这书上的划分的，很不错的一本书，想学习设计模式的同学可以看看。先说说我的体会，每次看设计模式，总<br>会有新的体会，这是第三次我复习复习这方面的知识了，感觉还不错，但是时间久了估计还是会忘，所以最好的办法还是找个例子，忘得时候看看怎么用就行了，我<br>的demo把27种设计模式进行了合并，不同的模式例子，分放在不同的文件中。资料总共有一下27种模式：<br><a id="more"></a><br><span style="color:#0000ff">设计模式主要分三个类型:创建型、结构型和行为型。<br>其中创建型有：<br>&nbsp; &nbsp; 一、Singleton，单例模式：保证一个类只有一个实例，并提供一个访问它的全局访问点<br>&nbsp; &nbsp; 二、Abstract Factory，抽象工厂：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们的具体类。<br>&nbsp; &nbsp; 三、Factory Method，工厂方法：定义一个用于创建对象的接口，让子类决定实例化哪一个类，Factory Method使一个类的实例化延迟到了子类。<br>&nbsp; &nbsp; 四、Builder，建造模式：将一个复杂对象的构建与他的表示相分离，使得同样的构建过程可以创建不同的表示。<br>&nbsp; &nbsp; 五、Prototype，原型模式：用原型实例指定创建对象的种类，并且通过拷贝这些原型来创建新的对象。<br>行为型有：<br>&nbsp; &nbsp; 六、Iterator，迭代器模式：提供一个方法顺序访问一个聚合对象的各个元素，而又不需要暴露该对象的内部表示。<br>&nbsp; &nbsp; 七、Observer，观察者模式：定义对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知自动更新。<br>&nbsp; &nbsp; 八、Template Method，模板方法：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中，TemplateMethod使得子类可以不改变一个算法的结构即可以重定义该算法得某些特定步骤。<br>&nbsp; &nbsp; 九、Command，命令模式：将一个请求封装为一个对象，从而使你可以用不同的请求对客户进行参数化，对请求排队和记录请求日志，以及支持可撤销的操作。<br>&nbsp; &nbsp; 十、State，状态模式：允许对象在其内部状态改变时改变他的行为。对象看起来似乎改变了他的类。<br>&nbsp; &nbsp; 十一、Strategy，策略模式：定义一系列的算法，把他们一个个封装起来，并使他们可以互相替换，本模式使得算法可以独立于使用它们的客户。<br>&nbsp; &nbsp; 十二、Chain of Responsibility，职责链模式：使多个对象都有机会处理请求，从而避免请求的送发者和接收者之间的耦合关系<br>&nbsp; &nbsp; 十三、Mediator，中介者模式：用一个中介对象封装一些列的对象交互。<br>&nbsp; &nbsp; 十四、Visitor，访问者模式：表示一个作用于某对象结构中的各元素的操作，它使你可以在不改变各元素类的前提下定义作用于这个元素的新操作。<br>&nbsp; &nbsp; 十五、Interpreter，解释器模式：给定一个语言，定义他的文法的一个表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。<br>&nbsp; &nbsp; 十六、Memento，备忘录模式：在不破坏对象的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。<br>结构型有：<br>&nbsp; &nbsp; 十七、Composite，组合模式：将对象组合成树形结构以表示部分整体的关系，Composite使得用户对单个对象和组合对象的使用具有一致性。<br>&nbsp; &nbsp; 十八、Facade，外观模式：为子系统中的一组接口提供一致的界面，fa?ade提供了一高层接口，这个接口使得子系统更容易使用。<br>&nbsp; &nbsp; 十九、Proxy，代理模式：为其他对象提供一种代理以控制对这个对象的访问<br>&nbsp; &nbsp; 二十、Adapter,适配器模式：将一类的接口转换成客户希望的另外一个接口，Adapter模式使得原本由于接口不兼容而不能一起工作那些类可以一起工作。<br>&nbsp; &nbsp; 二十一、Decrator，装饰模式：动态地给一个对象增加一些额外的职责，就增加的功能来说，Decorator模式相比生成子类更加灵活。<br>&nbsp; &nbsp; 二十二、Bridge，桥模式：将抽象部分与它的实现部分相分离，使他们可以独立的变化。<br>&nbsp; &nbsp; 二十三、Flyweight，享元模式</span><span style="color:#ff0000">除了以上23个模式之外，根据&lt;&lt;java与模式&gt;&gt;中的分类，还有4种模式，DefaultAdapter 缺省适配器模式，SimpleFactory 简单工厂模式，Multiton 多例模式, Immutable 不变模式</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下<br>面我来说说怎么阅读每个模式，每个文件中的Test.java是该模式的测试类，上面的注解详细描述了该模式的具体介绍和优缺点等等，该包中的其他文件就<br>是一些接口或抽象类等该模式所需要的类，要理解每个模式的思想，要把该包中的几个联系着一起看，为了避免太乱，就分开写了。</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><br><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下面上传几段代码：</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">代理模式的代码：</span></p>
-<pre class="brush:java;toolbar:false">package&nbsp;com.kunhong.design.Proxy;
+        <p>经过几天时间的努力，整理，设计模式的demo和资料基本整理完成，首先声明，这些资料部分从网上找的，还有部分是用了&lt;&lt;java与模<br>式&gt;&gt;书中的例子，里面的模式也是照着这书上的划分的，很不错的一本书，想学习设计模式的同学可以看看。先说说我的体会，每次看设计模式，总<br>会有新的体会，这是第三次我复习复习这方面的知识了，感觉还不错，但是时间久了估计还是会忘，所以最好的办法还是找个例子，忘得时候看看怎么用就行了，我<br>的demo把27种设计模式进行了合并，不同的模式例子，分放在不同的文件中。资料总共有一下27种模式：<br><a id="more"></a><br><span style="color:#0000ff">设计模式主要分三个类型:创建型、结构型和行为型。<br>其中创建型有：<br>    一、Singleton，单例模式：保证一个类只有一个实例，并提供一个访问它的全局访问点<br>    二、Abstract Factory，抽象工厂：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们的具体类。<br>    三、Factory Method，工厂方法：定义一个用于创建对象的接口，让子类决定实例化哪一个类，Factory Method使一个类的实例化延迟到了子类。<br>    四、Builder，建造模式：将一个复杂对象的构建与他的表示相分离，使得同样的构建过程可以创建不同的表示。<br>    五、Prototype，原型模式：用原型实例指定创建对象的种类，并且通过拷贝这些原型来创建新的对象。<br>行为型有：<br>    六、Iterator，迭代器模式：提供一个方法顺序访问一个聚合对象的各个元素，而又不需要暴露该对象的内部表示。<br>    七、Observer，观察者模式：定义对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知自动更新。<br>    八、Template Method，模板方法：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中，TemplateMethod使得子类可以不改变一个算法的结构即可以重定义该算法得某些特定步骤。<br>    九、Command，命令模式：将一个请求封装为一个对象，从而使你可以用不同的请求对客户进行参数化，对请求排队和记录请求日志，以及支持可撤销的操作。<br>    十、State，状态模式：允许对象在其内部状态改变时改变他的行为。对象看起来似乎改变了他的类。<br>    十一、Strategy，策略模式：定义一系列的算法，把他们一个个封装起来，并使他们可以互相替换，本模式使得算法可以独立于使用它们的客户。<br>    十二、Chain of Responsibility，职责链模式：使多个对象都有机会处理请求，从而避免请求的送发者和接收者之间的耦合关系<br>    十三、Mediator，中介者模式：用一个中介对象封装一些列的对象交互。<br>    十四、Visitor，访问者模式：表示一个作用于某对象结构中的各元素的操作，它使你可以在不改变各元素类的前提下定义作用于这个元素的新操作。<br>    十五、Interpreter，解释器模式：给定一个语言，定义他的文法的一个表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。<br>    十六、Memento，备忘录模式：在不破坏对象的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。<br>结构型有：<br>    十七、Composite，组合模式：将对象组合成树形结构以表示部分整体的关系，Composite使得用户对单个对象和组合对象的使用具有一致性。<br>    十八、Facade，外观模式：为子系统中的一组接口提供一致的界面，fa?ade提供了一高层接口，这个接口使得子系统更容易使用。<br>    十九、Proxy，代理模式：为其他对象提供一种代理以控制对这个对象的访问<br>    二十、Adapter,适配器模式：将一类的接口转换成客户希望的另外一个接口，Adapter模式使得原本由于接口不兼容而不能一起工作那些类可以一起工作。<br>    二十一、Decrator，装饰模式：动态地给一个对象增加一些额外的职责，就增加的功能来说，Decorator模式相比生成子类更加灵活。<br>    二十二、Bridge，桥模式：将抽象部分与它的实现部分相分离，使他们可以独立的变化。<br>    二十三、Flyweight，享元模式</span><span style="color:#ff0000">除了以上23个模式之外，根据&lt;&lt;java与模式&gt;&gt;中的分类，还有4种模式，DefaultAdapter 缺省适配器模式，SimpleFactory 简单工厂模式，Multiton 多例模式, Immutable 不变模式</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下<br>面我来说说怎么阅读每个模式，每个文件中的Test.java是该模式的测试类，上面的注解详细描述了该模式的具体介绍和优缺点等等，该包中的其他文件就<br>是一些接口或抽象类等该模式所需要的类，要理解每个模式的思想，要把该包中的几个联系着一起看，为了避免太乱，就分开写了。</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><br><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下面上传几段代码：</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">代理模式的代码：</span></p>
+<pre class="brush:java;toolbar:false">package com.kunhong.design.Proxy;
 /**
 
-&nbsp;*&nbsp;代理模式&nbsp;代理模式:给某一对象提供代理对象,并由代理对象控制具体对象的引用.
+ * 代理模式 代理模式:给某一对象提供代理对象,并由代理对象控制具体对象的引用.
 
-&nbsp;*&nbsp;
+ * 
 
-&nbsp;*&nbsp;代理,指的就是一个角色代表另一个角色采取行动,就象生活中,一个红酒厂商,是不会直接把红酒零售客户的,都是通过代理来完成他的销售业务的.而客户,
+ * 代理,指的就是一个角色代表另一个角色采取行动,就象生活中,一个红酒厂商,是不会直接把红酒零售客户的,都是通过代理来完成他的销售业务的.而客户,
 
-&nbsp;*&nbsp;也不用为了喝红酒而到处找工厂,他只要找到厂商在当地的代理就行了,具体红酒工厂在那里,客户不用关心,代理会帮他处理.
+ * 也不用为了喝红酒而到处找工厂,他只要找到厂商在当地的代理就行了,具体红酒工厂在那里,客户不用关心,代理会帮他处理.
 
-&nbsp;*&nbsp;
+ * 
 
-&nbsp;*&nbsp;@author&nbsp;lyq
+ * @author lyq
 
-&nbsp;*&nbsp;
+ * 
 
-&nbsp;*/
-public&nbsp;class&nbsp;Test&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String&nbsp;agr[])&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SellInterface&nbsp;sell&nbsp;=&nbsp;new&nbsp;RedWineProxy();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sell.sell();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ */
+public class Test {
+        public static void main(String agr[]) {
+                SellInterface sell = new RedWineProxy();
+                sell.sell();
+        }
 }</pre>
 
 <p><span style="font-family:Microsoft Yahei, Tahoma, Simsun"></span></p>
-<pre class="brush:java;toolbar:false">package&nbsp;com.kunhong.design.Observer;
+<pre class="brush:java;toolbar:false">package com.kunhong.design.Observer;
 /**
 
-&nbsp;*&nbsp;抽象主题角色类
+ * 抽象主题角色类
 
-&nbsp;*&nbsp;@author&nbsp;lyq
+ * @author lyq
 
-&nbsp;*
+ *
 
-&nbsp;*/
-public&nbsp;interface&nbsp;AbstractWatched&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//增加一个观察者
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;addAbstactWatcher(AbstractWatcher&nbsp;watcher);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//移除一个观察者
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;removeAbstactWatcher(AbstractWatcher&nbsp;watcher);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//移除所有的观察着
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;removeAll();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//通知所有的观察者
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;notifyWatchers();
+ */
+public interface AbstractWatched {
+
+        //增加一个观察者
+        public void addAbstactWatcher(AbstractWatcher watcher);
+
+        //移除一个观察者
+        public void removeAbstactWatcher(AbstractWatcher watcher);
+
+        //移除所有的观察着
+        public void removeAll();
+
+        //通知所有的观察者
+        public void notifyWatchers();
 }</pre>
 
 <p><span style="font-family:Microsoft Yahei, Tahoma, Simsun"></span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">好了，要想知道更多的代码，都在附近里了，希望能帮助更多的人了解设计模式，设计模式的最大就是可以减少代码的耦合度，使代码独立性，模块性更强，觉得不错的话，给个回复，不枉费我的辛苦整理啊</span><br><span style="font-family:Microsoft Yahei, Tahoma, Simsun">不好意思，刚刚代码上传发现里面有些涉及隐私信息忘删除了，晚些时候处理一下马上给出代码，真是不好意思！！</span><br>代码上传完毕，转载请注明出处！！</p>
@@ -482,7 +482,7 @@ public&nbsp;interface&nbsp;AbstractWatched&nbsp;{
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -535,13 +535,6 @@ public&nbsp;interface&nbsp;AbstractWatched&nbsp;{
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

@@ -6,68 +6,68 @@ date: 2015-08-25 14:09:09
 
 移动开发中个人认为最重要的就是应用的用户体验度,其中最重要的就是流畅度,而Android的Adapter优化就是很重要的一个方面,下面的代码就是一个Adapter的优化,当然从网上学习了很多大神写的代码,贴出来分享,大家共同进步,有什么好的建议可以留言评论
 <!-- more -->
-<pre class="brush:java;toolbar:false">import&nbsp;android.content.Context;
-import&nbsp;android.util.SparseArray;
-import&nbsp;android.view.LayoutInflater;
-import&nbsp;android.view.View;
-import&nbsp;android.view.ViewGroup;
-import&nbsp;android.widget.BaseAdapter;
-import&nbsp;java.util.ArrayList;
-public&nbsp;abstract&nbsp;class&nbsp;BaseArrayListAdapter&lt;T&gt;&nbsp;extends&nbsp;BaseAdapter&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;ArrayList&lt;T&gt;&nbsp;data;
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;getCount()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(data&nbsp;==&nbsp;null)&nbsp;?&nbsp;0&nbsp;:&nbsp;data.size();
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getItem(int&nbsp;position)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;position;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;long&nbsp;getItemId(int&nbsp;position)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;position;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;View&nbsp;getView(int&nbsp;position,&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getViewHolder(convertView,&nbsp;parent,&nbsp;position).getConvertView();
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;abstract&nbsp;ViewHolder&nbsp;getViewHolder(View&nbsp;convertView,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ViewGroup&nbsp;parent,&nbsp;int&nbsp;position);
-&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;class&nbsp;ViewHolder&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;SparseArray&lt;View&gt;&nbsp;views;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;View&nbsp;convertView;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ViewHolder(Context&nbsp;mContext,&nbsp;View&nbsp;convertView)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.views&nbsp;=&nbsp;new&nbsp;SparseArray&lt;View&gt;();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.convertView&nbsp;=&nbsp;convertView;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convertView.setTag(this);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;ViewHolder&nbsp;get(Context&nbsp;mContext,&nbsp;View&nbsp;convertView,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ViewGroup&nbsp;parent,&nbsp;int&nbsp;resId)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(convertView&nbsp;==&nbsp;null)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayoutInflater&nbsp;factory&nbsp;=&nbsp;(LayoutInflater)&nbsp;mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convertView&nbsp;=&nbsp;factory.inflate(resId,&nbsp;parent,&nbsp;false);&nbsp;//
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;ViewHolder(mContext,&nbsp;convertView);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(ViewHolder)&nbsp;convertView.getTag();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unchecked&quot;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&lt;T&nbsp;extends&nbsp;View&gt;&nbsp;T&nbsp;findViewById(int&nbsp;resourceId)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;view&nbsp;=&nbsp;views.get(resourceId);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(view&nbsp;==&nbsp;null)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view&nbsp;=&nbsp;convertView.findViewById(resourceId);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views.put(resourceId,&nbsp;view);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(T)&nbsp;view;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;View&nbsp;getConvertView()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;convertView;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setConvertView(View&nbsp;convertView)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.convertView&nbsp;=&nbsp;convertView;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;}
+<pre class="brush:java;toolbar:false">import android.content.Context;
+import android.util.SparseArray;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import java.util.ArrayList;
+public abstract class BaseArrayListAdapter&lt;T&gt; extends BaseAdapter {
+    protected ArrayList&lt;T&gt; data;
+    @Override
+    public int getCount() {
+        // TODO Auto-generated method stub
+        return (data == null) ? 0 : data.size();
+    }
+    @Override
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }
+    @Override
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // TODO Auto-generated method stub
+        return getViewHolder(convertView, parent, position).getConvertView();
+    }
+    public abstract ViewHolder getViewHolder(View convertView,
+        ViewGroup parent, int position);
+    static class ViewHolder {
+        private final SparseArray&lt;View&gt; views;
+        private View convertView;
+        private ViewHolder(Context mContext, View convertView) {
+            this.views = new SparseArray&lt;View&gt;();
+            this.convertView = convertView;
+            convertView.setTag(this);
+        }
+        public static ViewHolder get(Context mContext, View convertView,
+            ViewGroup parent, int resId) {
+            if (convertView == null) {
+                LayoutInflater factory = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = factory.inflate(resId, parent, false); //
+                return new ViewHolder(mContext, convertView);
+            }
+            return (ViewHolder) convertView.getTag();
+        }
+        @SuppressWarnings(&quot;unchecked&quot;)
+        public &lt;T extends View&gt; T findViewById(int resourceId) {
+            View view = views.get(resourceId);
+            if (view == null) {
+                view = convertView.findViewById(resourceId);
+                views.put(resourceId, view);
+            }
+            return (T) view;
+        }
+        public View getConvertView() {
+            return convertView;
+        }
+        public void setConvertView(View convertView) {
+            this.convertView = convertView;
+        }
+    }
 }</pre>

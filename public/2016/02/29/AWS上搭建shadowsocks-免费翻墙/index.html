@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -63,23 +63,23 @@
 <meta property="og:url" content="http://mandroid.cn/2016/02/29/AWS上搭建shadowsocks-免费翻墙/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙。shadowsocks需要使用自己的服务器，当然选择不同价格的服务器决定了服务的质量:-)">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728783308021.png">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728851354710.png">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728901300663.png">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456729113103878.png">
-<meta property="og:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456738265125261.png">
-<meta property="og:updated_time" content="2016-03-17T11:28:42.112Z">
+<meta property="og:image" content="http://mandroid.cn/upload/2016/02/201602291456728783308021.png">
+<meta property="og:image" content="http://mandroid.cn/upload/2016/02/201602291456728851354710.png">
+<meta property="og:image" content="http://mandroid.cn/upload/2016/02/201602291456728901300663.png">
+<meta property="og:image" content="http://mandroid.cn/upload/2016/02/201602291456729113103878.png">
+<meta property="og:image" content="http://mandroid.cn/upload/2016/02/201602291456738265125261.png">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS上搭建shadowsocks 免费翻墙">
 <meta name="twitter:description" content="hadowsocks类似goagent，是一种快速隧道代理，帮助你绕过防火墙。shadowsocks需要使用自己的服务器，当然选择不同价格的服务器决定了服务的质量:-)">
-<meta name="twitter:image" content="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728783308021.png">
+<meta name="twitter:image" content="http://mandroid.cn/upload/2016/02/201602291456728783308021.png">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -270,24 +270,24 @@
 </li>
 </ol>
 <p><span style="font-size: 20px;"></span><span style="font-size: 20px;">2.创建实例（推荐东京节点）</span></p>
-<p><img src="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728783308021.png" alt="awsec201.png" title="201602291456728783308021.png"></p>
+<p><img src="/upload/2016/02/201602291456728783308021.png" alt="awsec201.png" title="201602291456728783308021.png"></p>
 <p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">选择</span><em>Amazon系统映像</em><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">(AMI)，这里选择</span><em>“Ubuntu Server 14.04 LTS”</em><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">，如下图：</span></p>
-<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728851354710.png" alt="QQ截图20160229145350.png" title="201602291456728851354710.png"></span></p>
+<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="/upload/2016/02/201602291456728851354710.png" alt="QQ截图20160229145350.png" title="201602291456728851354710.png"></span></p>
 <p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><br></span></p>
 <p><em><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">一路下一步到配置安全组（添加一个规则，端口<span style="font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);">443</span>，也可以自定义，来源<span style="font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);">任何位置</span>）</span></em></p>
 <p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><br></span></p>
-<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456728901300663.png" alt="blob.png" title="正在上传..."></span></p>
+<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="/upload/2016/02/201602291456728901300663.png" alt="blob.png" title="正在上传..."></span></p>
 <p><span style="font-family: &#39;Open Sans&#39;; line-height: 26px; color: rgb(255, 0, 0); font-size: 20px; background-color: rgb(255, 255, 255);">继续步骤创建完成，进入控制面板的弹性ip分配公网地址，绑定刚申请的实例（这步很重要）</span></p>
 <p><span style="font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);"><br></span></p>
-<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456729113103878.png" alt="blob.png" title="正在上传..."></span></p>
+<p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="/upload/2016/02/201602291456729113103878.png" alt="blob.png" title="正在上传..."></span></p>
 <p><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><br></span></p>
 <p><span style="color: rgb(85, 85, 85); line-height: 26px; font-size: 20px; font-family: &#39;Microsoft YaHei&#39;; background-color: rgb(255, 255, 255);">3.配置shadowsocks</span></p>
 <p><span style="color: rgb(85, 85, 85); line-height: 26px; font-size: 20px; font-family: &#39;Microsoft YaHei&#39;; background-color: rgb(255, 255, 255);"><br></span></p>
 <p>_<span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);">登录ssh（</span><span style="color: rgb(85, 85, 85); font-family: &#39;Open Sans&#39;; font-size: 16px; line-height: 26px; background-color: rgb(255, 255, 255);"><a href="https://docs.aws.amazon.com/zh_cn/console/ec2/instances/connect/docs" target="_blank" rel="external">ssh使用教程</a>），执行以下命令：</span>_</p>
-<pre class="brush:cf;toolbar:false">1.&nbsp;sudo&nbsp;-s&nbsp;//获取超级管理员权限
-2.&nbsp;apt-get&nbsp;update&nbsp;//更新apt-get
-3.&nbsp;apt-get&nbsp;install&nbsp;python-pip&nbsp;//安装python包管理工具pip
-4.&nbsp;pip&nbsp;install&nbsp;shadowsocks&nbsp;//&nbsp;安装shadowsocks</pre><pre class="brush:cf;toolbar:false">nano&nbsp;/etc/shadowsocks.json&nbsp;&nbsp;//配置文件</pre>
+<pre class="brush:cf;toolbar:false">1. sudo -s //获取超级管理员权限
+2. apt-get update //更新apt-get
+3. apt-get install python-pip //安装python包管理工具pip
+4. pip install shadowsocks // 安装shadowsocks</pre><pre class="brush:cf;toolbar:false">nano /etc/shadowsocks.json  //配置文件</pre>
 
 <p><em>
 </em></p>
@@ -295,20 +295,20 @@
 <p><em>
 </em></p>
 <pre class="brush:cf;toolbar:false">{
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;server&quot;:&quot;0.0.0.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;server_port&quot;:在创建实例安全组时添加的端口号（比如443）,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;local_address&quot;:&quot;127.0.0.1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;local_port&quot;:1080,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;password&quot;:&quot;连接密码&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;timeout&quot;:300,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;method&quot;:&quot;aes-256-cfb&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;fast_open&quot;:false
-}</pre><pre class="brush:cf;toolbar:false">ssserver&nbsp;-c&nbsp;/etc/shadowsocks.json&nbsp;-d&nbsp;start&nbsp;//启动shadowsocks</pre>
+    &quot;server&quot;:&quot;0.0.0.0&quot;,
+    &quot;server_port&quot;:在创建实例安全组时添加的端口号（比如443）,
+    &quot;local_address&quot;:&quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;连接密码&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;:false
+}</pre><pre class="brush:cf;toolbar:false">ssserver -c /etc/shadowsocks.json -d start //启动shadowsocks</pre>
 
 <p><span style="font-size: 20px;">4.shadowsocks客户端下载：</span></p>
 <p><a href="https://shadowsocks.org/en/index.html" target="_blank" rel="external">https://shadowsocks.org/en/index.html</a></p>
 <p>配置截图：</p>
-<p><img src="http://www.mandroid.cn/zb_users/upload/2016/02/201602291456738265125261.png" alt="blob.png" title="正在上传..."></p>
+<p><img src="/upload/2016/02/201602291456738265125261.png" alt="blob.png" title="正在上传..."></p>
 
       
     </div>
@@ -491,7 +491,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -544,13 +544,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -58,25 +58,25 @@
 
 
 <meta name="description" content="Android经典完美退出方法，使用单例模式创建一个Activity管理对象，该对象中有一个Activity容器（具体实现自己处理，使用LinkedList等）专门负责存储新开启的每一个Activity，并且容易理解、易于操作，非常不错！ AppUtils类（储存每一个Activity，并实现关闭所有Activity的操作）
-package&amp;nbsp;com.cpic.jscx.android.">
+package com.cpic.jscx.android.utils">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android退出所有的activity">
 <meta property="og:url" content="http://mandroid.cn/2015/06/22/android退出所有的activity/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="Android经典完美退出方法，使用单例模式创建一个Activity管理对象，该对象中有一个Activity容器（具体实现自己处理，使用LinkedList等）专门负责存储新开启的每一个Activity，并且容易理解、易于操作，非常不错！ AppUtils类（储存每一个Activity，并实现关闭所有Activity的操作）
-package&amp;nbsp;com.cpic.jscx.android.">
-<meta property="og:updated_time" content="2016-03-17T11:27:50.598Z">
+package com.cpic.jscx.android.utils">
+<meta property="og:updated_time" content="2016-03-18T02:34:16.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android退出所有的activity">
 <meta name="twitter:description" content="Android经典完美退出方法，使用单例模式创建一个Activity管理对象，该对象中有一个Activity容器（具体实现自己处理，使用LinkedList等）专门负责存储新开启的每一个Activity，并且容易理解、易于操作，非常不错！ AppUtils类（储存每一个Activity，并实现关闭所有Activity的操作）
-package&amp;nbsp;com.cpic.jscx.android.">
+package com.cpic.jscx.android.utils">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -248,72 +248,72 @@ package&amp;nbsp;com.cpic.jscx.android.">
       
         <a id="more"></a>
 <p><span style="font-size: 20px;"><span style="color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);">Android经典完美退出方法，使用单例模式创建一个Activity管理对象，该对象中有一个Activity容器（具体实现自己处理，使用LinkedList等）专门负责存储新开启的每一个Activity，并且容易理解、易于操作，非常不错！</span><br> <span style="color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;">AppUtils类（储存每一个Activity，并实现关闭所有Activity的操作）</span></span></p>
-<pre class="brush:java;toolbar:false">package&nbsp;com.cpic.jscx.android.utils;&nbsp;
-&nbsp;import&nbsp;android.app.Activity;&nbsp;
-&nbsp;import&nbsp;android.app.Application;&nbsp;
-&nbsp;import&nbsp;java.util.LinkedList;&nbsp;
-&nbsp;import&nbsp;java.util.List;&nbsp;
-&nbsp;public&nbsp;class&nbsp;AppUtils&nbsp;extends&nbsp;Application{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;List&lt;Activity&gt;&nbsp;activityList&nbsp;=&nbsp;new&nbsp;LinkedList&lt;Activity&gt;();&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;AppUtils&nbsp;instance;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;AppUtils()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//单例模式中获取唯一的app实例&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;AppUtils&nbsp;getInstance()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(null&nbsp;==&nbsp;instance)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance&nbsp;=&nbsp;new&nbsp;AppUtils();&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;instance;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//添加Activity到容器中&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;addActivity(Activity&nbsp;activity)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activityList.add(activity);&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//遍历所有Activity并finish&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;exit()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(Activity&nbsp;activity:activityList)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activity.finish();&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.exit(0);&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
-&nbsp;}</pre>
+<pre class="brush:java;toolbar:false">package com.cpic.jscx.android.utils; 
+ import android.app.Activity; 
+ import android.app.Application; 
+ import java.util.LinkedList; 
+ import java.util.List; 
+ public class AppUtils extends Application{ 
+     private List&lt;Activity&gt; activityList = new LinkedList&lt;Activity&gt;(); 
+     private static AppUtils instance; 
+             private AppUtils() 
+             { 
+             } 
+              //单例模式中获取唯一的app实例 
+              public static AppUtils getInstance() 
+              { 
+                             if(null == instance) 
+                           { 
+                              instance = new AppUtils(); 
+                           } 
+                  return instance;             
+              } 
+              //添加Activity到容器中 
+              public void addActivity(Activity activity) 
+              { 
+                             activityList.add(activity); 
+              } 
+              //遍历所有Activity并finish 
+              public void exit() 
+              { 
+                           for(Activity activity:activityList) 
+                          { 
+                            activity.finish(); 
+                          } 
+                            System.exit(0); 
+             } 
+ }</pre>
 
 <p>activity实现：</p>
-<pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;ActionBarActivity&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;&nbsp;AppUtils&nbsp;appUtils;
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onCreate(Bundle&nbsp;savedInstanceState)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appUtils=AppUtils.getInstance();
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;onCreateOptionsMenu(Menu&nbsp;menu)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Inflate&nbsp;the&nbsp;menu;&nbsp;this&nbsp;adds&nbsp;items&nbsp;to&nbsp;the&nbsp;action&nbsp;bar&nbsp;if&nbsp;it&nbsp;is&nbsp;present.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getMenuInflater().inflate(R.menu.main,&nbsp;menu);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;onDestroy()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appUtils.exit();
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@Override
-&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;onOptionsItemSelected(MenuItem&nbsp;item)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Handle&nbsp;action&nbsp;bar&nbsp;item&nbsp;clicks&nbsp;here.&nbsp;The&nbsp;action&nbsp;bar&nbsp;will
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;automatically&nbsp;handle&nbsp;clicks&nbsp;on&nbsp;the&nbsp;Home/Up&nbsp;button,&nbsp;so&nbsp;long
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as&nbsp;you&nbsp;specify&nbsp;a&nbsp;parent&nbsp;activity&nbsp;in&nbsp;AndroidManifest.xml.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;id&nbsp;=&nbsp;item.getItemId();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(id&nbsp;==&nbsp;R.id.action_settings)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;super.onOptionsItemSelected(item);
-&nbsp;&nbsp;&nbsp;&nbsp;}
+<pre class="brush:java;toolbar:false">public class MainActivity extends ActionBarActivity {
+    private  AppUtils appUtils;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        appUtils=AppUtils.getInstance();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public void onDestroy() {
+        appUtils.exit();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }</pre>
       
     </div>
@@ -496,7 +496,7 @@ package&amp;nbsp;com.cpic.jscx.android.">
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -549,13 +549,6 @@ package&amp;nbsp;com.cpic.jscx.android.">
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
   
