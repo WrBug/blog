@@ -1,0 +1,735 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="原文地址：原文地址算法算法很简单，不是提前算好，而是抢红包时计算：
+
+红包里的金额怎么算？为什么出现各个红包金额相差很大？答：随机，额度在0.01和剩余平均值*2之间。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信红包随机算法初探">
+<meta property="og:url" content="http://mandroid.cn/2016/02/22/微信红包随机算法初探/index.html">
+<meta property="og:site_name" content="测试">
+<meta property="og:description" content="原文地址：原文地址算法算法很简单，不是提前算好，而是抢红包时计算：
+
+红包里的金额怎么算？为什么出现各个红包金额相差很大？答：随机，额度在0.01和剩余平均值*2之间。">
+<meta property="og:image" content="http://7d9owd.com1.z0.glb.clouddn.com/images/7682b4d2-e67f-47b4-9282-31da086ffb55.png">
+<meta property="og:image" content="http://7d9owd.com1.z0.glb.clouddn.com/images/a615bbc4-4dbf-42da-a1a1-e4afcb908752.png">
+<meta property="og:image" content="http://7d9owd.com1.z0.glb.clouddn.com/images/20d36929-634f-4655-90d2-64fffa43838f.png">
+<meta property="og:image" content="http://7d9owd.com1.z0.glb.clouddn.com/images/dfddb714-72fb-40e2-805d-cbc43b944f4d.png">
+<meta property="og:updated_time" content="2016-03-17T11:29:26.216Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信红包随机算法初探">
+<meta name="twitter:description" content="原文地址：原文地址算法算法很简单，不是提前算好，而是抢红包时计算：
+
+红包里的金额怎么算？为什么出现各个红包金额相差很大？答：随机，额度在0.01和剩余平均值*2之间。">
+<meta name="twitter:image" content="http://7d9owd.com1.z0.glb.clouddn.com/images/7682b4d2-e67f-47b4-9282-31da086ffb55.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 微信红包随机算法初探 | 测试 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">测试</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">子标签</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信红包随机算法初探
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-22T09:49:11+08:00" content="2016-02-22">
+              2016-02-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="原文地址：原文地址"><a href="#原文地址：原文地址" class="headerlink" title="原文地址：原文地址"></a>原文地址：<a href="http://coderroc.com/2015/10/28/%E6%95%B0%E5%AD%A6%E5%92%8C%E7%AE%97%E6%B3%95/%E5%BE%AE%E4%BF%A1%E7%BA%A2%E5%8C%85%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2/" target="_blank" rel="external">原文地址</a></h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>算法很简单，不是提前算好，而是抢红包时计算：</p>
+<blockquote>
+<p>红包里的金额怎么算？为什么出现各个红包金额相差很大？<br>答：随机，额度在0.01和剩余平均值*2之间。<br><a id="more"></a></p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3></blockquote>
+<p>实现上述算法的逻辑主要是：</p>
+<pre class="brush:java;toolbar:false">public&nbsp;static&nbsp;double&nbsp;getRandomMoney(RedPackage&nbsp;_redPackage)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;remainSize&nbsp;剩余的红包数量
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;remainMoney&nbsp;剩余的钱
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(_redPackage.remainSize&nbsp;==&nbsp;1)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_redPackage.remainSize--;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(double)&nbsp;Math.round(_redPackage.remainMoney&nbsp;*&nbsp;100)&nbsp;/&nbsp;100;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;Random&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;new&nbsp;Random();&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;min&nbsp;&nbsp;&nbsp;=&nbsp;0.01;&nbsp;//
+&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;max&nbsp;&nbsp;&nbsp;=&nbsp;_redPackage.remainMoney&nbsp;/&nbsp;_redPackage.remainSize&nbsp;*&nbsp;2;&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;money&nbsp;=&nbsp;r.nextDouble()&nbsp;*&nbsp;max;
+&nbsp;&nbsp;&nbsp;&nbsp;money&nbsp;=&nbsp;money&nbsp;&lt;=&nbsp;min&nbsp;?&nbsp;0.01:&nbsp;money;
+&nbsp;&nbsp;&nbsp;&nbsp;money&nbsp;=&nbsp;Math.floor(money&nbsp;*&nbsp;100)&nbsp;/&nbsp;100;
+&nbsp;&nbsp;&nbsp;&nbsp;_redPackage.remainSize--;
+&nbsp;&nbsp;&nbsp;&nbsp;_redPackage.remainMoney&nbsp;-=&nbsp;money;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;money;
+}</pre>
+
+<p><code>LeftMoneyPackage</code><span style="color: rgb(85, 85, 85); font-family: Lato, &#39;Microsoft Jhenghei&#39;, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, sans-serif; font-size: 16px; line-height: 27.2px; text-align: justify; background-color: rgb(255, 255, 255);">数据结构如下：</span></p>
+<pre class="brush:java;toolbar:false">class&nbsp;RedPackage&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp;remainSize;
+&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;remainMoney;
+}</pre>
+
+<p><span style="color: rgb(85, 85, 85); font-family: Lato, &#39;Microsoft Jhenghei&#39;, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, sans-serif; font-size: 16px; line-height: 27.2px; text-align: justify; background-color: rgb(255, 255, 255);">测试时初始化相关数据是：</span></p>
+<pre class="brush:java;toolbar:false">static&nbsp;void&nbsp;init()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;redPackage.remainSize&nbsp;&nbsp;=&nbsp;30;
+&nbsp;&nbsp;&nbsp;&nbsp;redPackage.remainMoney&nbsp;=&nbsp;500;
+}</pre>
+
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><h4 id="单词测试随机红包"><a href="#单词测试随机红包" class="headerlink" title="单词测试随机红包"></a>单词测试随机红包</h4><p>以上面的初始化数据（30人抢500块），执行了两次，结果如下：</p>
+<p>// 第一次</p>
+<p>15.69 &nbsp; &nbsp;21.18 &nbsp; &nbsp;24.11 &nbsp; &nbsp;30.85 &nbsp; &nbsp;0.74 &nbsp; &nbsp;20.85 &nbsp; &nbsp;2.96 &nbsp; &nbsp;13.43 &nbsp; &nbsp;11.12 &nbsp; &nbsp;24.87 &nbsp; &nbsp;1.86 &nbsp; &nbsp;19.62 &nbsp; &nbsp;5.97 &nbsp; &nbsp;29.33 &nbsp; &nbsp;3.05 &nbsp; &nbsp;26.94 &nbsp; &nbsp;18.69 &nbsp; &nbsp;34.47 &nbsp; &nbsp;9.4 &nbsp; &nbsp;29.83 &nbsp; &nbsp;5.17 &nbsp; &nbsp;24.67 &nbsp; &nbsp;17.09 &nbsp; &nbsp;29.96 &nbsp; &nbsp;6.77 &nbsp; &nbsp;5.79 &nbsp; &nbsp;0.34 &nbsp; &nbsp;23.89 &nbsp; &nbsp;40.44 &nbsp; &nbsp;0.92</p>
+<p>// 第二次</p>
+<p>10.44 &nbsp; &nbsp;18.01 &nbsp; &nbsp;17.01 &nbsp; &nbsp;21.07 &nbsp; &nbsp;11.87 &nbsp; &nbsp;4.78 &nbsp; &nbsp;30.14 &nbsp; &nbsp;32.05 &nbsp; &nbsp;16.68 &nbsp; &nbsp;20.34 &nbsp; &nbsp;12.94 &nbsp; &nbsp;27.98 &nbsp; &nbsp;9.31 &nbsp; &nbsp;17.97 &nbsp; &nbsp;12.93 &nbsp; &nbsp;28.75 &nbsp; &nbsp;12.1 &nbsp; &nbsp;12.77 &nbsp; &nbsp;7.54 &nbsp; &nbsp;10.87 &nbsp; &nbsp;4.16 &nbsp; &nbsp;25.36 &nbsp; &nbsp;26.89 &nbsp; &nbsp;5.73 &nbsp; &nbsp;11.59 &nbsp; &nbsp;23.91 &nbsp; &nbsp;17.77 &nbsp; &nbsp;15.85 &nbsp; &nbsp;23.42 &nbsp; &nbsp;9.77</p>
+<p>对应图表如下：<br><img src="http://7d9owd.com1.z0.glb.clouddn.com/images/7682b4d2-e67f-47b4-9282-31da086ffb55.png" alt="第一次随机红包数据展示"></p>
+<div class="pic-title" style="margin: 0px auto; text-align: center;"><a href="http://7d9owd.com1.z0.glb.clouddn.com/images/7682b4d2-e67f-47b4-9282-31da086ffb55.png" title="第一次随机红包数据展示" target="_blank" rel="external"><span style="min-width: 20%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-size: 18px; color: rgb(153, 153, 153); font-style: italic; line-height: 1.7;">第一次随机红包数据展示</span></a></div>
+
+<p>还有一张：</p>
+<p><img src="http://7d9owd.com1.z0.glb.clouddn.com/images/a615bbc4-4dbf-42da-a1a1-e4afcb908752.png" alt="第二次随机红包数据展示"></p>
+<div class="pic-title" style="margin: 0px auto; text-align: center;"><a href="http://7d9owd.com1.z0.glb.clouddn.com/images/a615bbc4-4dbf-42da-a1a1-e4afcb908752.png" title="第二次随机红包数据展示" target="_blank" rel="external"><span style="min-width: 20%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-size: 18px; color: rgb(153, 153, 153); font-style: italic; line-height: 1.7;">第二次随机红包数据展示</span></a></div>
+
+<h4 id="多次均值"><a href="#多次均值" class="headerlink" title="多次均值"></a>多次均值</h4><p><img src="http://7d9owd.com1.z0.glb.clouddn.com/images/20d36929-634f-4655-90d2-64fffa43838f.png" alt="重复执行200次的均值"></p>
+<div class="pic-title" style="margin: 0px auto; text-align: center;"><a href="http://7d9owd.com1.z0.glb.clouddn.com/images/20d36929-634f-4655-90d2-64fffa43838f.png" title="重复执行200次的均值" target="_blank" rel="external"><span style="min-width: 20%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-size: 18px; color: rgb(153, 153, 153); font-style: italic; line-height: 1.7;">重复执行200次的均值</span></a></div>
+
+<p><img src="http://7d9owd.com1.z0.glb.clouddn.com/images/dfddb714-72fb-40e2-805d-cbc43b944f4d.png" alt="重复执行2000次的均值"></p>
+<div class="pic-title" style="margin: 0px auto; text-align: center;"><a href="http://7d9owd.com1.z0.glb.clouddn.com/images/dfddb714-72fb-40e2-805d-cbc43b944f4d.png" title="重复执行2000次的均值" target="_blank" rel="external"><span style="min-width: 20%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-size: 18px; color: rgb(153, 153, 153); font-style: italic; line-height: 1.7;">重复执行2000次的均值</span></a></div>
+
+<p>可以看到，这个算法可以让大家抢到的红包面额在概率上是大致均匀的。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/25/1/" rel="next" title="webǰ��ְҵ�滮">
+                <i class="fa fa-chevron-left"></i> webǰ��ְҵ�滮
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/28/EditSpinner-一款结合EditText和Spinner的开源控件/" rel="prev" title="EditSpinner 一款结合EditText和Spinner的开源控件">
+                EditSpinner 一款结合EditText和Spinner的开源控件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="wangtao" />
+          <p class="site-author-name" itemprop="name">wangtao</p>
+          <p class="site-description motion-element" itemprop="description">描述</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原文地址：原文地址"><span class="nav-number">1.</span> <span class="nav-text">原文地址：原文地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试结果"><span class="nav-number">4.</span> <span class="nav-text">测试结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单词测试随机红包"><span class="nav-number">4.1.</span> <span class="nav-text">单词测试随机红包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多次均值"><span class="nav-number">4.2.</span> <span class="nav-text">多次均值</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangtao</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

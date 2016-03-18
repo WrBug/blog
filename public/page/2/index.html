@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="描述">
+<meta property="og:type" content="website">
+<meta property="og:title" content="测试">
+<meta property="og:url" content="http://mandroid.cn/page/2/index.html">
+<meta property="og:site_name" content="测试">
+<meta property="og:description" content="描述">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="测试">
+<meta name="twitter:description" content="描述">
+  
+    <link rel="alternate" href="/atom.xml" title="测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">子标签</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://mandroid.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-获取百度网盘真实下载链接" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/15/获取百度网盘真实下载链接/" class="article-date">
+  <time datetime="2015-07-15T02:15:12.000Z" itemprop="datePublished">2015-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/15/获取百度网盘真实下载链接/">获取百度网盘真实下载链接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><span style="color: rgb(255, 0, 0);">本代码为原创，转载请注明</span></p>
+<p>目前还存在一个问题，同一ip在获取3次以后会出现验证码，会获取失败，大家可以讨论研究下</p>
+<p>主要代码：</p>
+<p>HttpRequest.java</p>
+<pre class="brush:java;toolbar:false">import&nbsp;java.io.BufferedReader;
+import&nbsp;java.io.IOException;
+import&nbsp;java.io.InputStream;
+import&nbsp;java.io.InputStreamReader;
+import&nbsp;java.io.RandomAccessFile;
+import&nbsp;java.lang.reflect.Method;
+import&nbsp;java.net.HttpURLConnection;
+import&nbsp;java.net.URL;
+public&nbsp;class&nbsp;HttpRequest&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;String&nbsp;getData(String&nbsp;u)&nbsp;throws&nbsp;Exception&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;re=&quot;&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL&nbsp;url&nbsp;=&nbsp;new&nbsp;URL(u);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpURLConnection&nbsp;httpURLConnection&nbsp;=&nbsp;(HttpURLConnection)&nbsp;url
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.openConnection();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpURLConnection.setRequestMethod(&quot;GET&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpURLConnection.setDoInput(true);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpURLConnection.setDoOutput(true);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputStream&nbsp;is&nbsp;=&nbsp;httpURLConnection.getInputStream();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputStreamReader&nbsp;isr&nbsp;=&nbsp;new&nbsp;InputStreamReader(is);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BufferedReader&nbsp;bufferedReader&nbsp;=&nbsp;new&nbsp;BufferedReader(isr);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;iL&nbsp;=&nbsp;&quot;&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;((iL&nbsp;=&nbsp;bufferedReader.readLine())&nbsp;!=&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re&nbsp;+=&nbsp;iL&nbsp;+&nbsp;&quot;\n&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;re;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+
+<p>获取方法：</p>
+<pre class="brush:java;toolbar:false">import&nbsp;java.net.URLEncoder;
+import&nbsp;java.util.ArrayList;
+import&nbsp;java.util.HashMap;
+import&nbsp;java.util.List;
+import&nbsp;java.util.Map;
+import&nbsp;org.json.JSONArray;
+import&nbsp;org.json.JSONObject;
+import&nbsp;org.jsoup.Jsoup;
+import&nbsp;org.jsoup.nodes.Document;
+public&nbsp;class&nbsp;BaiduNetDisk&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;List&lt;Map&lt;String,&nbsp;Object&gt;&gt;&nbsp;getUrl(String&nbsp;url)&nbsp;throws&nbsp;Exception&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;String&gt;&nbsp;fs_id&nbsp;=&nbsp;new&nbsp;ArrayList&lt;String&gt;();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Map&lt;String,&nbsp;Object&gt;&gt;&nbsp;list&nbsp;=&nbsp;new&nbsp;ArrayList&lt;Map&lt;String,&nbsp;Object&gt;&gt;();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;doc&nbsp;=&nbsp;Jsoup.connect(url).get();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;html&nbsp;=&nbsp;doc.toString();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;a&nbsp;=&nbsp;html.indexOf(&quot;{\&quot;typicalPath&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;b&nbsp;=&nbsp;html.indexOf(&quot;yunData.getCon&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;sign_head&nbsp;=&nbsp;html.indexOf(&quot;yunData.SIGN&nbsp;=&nbsp;\&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;sign_foot&nbsp;=&nbsp;html.indexOf(&quot;yunData.TIMESTAMP&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;time_head&nbsp;=&nbsp;html.indexOf(&quot;yunData.TIMESTAMP&nbsp;=&nbsp;\&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;time_foot&nbsp;=&nbsp;html.indexOf(&quot;yunData.SHARE_UK&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;share_id_head&nbsp;=&nbsp;html.indexOf(&quot;yunData.SHARE_ID&nbsp;=&nbsp;\&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;share_id_foot&nbsp;=&nbsp;html.indexOf(&quot;yunData.SIGN&nbsp;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;sign&nbsp;=&nbsp;html.substring(sign_head,&nbsp;sign_foot);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;=&nbsp;sign.substring(sign.indexOf(&quot;\&quot;&quot;)&nbsp;+&nbsp;1,&nbsp;sign.indexOf(&quot;\&quot;;&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;time&nbsp;=&nbsp;html.substring(time_head,&nbsp;time_foot);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;=&nbsp;time.substring(time.indexOf(&quot;\&quot;&quot;)&nbsp;+&nbsp;1,&nbsp;time.indexOf(&quot;\&quot;;&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;share_id&nbsp;=&nbsp;html.substring(share_id_head,&nbsp;share_id_foot);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share_id&nbsp;=&nbsp;share_id.substring(share_id.indexOf(&quot;\&quot;&quot;)&nbsp;+&nbsp;1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share_id.indexOf(&quot;\&quot;;&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(share_id);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html&nbsp;=&nbsp;html.substring(a,&nbsp;b);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;html.indexOf(&quot;{\&quot;typicalPath&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;html.indexOf(&quot;};&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONArray&nbsp;jsonArray&nbsp;=&nbsp;new&nbsp;JSONArray(&quot;[&quot;&nbsp;+&nbsp;html.substring(a,&nbsp;b&nbsp;+&nbsp;1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;]&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONObject&nbsp;jsonObject&nbsp;=&nbsp;jsonArray.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;uk&nbsp;=&nbsp;jsonObject.getString(&quot;uk&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;shareid&nbsp;=&nbsp;jsonObject.getString(&quot;shareid&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;path&nbsp;=&nbsp;URLEncoder.encode(jsonObject.getString(&quot;typicalPath&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;utf-8&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonArray&nbsp;=&nbsp;new&nbsp;JSONArray(&quot;[&quot;&nbsp;+&nbsp;jsonObject.getString(&quot;file_list&quot;)&nbsp;+&nbsp;&quot;]&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObject&nbsp;=&nbsp;jsonArray.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonArray&nbsp;=&nbsp;new&nbsp;JSONArray(jsonObject.getString(&quot;list&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObject&nbsp;=&nbsp;jsonArray.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;app_id&nbsp;=&nbsp;jsonObject.getString(&quot;app_id&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(jsonObject.getString(&quot;isdir&quot;).equals(&quot;1&quot;))&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;url1&nbsp;=&nbsp;&quot;http://pan.baidu.com/share/list?uk=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;uk
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;shareid=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;shareid
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;page=1&amp;num=100&amp;dir=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;path
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;order=time&amp;desc=1&amp;_=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;time
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;bdstoken=c51077ce0e0e313a16066612a13fbcd4&amp;channel=chunlei&amp;clienttype=0&amp;web=1&amp;app_id=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;app_id;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;fileListJson&nbsp;=&nbsp;HttpRequest.getData(url1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(fileListJson);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonArray&nbsp;=&nbsp;new&nbsp;JSONArray(&quot;[&quot;&nbsp;+&nbsp;fileListJson&nbsp;+&nbsp;&quot;]&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObject&nbsp;=&nbsp;jsonArray.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonArray&nbsp;=&nbsp;new&nbsp;JSONArray(jsonObject.getString(&quot;list&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;int&nbsp;size&nbsp;=&nbsp;jsonArray.length();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;size;&nbsp;i++)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map&lt;String,&nbsp;Object&gt;&nbsp;map&nbsp;=&nbsp;new&nbsp;HashMap&lt;String,&nbsp;Object&gt;();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObject&nbsp;=&nbsp;jsonArray.getJSONObject(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;fileName&nbsp;=&nbsp;jsonObject.getString(&quot;server_filename&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map.put(&quot;fileName&quot;,&nbsp;fileName);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs_id.add(jsonObject.getString(&quot;fs_id&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;fileInfo&nbsp;=&nbsp;HttpRequest
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.getData(&quot;http://pan.baidu.com/api/sharedownload?sign=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;sign
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;timestamp=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;time
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&amp;bdstoken=c51077ce0e0e313a16066612a13fbcd4&amp;channel=chunlei&amp;clienttype=0&amp;web=1&amp;app_id=250528&amp;encrypt=0&amp;product=share&amp;uk=&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;uk&nbsp;+&nbsp;&quot;&amp;primaryid=&quot;&nbsp;+&nbsp;share_id&nbsp;+&nbsp;&quot;&amp;fid_list=%5B&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;fs_id.get(i)&nbsp;+&nbsp;&quot;%5D&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONArray&nbsp;jsonArray2&nbsp;=&nbsp;new&nbsp;JSONArray(&quot;[&quot;&nbsp;+&nbsp;fileInfo&nbsp;+&nbsp;&quot;]&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONObject&nbsp;json_data&nbsp;=&nbsp;jsonArray2.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(json_data.getString(&quot;errno&quot;).equals(&quot;0&quot;))&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonArray2&nbsp;=&nbsp;new&nbsp;JSONArray(json_data.getString(&quot;list&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_data&nbsp;=&nbsp;jsonArray2.getJSONObject(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map.put(&quot;url&quot;,&nbsp;json_data.getString(&quot;dlink&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(json_data.getString(&quot;errno&quot;).equals(&quot;-20&quot;))&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;String&nbsp;getVerCode();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(map);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;list;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/15/获取百度网盘真实下载链接/" data-id="cilw5k4xd000uu8ub3y01gsn0" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/14/一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）/" class="article-date">
+  <time datetime="2015-07-14T03:19:08.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/14/一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）/">一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><span style="font-size:16px"><span style="color:#ff0000">首先将手机连接wifi，打开本程序，会自动创建服务，等待客户端连接~</span></span></p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507141436844080960125.png" alt="" title="201507141436844080960125.png"></p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507141436844080181981.png" alt="" title="201507141436844080181981.png"></p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507141436844080465044.png" alt="" title="201507141436844080465044.png"></p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507141436844080112252.png" alt="" title="201507141436844080112252.png"></p>
+<p>下载地址：<a href="http://pan.baidu.com/s/1pJMdMNx" target="_blank" rel="external">http://pan.baidu.com/s/1pJMdMNx</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/14/一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）/" data-id="cilw5k4wx000qu8ubgd4u22pf" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-27种设计模式例子配详细注释源代码完整版" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/12/27种设计模式例子配详细注释源代码完整版/" class="article-date">
+  <time datetime="2015-07-12T15:13:36.000Z" itemprop="datePublished">2015-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/12/27种设计模式例子配详细注释源代码完整版/">27种设计模式例子配详细注释源代码完整版</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>经过几天时间的努力，整理，设计模式的demo和资料基本整理完成，首先声明，这些资料部分从网上找的，还有部分是用了&lt;&lt;java与模<br>式&gt;&gt;书中的例子，里面的模式也是照着这书上的划分的，很不错的一本书，想学习设计模式的同学可以看看。先说说我的体会，每次看设计模式，总<br>会有新的体会，这是第三次我复习复习这方面的知识了，感觉还不错，但是时间久了估计还是会忘，所以最好的办法还是找个例子，忘得时候看看怎么用就行了，我<br>的demo把27种设计模式进行了合并，不同的模式例子，分放在不同的文件中。资料总共有一下27种模式：<br><span style="color:#0000ff">设计模式主要分三个类型:创建型、结构型和行为型。<br>其中创建型有：<br>&nbsp; &nbsp; 一、Singleton，单例模式：保证一个类只有一个实例，并提供一个访问它的全局访问点<br>&nbsp; &nbsp; 二、Abstract Factory，抽象工厂：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们的具体类。<br>&nbsp; &nbsp; 三、Factory Method，工厂方法：定义一个用于创建对象的接口，让子类决定实例化哪一个类，Factory Method使一个类的实例化延迟到了子类。<br>&nbsp; &nbsp; 四、Builder，建造模式：将一个复杂对象的构建与他的表示相分离，使得同样的构建过程可以创建不同的表示。<br>&nbsp; &nbsp; 五、Prototype，原型模式：用原型实例指定创建对象的种类，并且通过拷贝这些原型来创建新的对象。<br>行为型有：<br>&nbsp; &nbsp; 六、Iterator，迭代器模式：提供一个方法顺序访问一个聚合对象的各个元素，而又不需要暴露该对象的内部表示。<br>&nbsp; &nbsp; 七、Observer，观察者模式：定义对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知自动更新。<br>&nbsp; &nbsp; 八、Template Method，模板方法：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中，TemplateMethod使得子类可以不改变一个算法的结构即可以重定义该算法得某些特定步骤。<br>&nbsp; &nbsp; 九、Command，命令模式：将一个请求封装为一个对象，从而使你可以用不同的请求对客户进行参数化，对请求排队和记录请求日志，以及支持可撤销的操作。<br>&nbsp; &nbsp; 十、State，状态模式：允许对象在其内部状态改变时改变他的行为。对象看起来似乎改变了他的类。<br>&nbsp; &nbsp; 十一、Strategy，策略模式：定义一系列的算法，把他们一个个封装起来，并使他们可以互相替换，本模式使得算法可以独立于使用它们的客户。<br>&nbsp; &nbsp; 十二、Chain of Responsibility，职责链模式：使多个对象都有机会处理请求，从而避免请求的送发者和接收者之间的耦合关系<br>&nbsp; &nbsp; 十三、Mediator，中介者模式：用一个中介对象封装一些列的对象交互。<br>&nbsp; &nbsp; 十四、Visitor，访问者模式：表示一个作用于某对象结构中的各元素的操作，它使你可以在不改变各元素类的前提下定义作用于这个元素的新操作。<br>&nbsp; &nbsp; 十五、Interpreter，解释器模式：给定一个语言，定义他的文法的一个表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。<br>&nbsp; &nbsp; 十六、Memento，备忘录模式：在不破坏对象的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。<br>结构型有：<br>&nbsp; &nbsp; 十七、Composite，组合模式：将对象组合成树形结构以表示部分整体的关系，Composite使得用户对单个对象和组合对象的使用具有一致性。<br>&nbsp; &nbsp; 十八、Facade，外观模式：为子系统中的一组接口提供一致的界面，fa?ade提供了一高层接口，这个接口使得子系统更容易使用。<br>&nbsp; &nbsp; 十九、Proxy，代理模式：为其他对象提供一种代理以控制对这个对象的访问<br>&nbsp; &nbsp; 二十、Adapter,适配器模式：将一类的接口转换成客户希望的另外一个接口，Adapter模式使得原本由于接口不兼容而不能一起工作那些类可以一起工作。<br>&nbsp; &nbsp; 二十一、Decrator，装饰模式：动态地给一个对象增加一些额外的职责，就增加的功能来说，Decorator模式相比生成子类更加灵活。<br>&nbsp; &nbsp; 二十二、Bridge，桥模式：将抽象部分与它的实现部分相分离，使他们可以独立的变化。<br>&nbsp; &nbsp; 二十三、Flyweight，享元模式</span><span style="color:#ff0000">除了以上23个模式之外，根据&lt;&lt;java与模式&gt;&gt;中的分类，还有4种模式，DefaultAdapter 缺省适配器模式，SimpleFactory 简单工厂模式，Multiton 多例模式, Immutable 不变模式</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下<br>面我来说说怎么阅读每个模式，每个文件中的Test.java是该模式的测试类，上面的注解详细描述了该模式的具体介绍和优缺点等等，该包中的其他文件就<br>是一些接口或抽象类等该模式所需要的类，要理解每个模式的思想，要把该包中的几个联系着一起看，为了避免太乱，就分开写了。</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><br><span style="font-family:Microsoft Yahei, Tahoma, Simsun"><br></span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">下面上传几段代码：</span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">代理模式的代码：</span></p>
+<pre class="brush:java;toolbar:false">package&nbsp;com.kunhong.design.Proxy;
+/**
+
+&nbsp;*&nbsp;代理模式&nbsp;代理模式:给某一对象提供代理对象,并由代理对象控制具体对象的引用.
+
+&nbsp;*&nbsp;
+
+&nbsp;*&nbsp;代理,指的就是一个角色代表另一个角色采取行动,就象生活中,一个红酒厂商,是不会直接把红酒零售客户的,都是通过代理来完成他的销售业务的.而客户,
+
+&nbsp;*&nbsp;也不用为了喝红酒而到处找工厂,他只要找到厂商在当地的代理就行了,具体红酒工厂在那里,客户不用关心,代理会帮他处理.
+
+&nbsp;*&nbsp;
+
+&nbsp;*&nbsp;@author&nbsp;lyq
+
+&nbsp;*&nbsp;
+
+&nbsp;*/
+public&nbsp;class&nbsp;Test&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String&nbsp;agr[])&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SellInterface&nbsp;sell&nbsp;=&nbsp;new&nbsp;RedWineProxy();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sell.sell();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+
+<p><span style="font-family:Microsoft Yahei, Tahoma, Simsun"></span></p>
+<pre class="brush:java;toolbar:false">package&nbsp;com.kunhong.design.Observer;
+/**
+
+&nbsp;*&nbsp;抽象主题角色类
+
+&nbsp;*&nbsp;@author&nbsp;lyq
+
+&nbsp;*
+
+&nbsp;*/
+public&nbsp;interface&nbsp;AbstractWatched&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//增加一个观察者
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;addAbstactWatcher(AbstractWatcher&nbsp;watcher);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//移除一个观察者
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;removeAbstactWatcher(AbstractWatcher&nbsp;watcher);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//移除所有的观察着
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;removeAll();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//通知所有的观察者
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;notifyWatchers();
+}</pre>
+
+<p><span style="font-family:Microsoft Yahei, Tahoma, Simsun"></span><span style="font-family:Microsoft Yahei, Tahoma, Simsun">好了，要想知道更多的代码，都在附近里了，希望能帮助更多的人了解设计模式，设计模式的最大就是可以减少代码的耦合度，使代码独立性，模块性更强，觉得不错的话，给个回复，不枉费我的辛苦整理啊</span><br><span style="font-family:Microsoft Yahei, Tahoma, Simsun">不好意思，刚刚代码上传发现里面有些涉及隐私信息忘删除了，晚些时候处理一下马上给出代码，真是不好意思！！</span><br>代码上传完毕，转载请注明出处！！</p>
+<p><strong> 更新源代码，这次增加了各大模式的通用模式，也就是下面的一个<br>general目录下的文件，从原理上更加理解设计模式的精髓，目前更新其中的12套模式，喜欢的就顶！！！让更多的人知道设计模式的存在！！！！</strong></p>
+<p><strong>
+</strong></p>
+<p><span style="font-size: 20px; color: rgb(255, 0, 0);"><strong>下载地址：**</strong><a href="http://pan.baidu.com/s/1hqjIr3m" target="_blank" rel="external">http://pan.baidu.com/s/1hqjIr3m</a>**</span></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/12/27种设计模式例子配详细注释源代码完整版/" data-id="cilw5k4w20001u8ubzl1y4b08" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Adroid-zxing-二维码3-1集成（源码无删减）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/" class="article-date">
+  <time datetime="2015-07-12T15:09:48.000Z" itemprop="datePublished">2015-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/">Adroid zxing 二维码3.1集成（源码无删减）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Adroid-zxing-二维码3-1集成"><a href="#Adroid-zxing-二维码3-1集成" class="headerlink" title="Adroid zxing 二维码3.1集成"></a>Adroid zxing 二维码3.1集成</h1><p><strong>文章转自：<a href="http://my.oschina.net/gluoyer/blog/315947" target="_blank" rel="external">http://my.oschina.net/gluoyer/blog/315947</a></strong></p>
+<p><em>引子：最近项目中用到二维码，找到了最新的3.1版本</em><span style="color: rgb(255, 0, 0); font-size: 20px;">&nbsp;</span><a href="https://github.com/zxing/zxing/" target="_blank" rel="external"><span style="color: rgb(255, 0, 0); font-size: 20px;">zxing-GitHub</span></a><em>，进行了集成、调整，同时笔记以备忘。</em></p>
+<p><em><span style="color:#9b00d3">求点击：博客访问9.9k+了，距离初步期望1w很近了。&nbsp;&nbsp; 一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。</span></em></p>
+<p><em><span style="color:#9b00d3">&nbsp;&nbsp;&nbsp; 特此版本去掉了下载时需要积分的情况</span></em></p>
+<p>实现效果：</p>
+<p>&nbsp;&nbsp;&nbsp; <img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788417101357.png" alt="19115112_23fw.png" title="201507131436788417101357.png"></p>
+<p>&nbsp;&nbsp;&nbsp; 相关博文很多，生成jar包，简化代码。度娘一下就有了。 感觉需要必要笔记，是发现：</p>
+<ul>
+<li><p>以1.6版本居多，据说3.1对4x支持更好些。</p>
+</li>
+<li><p>简化后，对扩展比较麻烦。</p>
+</li>
+<li><p>修改竖屏后，修改的地方找起来比较麻烦。</p>
+</li>
+</ul>
+<h3 id="未使用简化版本，直接引用zxing源码"><a href="#未使用简化版本，直接引用zxing源码" class="headerlink" title="未使用简化版本，直接引用zxing源码"></a>未使用简化版本，直接引用zxing源码</h3><p>&nbsp;&nbsp;&nbsp; 由于网上的简化版本，对功能扩展比较麻烦，因此，直接将zxing放到了工程目录下的extras/zxing下，只在项目中加入了目录，复制、修改了必要的文件，其他均引用源码文件</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788453805554.jpg" alt="19115113_8oXJ.jpg" title="201507131436788453805554.jpg"></p>
+<h3 id="修改竖屏后所需调整"><a href="#修改竖屏后所需调整" class="headerlink" title="修改竖屏后所需调整"></a>修改竖屏后所需调整</h3><p>&nbsp;&nbsp;&nbsp; 集成过程中，发现网文提到的修改竖屏，还是有点分散的，找起还是有点麻烦。故在<span style="color:#0000ff">CameraConfigurationManager</span>加了一个标识方法：<span style="color:#0000ff">isPortrait()</span>，返回<span style="color:#ff0000">true</span></p>
+<p>&nbsp;&nbsp;&nbsp; 例如，<span style="color:#0000ff">DecodeHandler.java</span>的<span style="color:#0000ff">decode</span>方法中需要调整，如下条件实现：</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788496442797.jpg" alt="19115114_4eQr.jpg" title="201507131436788496442797.jpg"></p>
+<p>其他需要修改的地方，也如此使用<span style="color:#0000ff">isPortrait()</span>条件，所以，只需要看下<span style="color:#0000ff">isPortrait()</span>的<span style="color:#ccb400">Call Hierarchy</span>，就比较清晰得看到所需修改。</p>
+<p>同时，返回<span style="color:#ff0000">false</span>，就可以恢复到源码处理。</p>
+<h3 id="绘制扫描框"><a href="#绘制扫描框" class="headerlink" title="绘制扫描框"></a>绘制扫描框</h3><p>&nbsp;&nbsp;&nbsp; 根据项目需求，需要重新绘制扫描框框，主要在<span style="color:#0000ff">ViewfinderView.java</span>实现绘制方法，同样条件控制，<span style="color:#0000ff">drawScanFrame</span>局部如下：</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788506598227.jpg" alt="19115116_xCkn.jpg" title="201507131436788506598227.jpg"></p>
+<h3 id="灯光的设置"><a href="#灯光的设置" class="headerlink" title="灯光的设置"></a>灯光的设置</h3><p>&nbsp;&nbsp;&nbsp; 根据源码中，音量键对灯光的开关，添加了新接口，支持标题右上角对灯光的控制：</p>
+<p><span style="color:#0000ff">CameraManager.java</span>中：</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788519124077.jpg" alt="19115116_gKwu.jpg" title="201507131436788519124077.jpg"></p>
+<p>以及<span style="color:#0000ff">CameraConfigurationManager.java</span>中：</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788593429629.jpg" alt="19115117_ue4m.jpg" title="201507131436788593429629.jpg"></p>
+<p>在Activity中进行必要的调用处理即可。</p>
+<h3 id="QrCaptureActivity-中扫描成功的处理"><a href="#QrCaptureActivity-中扫描成功的处理" class="headerlink" title="QrCaptureActivity 中扫描成功的处理"></a><span style="color:#0000ff">QrCaptureActivity</span> 中扫描成功的处理</h3><p>&nbsp;&nbsp; 根据实际需求，扫描成功后，跳转并将数据传递给新页面，因此，只在<span style="color:#0000ff">handleDecode</span>方法中，</p>
+<p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507131436788571117265.jpg" alt="19115119_Ehb6.jpg" title="201507131436788571117265.jpg"></p>
+<p>&nbsp;&nbsp;&nbsp; 在注释信息下面，将新页面的跳转就可以了。&nbsp;&nbsp;</p>
+<p>如果有其他需求，也在这里自行处理，应该就没有问题了。</p>
+<p>另外，运行zxing源码，可以看到它有个设置页面，也可以根据需求，集成该设置页面，或修改<span style="color:#f79646">R.xml.preferences</span>中的配置即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/" data-id="cilw5k4wi0005u8ub1ipyg0ju" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android-自动换行流式布局的多行多列RadioGroup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/12/Android-自动换行流式布局的多行多列RadioGroup/" class="article-date">
+  <time datetime="2015-07-12T15:05:56.000Z" itemprop="datePublished">2015-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/12/Android-自动换行流式布局的多行多列RadioGroup/">Android 自动换行流式布局的多行多列RadioGroup</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://www.mandroid.cn/zb_users/upload/2015/07/201507121436713650204443.png" alt="04155106-9f598b9f5ed34195ab7482d69729fb26.png" title="201507121436713650204443.png"></p>
+<pre class="brush:java;toolbar:false">import&nbsp;android.content.Context;
+import&nbsp;android.util.AttributeSet;
+import&nbsp;android.view.View;
+import&nbsp;android.widget.RadioGroup;
+/**
+&nbsp;*&nbsp;流式布局的RadioGroup
+&nbsp;*/
+public&nbsp;class&nbsp;FlowRadioGroup&nbsp;extends&nbsp;RadioGroup&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FlowRadioGroup(Context&nbsp;context)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(context);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FlowRadioGroup(Context&nbsp;context,&nbsp;AttributeSet&nbsp;attrs)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(context,&nbsp;attrs);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;@Override
+&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onMeasure(int&nbsp;widthMeasureSpec,&nbsp;int&nbsp;heightMeasureSpec)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;maxWidth&nbsp;=&nbsp;MeasureSpec.getSize(widthMeasureSpec);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;childCount&nbsp;=&nbsp;getChildCount();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;y&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;row&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;index&nbsp;=&nbsp;0;&nbsp;index&nbsp;&lt;&nbsp;childCount;&nbsp;index++)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;View&nbsp;child&nbsp;=&nbsp;getChildAt(index);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(child.getVisibility()&nbsp;!=&nbsp;View.GONE)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.measure(MeasureSpec.UNSPECIFIED,&nbsp;MeasureSpec.UNSPECIFIED);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;此处增加onlayout中的换行判断，用于计算所需的高度
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;width&nbsp;=&nbsp;child.getMeasuredWidth();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;height&nbsp;=&nbsp;child.getMeasuredHeight();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;+=&nbsp;width;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;row&nbsp;*&nbsp;height&nbsp;+&nbsp;height;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;maxWidth)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;width;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;row&nbsp;*&nbsp;height&nbsp;+&nbsp;height;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;设置容器所需的宽度和高度
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setMeasuredDimension(maxWidth,&nbsp;y);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;@Override
+&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onLayout(boolean&nbsp;changed,&nbsp;int&nbsp;l,&nbsp;int&nbsp;t,&nbsp;int&nbsp;r,&nbsp;int&nbsp;b)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;int&nbsp;childCount&nbsp;=&nbsp;getChildCount();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;maxWidth&nbsp;=&nbsp;r&nbsp;-&nbsp;l;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;y&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;row&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;childCount;&nbsp;i++)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;View&nbsp;child&nbsp;=&nbsp;this.getChildAt(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(child.getVisibility()&nbsp;!=&nbsp;View.GONE)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;width&nbsp;=&nbsp;child.getMeasuredWidth();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;height&nbsp;=&nbsp;child.getMeasuredHeight();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;+=&nbsp;width;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;row&nbsp;*&nbsp;height&nbsp;+&nbsp;height;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;maxWidth)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;width;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;row&nbsp;*&nbsp;height&nbsp;+&nbsp;height;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.layout(x&nbsp;-&nbsp;width,&nbsp;y&nbsp;-&nbsp;height,&nbsp;x,&nbsp;y);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/12/Android-自动换行流式布局的多行多列RadioGroup/" data-id="cilw5k4wi0007u8ubfen6f4b4" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-XML布局参数大全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/10/android-XML布局参数大全/" class="article-date">
+  <time datetime="2015-07-10T15:39:38.000Z" itemprop="datePublished">2015-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/10/android-XML布局参数大全/">android XML布局参数大全</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一类:属性值为true或false<br>android:layout_centerHrizontal &nbsp;水平居中<br>android:layout_centerVertical &nbsp; 垂直居中<br>android:layout_centerInparent &nbsp; &nbsp;相对于父元素完全居中<br>android:layout_alignParentBottom 贴紧父元素的下边缘<br>android:layout_alignParentLeft &nbsp; 贴紧父元素的左边缘<br>android:layout_alignParentRight &nbsp;贴紧父元素的右边缘<br>android:layout_alignParentTop &nbsp; &nbsp;贴紧父元素的上边缘<br>android:layout_alignWithParentIfMissing &nbsp;如果对应的兄弟元素找不到的话就以父元素做参照物<br>第二类：属性值必须为id的引用名”<br>android:layout_below &nbsp; &nbsp; &nbsp;在某元素的下方<br>android:layout_above &nbsp; &nbsp; &nbsp;在某元素的的上方<br>android:layout_toLeftOf &nbsp; 在某元素的左边<br>android:layout_toRightOf &nbsp;在某元素的右边<br>android:layout_alignTop &nbsp; 本元素的上边缘和某元素的的上边缘对齐<br>android:layout_alignLeft &nbsp;本元素的左边缘和某元素的的左边缘对齐<br>android:layout_alignBottom 本元素的下边缘和某元素的的下边缘对齐<br>android:layout_alignRight &nbsp;本元素的右边缘和某元素的的右边缘对齐<br>第三类：属性值为具体的像素值，如30dip，40px<br>android:layout_marginBottom &nbsp; &nbsp; &nbsp; 离某元素底边缘的距离<br>android:layout_marginLeft &nbsp; &nbsp; &nbsp; &nbsp; 离某元素左边缘的距离<br>android:layout_marginRight &nbsp; &nbsp; &nbsp; &nbsp;离某元素右边缘的距离<br>android:layout_marginTop &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;离某元素上边缘的距离<br>EditText的android:hint &nbsp;设置EditText为空时输入框内的提示信息。<br>android:gravity　<br>android:gravity属性是对该view 内容的限定．比如一个button 上面的text. &nbsp;你可以设置该text 在view的靠左，靠右等位置．以button为例，android:gravity=&quot;right&quot;则button上面的文字靠右<br>android:layout_gravity<br>android:layout_gravity<br> 是用来设置该view相对与起父view 的位置．比如一个button<br>在linearlayout里，你想把该button放在靠左、靠右等位置就可以通过该属性设置．以button为<br>例，android:layout_gravity=&quot;right&quot;则button靠右<br>android:scaleType：<br>android:scaleType是控制图片如何resized/moved来匹对ImageView的size。ImageView.ScaleType / android:scaleType值的意义区别：<br>CENTER /center &nbsp;按图片的原来size居中显示，当图片长/宽超过View的长/宽，则截取图片的居中部分显示<br>CENTER_CROP / centerCrop &nbsp;按比例扩大图片的size居中显示，使得图片长(宽)等于或大于View的长(宽)<br>CENTER_INSIDE / centerInside &nbsp;将图片的内容完整居中显示，通过按比例缩小或原来的size使得图片长/宽等于或小于View的长/宽<br>FIT_CENTER / fitCenter &nbsp;把图片按比例扩大/缩小到View的宽度，居中显示<br>FIT_END / fitEnd &nbsp; 把图片按比例扩大/缩小到View的宽度，显示在View的下部分位置<br>FIT_START / fitStart &nbsp;把图片按比例扩大/缩小到View的宽度，显示在View的上部分位置<br>FIT_XY / fitXY &nbsp;把图片不按比例扩大/缩小到View的大小显示<br>MATRIX / matrix 用矩阵来绘制，动态缩小放大图片来显示。</p>
+<h2 id="要注意一点，Drawable文件夹里面的图片命名是不能大写的。"><a href="#要注意一点，Drawable文件夹里面的图片命名是不能大写的。" class="headerlink" title="** 要注意一点，Drawable文件夹里面的图片命名是不能大写的。"></a>** 要注意一点，Drawable文件夹里面的图片命名是不能大写的。</h2><p>android:id<br>为控件指定相应的ID<br>android:text<br>指定控件当中显示的文字，需要注意的是，这里尽量使用strings.xml文件当中的字符串<br>android:gravity<br>指定View组件的对齐方式，比如说居中，居右等位置 这里指的是控件中的文本位置并不是控件本身<br>android:layout_gravity<br>指定Container组件的对齐方式．比如一个button 在linearlayout里，你想把该button放在靠左、靠右等位置就可以通过该属性设置．以button为 例，android:layout_gravity=&quot;right&quot;则button靠右<br>android:textSize<br>指定控件当中字体的大小<br>android:background<br>指定该控件所使用的背景色，RGB命名法<br>android:width<br>指定控件的宽度<br>android:height<br>指定控件的高度<br>android:layout_width<br>指定Container组件的宽度<br>android:layout_height<br>指定Container组件的高度<br>android:layout_weight<br>View中很重要的属性，按比例划分空间<br>android:padding*<br>指定控件的内边距，也就是说控件当中的内容<br>android:sigleLine<br>如果设置为真的话，则控件的内容在同一行中进行显示<br>android:scaleType<br>是控制图片如何resized/moved来匹对ImageView的siz<br>android:layout_centerHrizontal<br>水平居中<br>android:layout_centerVertical<br>垂直居中<br>android:layout_centerInparent<br>相对于父元素完全居中<br>android:layout_alignParentBottom<br>贴紧父元素的下边缘<br>android:layout_alignParentLeft<br>贴紧父元素的左边缘<br>android:layout_alignParentRight<br>贴紧父元素的右边缘<br>android:layout_alignParentTop<br>贴紧父元素的上边缘<br>android:layout_alignWithParentIfMissing<br>如果对应的兄弟元素找不到的话就以父元素做参照物<br>android:layout_below<br>在某元素的下方<br>android:layout_above<br>在某元素的的上方<br>android:layout_toLeftOf<br>在某元素的左边<br>android:layout_toRightOf<br>在某元素的右边<br>android:layout_alignTop<br>本元素的上边缘和某元素的的上边缘对齐<br>android:layout_alignLeft<br>本元素的左边缘和某元素的的左边缘对齐<br>android:layout_alignBottom<br>本元素的下边缘和某元素的的下边缘对齐<br>android:layout_alignRight<br>本元素的右边缘和某元素的的右边缘对齐<br>android:layout_marginBottom<br>离某元素底边缘的距离<br>android:layout_marginLeft<br>离某元素左边缘的距离<br>android:layout_marginRight<br>离某元素右边缘的距离<br>android:layout_marginTop<br>离某元素上边缘的距离<br>android:paddingLeft<br>本元素内容离本元素右边缘的距离<br>android:paddingRight<br>本元素内容离本元素上边缘的距离<br>android:hint<br>设置EditText为空时输入框内的提示信息<br>android:LinearLayout<br>它确定了LinearLayout的方向，其值可以为vertical，表示垂直布局horizontal， 表示水平布局</p>
+<hr>
+<p>android:interpolator<br>可<br> 能有很多人不理解它的用法，文档里说的也不太清楚，其实很简单，看下面：interpolator定义一个动画的变化率（the rate of<br>change）。这使得基本的动画效果(alpha, scale, translate,<br>rotate）得以加速，减速，重复等。用通俗的一点的话理解就是：动画的进度使用 Interpolator 控制。interpolator<br>定义了动画的变化速度，可以实现匀速、正加速、负加速、无规则变加速等。Interpolator 是基类，封装了所有 Interpolator<br>的共同方法，它只有一个方法，即 getInterpolation (float input)，该方法 maps a point on the<br>timeline to a multiplier to be applied to the transformations of an<br>animation。Android 提供了几个 Interpolator 子类，实现了不同的速度曲线，如下：<br>AccelerateDecelerateInterpolator &nbsp; &nbsp; &nbsp; &nbsp;在动画开始与介绍的地方速率改变比较慢，在中间的时侯加速<br>AccelerateInterpolator &nbsp; &nbsp; &nbsp; &nbsp;在动画开始的地方速率改变比较慢，然后开始加速<br>CycleInterpolator &nbsp; &nbsp; &nbsp; &nbsp;动画循环播放特定的次数，速率改变沿着正弦曲线<br>DecelerateInterpolator &nbsp; &nbsp; &nbsp; &nbsp;在动画开始的地方速率改变比较慢，然后开始减速<br>LinearInterpolator &nbsp; &nbsp; &nbsp; &nbsp;在动画的以均匀的速率改变<br>对于 LinearInterpolator ，变化率是个常数，即 f (x) = x.<br>public float getInterpolation(float input) {<br>return input;<br>}<br>Interpolator其他的几个子类，也都是按照特定的算法，实现了对变化率。还可以定义自己的 Interpolator 子类，实现抛物线、自由落体等物理效果。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/10/android-XML布局参数大全/" data-id="cilw5k4wx000eu8ubibkq70vz" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jni-通过c-c-返回HashMap等复杂参数给java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/02/jni-通过c-c-返回HashMap等复杂参数给java/" class="article-date">
+  <time datetime="2015-07-02T08:15:11.000Z" itemprop="datePublished">2015-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/02/jni-通过c-c-返回HashMap等复杂参数给java/">jni 通过c/c++返回HashMap等复杂参数给java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp; 返回其他对象与这个相似，可以自己研究下</p>
+<p>思路：</p>
+<p>&nbsp;&nbsp;&nbsp; 1.创建HashMap对象：</p>
+<pre class="brush:cpp;toolbar:false">&nbsp;&nbsp;&nbsp;&nbsp;/*C语言版本，下同*/
+&nbsp;&nbsp;&nbsp;&nbsp;//获取java的HashMap类
+&nbsp;&nbsp;&nbsp;jclass&nbsp;class_hashmap&nbsp;=&nbsp;(*env)-&gt;FindClass(env,&nbsp;&quot;java/util/HashMap&quot;);
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//获取类似于java&nbsp;的new&nbsp;HashMap();
+&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;hashmap_init&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;&lt;init&gt;&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;()V&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;//初始化。类似于hashMap=new&nbsp;HashMap();
+&nbsp;&nbsp;&nbsp;&nbsp;jobject&nbsp;HashMap&nbsp;=&nbsp;(*env)-&gt;NewObject(env,&nbsp;class_hashmap,&nbsp;hashmap_init,&nbsp;&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;//获取hashMap.put()的ID
+&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;HashMap_put&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;put&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);</pre>
+
+<p>&nbsp;&nbsp; 2. 赋值：</p>
+<pre class="brush:cpp;toolbar:false;">&nbsp;&nbsp;&nbsp;&nbsp;//类似于map.put(&quot;key&quot;,&quot;value&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;//(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;)不能直接用&quot;key值&quot;替代
+&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key值&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value值&quot;));</pre>
+
+<p>全部代码：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;JniClient.java</p>
+<pre class="brush:java;toolbar:false">package&nbsp;com.ndk.test;
+import&nbsp;java.util.HashMap;
+public&nbsp;class&nbsp;JniClient&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;native&nbsp;HashMap&lt;String,&nbsp;String&gt;&nbsp;setMap();
+}</pre>
+
+<p>JniClient.h</p>
+<pre class="brush:cpp;toolbar:false">/*&nbsp;DO&nbsp;NOT&nbsp;EDIT&nbsp;THIS&nbsp;FILE&nbsp;-&nbsp;it&nbsp;is&nbsp;machine&nbsp;generated&nbsp;*/
+#include&nbsp;&lt;jni.h&gt;
+/*&nbsp;Header&nbsp;for&nbsp;class&nbsp;com_ndk_test_JniClient&nbsp;*/
+#ifndef&nbsp;_Included_com_ndk_test_JniClient
+#define&nbsp;_Included_com_ndk_test_JniClient
+#ifdef&nbsp;__cplusplus
+extern&nbsp;&quot;C&quot;&nbsp;{
+#endif
+/*
+&nbsp;*&nbsp;Class:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com_ndk_test_JniClient
+&nbsp;*&nbsp;Method:&nbsp;&nbsp;&nbsp;&nbsp;setMap
+&nbsp;*&nbsp;Signature:&nbsp;()Ljava/util/HashMap;
+&nbsp;*/
+JNIEXPORT&nbsp;jobject&nbsp;JNICALL&nbsp;Java_com_ndk_test_JniClient_setMap
+&nbsp;&nbsp;(JNIEnv&nbsp;*,&nbsp;jclass);
+#ifdef&nbsp;__cplusplus
+}
+#endif
+#endif</pre>
+
+<p>JniClient.c</p>
+<pre class="brush:cpp;toolbar:false">#include&nbsp;&quot;com_ndk_test_JniClient.h&quot;
+#include&lt;stdio.h&gt;
+#ifdef&nbsp;__cplusplus
+extern&nbsp;&quot;C&quot;
+{
+#endif
+JNIEXPORT&nbsp;jobject&nbsp;JNICALL&nbsp;Java_com_ndk_test_JniClient_setMap(JNIEnv&nbsp;*env,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;cls)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;class_hashmap&nbsp;=&nbsp;(*env)-&gt;FindClass(env,&nbsp;&quot;java/util/HashMap&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;hashmap_init&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;&lt;init&gt;&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;()V&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;jobject&nbsp;HashMap&nbsp;=&nbsp;(*env)-&gt;NewObject(env,&nbsp;class_hashmap,&nbsp;hashmap_init,&nbsp;&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;jmethodID&nbsp;HashMap_put&nbsp;=&nbsp;(*env)-&gt;GetMethodID(env,&nbsp;class_hashmap,&nbsp;&quot;put&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key1&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value1&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;(*env)-&gt;CallObjectMethod(env,&nbsp;HashMap,&nbsp;HashMap_put,(*env)-&gt;NewStringUTF(env,&nbsp;&quot;key2&quot;),&nbsp;(*env)-&gt;NewStringUTF(env,&nbsp;&quot;value2&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;HashMap;
+}
+#ifdef&nbsp;__cplusplus
+}
+#endif</pre>
+
+<p>引用方法：</p>
+<pre class="brush:java;toolbar:false">Object&nbsp;object=JniClient.setMap();
+HashMap&lt;String,&nbsp;String&gt;map=(HashMap&lt;String,&nbsp;String&gt;)object;
+System.out.println(&quot;size:&quot;+map.size()+&quot;;value:&quot;+map.get(&quot;key1&quot;));</pre>
+
+<p>打印信息：</p>
+<p>size:2;value:value1</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/07/02/jni-通过c-c-返回HashMap等复杂参数给java/" data-id="cilw5k4wx000mu8ubfb8bti5t" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android涉及到的设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/29/Android涉及到的设计模式/" class="article-date">
+  <time datetime="2015-06-29T02:43:37.000Z" itemprop="datePublished">2015-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/29/Android涉及到的设计模式/">Android涉及到的设计模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="article_content" class="article_content"><br><br>1、适配器模式：ListView或GridView的Adapter<br><br>简介：不同的数据提供者使用一个适配器来向一个相同的客户提供服务。<br><br>&nbsp;<br><br>2、建造者模式：AlertDialog.Builder<br><br>简介：可以分步地构造每一部分。<br><br>&nbsp;<br><br>3、命令模式：Handler.post后Handler.handleMessage<br><br>简介：把请求封装成一个对象发送出去，方便定制、排队、取消。<br><br>&nbsp;<br><br>4、享元模式：Message.obtainMessage通过重用Message对象来避免大量的Message对象被频繁的创建和销毁。<br><br>简介：运用共享技术有效地支持大量细粒度的对象。<br><br>&nbsp;<br><br>5、迭代器模式：如通过Hashtable.elements方法可以得到一个Enumeration，然后通过这个Enumeration访问Hashtable中的数据，而不用关心Hashtable中的数据存放方式。<br><br>简介：提供一个方法顺序访问数据集合中的所有数据而又不暴露对象的内部表示。<br><br>&nbsp;<br><br>6、备忘录模式：Activity的onSaveInstanceState和onRestoreInstanceState就是通过Bundle这种序列化的数据结构来存储Activity的状态，至于其中存储的数据结构，这两个方法不用关心<br><br>简介：不需要了解对象的内部结构的情况下备份对象的状态，方便以后恢复。<br><br>&nbsp;<br><br>7、观察者模式：我们可以通过BaseAdapter.registerDataSetObserver和<br>BaseAdapter.unregisterDataSetObserver两方法来向BaseAdater注册、注销一个<br>DataSetObserver。这个过程中，DataSetObserver就是一个观察者，它一旦发现BaseAdapter内部数据有变量，就会通<br>过回调方法DataSetObserver.onChanged和DataSetObserver.onInvalidated来通知<br>DataSetObserver的实现类。事件通知也是观察者模式<br><br>简介：一个对象发生改变时，所有信赖于它的对象自动做相应改变。<br><br>&nbsp;<br><br>8、原型模式：比如我们需要一张Bitmap的几种不同格式：ARGB_8888、RGB_565、ARGB_4444、ALAPHA_8等。那我<br>们就可以先创建一个ARGB_8888的Bitmap作为原型，在它的基础上，通过调用Bitmap.copy(Config)来创建出其它几种格式的<br>Bitmap。另外一个例子就是Java中所有对象都有的一个名字叫clone的方法，已经原型模式的代名词了<br><br>简介：在系统中要创建大量的对象，这些对象之间具有几乎完全相同的功能，只是在细节上有一点儿差别。<br><br>&nbsp;<br><br>9、代理模式：类似于ios开发的delegate委托模式，所有的AIDL都一个代理模式的例子。假设一个Activity<br>A去绑定一个Service<br>S，那么A调用S中的每一个方法其实都是通过系统的Binder机制的中转，然后调用S中的对应方法来做到的。Binder机制就起到了代理的作用。<br><br>简介：为其他对象提供一种代理以控制对这个对象的访问。<br><br>&nbsp;<br><br>10、状态模式：View.onVisibilityChanged方法，就是提供了一个状态模式的实现，允许在View的visibility发生改变时，引发执行onVisibilityChanged方法中的动作。<br><br><span style="color:#000000">简介：状态发生改变时，行为改变。</span><br><br>&nbsp;<br><br>11、策略模式：<br><br>举例：Java.util.List就是定义了一个增（add）、删（remove）、改（set）、查（indexOf）策略，至于实现这个策略<br>的ArrayList、LinkedList等类，只是在具体实现时采用了不同的算法。但因为它们策略一样，不考虑速度的情况下，使用时完全可以互相替换<br>使用。<br><br>简介：定义了一系列封装了算法、行为的对象，他们可以相互替换。<br><br>&nbsp;<br><br>12、调解者模式<br><br>简介：一个对象的某个操作需要调用N个对象的M个方法来完成时，把这些调用过程封装起来，就成了一个调解者<br><br>举例：如Resource.getDrawable方法的实现逻辑是这样的：创建一个缓存来存放所有已经加载过的，如果getDrawable中传<br>入的id所对应的Drawable以前没有被加载过，那么它就会根据id所对应的资源类型，分别调用XML解析器生成，或者通过读取包中的图片资源文件来<br>创建Drawable。<br><br>而Resource.getDrawable把涉及到多个对象、多个逻辑的操作封装成一个方法，就实现了一个调解者的角色。<br><br>&nbsp;<br><br>13、抽象工厂模式<br><br>DAO与Service的使用<br></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/06/29/Android涉及到的设计模式/" data-id="cilw5k4wi0006u8ub0mu9vq7v" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Eclipse-Mars-正式版发布，列数-10-大特点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/27/Eclipse-Mars-正式版发布，列数-10-大特点/" class="article-date">
+  <time datetime="2015-06-27T15:48:23.000Z" itemprop="datePublished">2015-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/27/Eclipse-Mars-正式版发布，列数-10-大特点/">Eclipse Mars 正式版发布，列数 10 大特点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>代号 Mars 的 Eclipse 4.5 版本发布了，这一版本在 Linux 工具中结合了额外的 Docker 工具，更好地支持<br>Maven 和 Gradle （包括对嵌入工具的更新），提升了 Java 8 的特性，并通过 Eclipse Marketplace 支持对<br>Java 9 早期访问。主要更新内容有以下几个方面：</p>
+<ul>
+<li><p>新 Java IDE 特性， 包括对嵌套的项目层次视图，可自定义 perspectives，并提升了文本搜索的速度。</p>
+</li>
+<li><p>集成的工具，用于建立和维护 Docker 容器，可在 Linux Tools 项目获取.</p>
+</li>
+<li><p>Oomph 项目现在能够跨工作区记录和分享个人偏好设置。</p>
+</li>
+<li><p>&nbsp;Gradle 新的集成，使得更加容易管理 Gradle 构建，通过 Buildship 项目。</p>
+</li>
+<li><p>&nbsp;提升对 Maven 支持，包括支持 Maven 3.3.3, 提升 Maven 原型整合和在 pom 编辑器中的自动完成。</p>
+</li>
+<li><p>自动错误报告，让 Eclipse 用户可以直接报告错误到Eclipse项目。&nbsp;&nbsp;</p>
+</li>
+<li>&nbsp;新的 Thym 项目提供了使用 Apache Cordova 创建跨平台移动应用的工具。</li>
+</ul>
+<p>下面，是一篇对 Eclipse Mars 的分析文章：</p>
+<p>Eclipse Mars 来了！在过去的十天里，我一直在细数最令我兴奋的十个 Eclipse Mars 的特点。想了解最新特性的详细信息，请查看以下链接：</p>
+<p>10. <a href="http://eclipsesource.com/blogs/2015/06/11/mac-application-layout-top-eclipse-mars-feature-10/" target="_blank" rel="external">Mac Application Layout</a><br>9. <a href="http://eclipsesource.com/blogs/2015/06/12/platform-improvements-top-eclipse-mars-feature-9/" target="_blank" rel="external">Platform Improvements</a><br>8. <a href="http://eclipsesource.com/blogs/2015/06/15/ui-monitoring-top-eclipse-mars-feature-8/" target="_blank" rel="external">UI Monitoring</a><br>7. <a href="http://eclipsesource.com/blogs/2015/06/16/cc-launching-top-eclipse-mars-feature-7/" target="_blank" rel="external">C/C++ Launching</a><br>6. <a href="http://eclipsesource.com/blogs/2015/06/17/e4-tools-top-eclipse-mars-feature-6/" target="_blank" rel="external">e4 Tools</a><br>5. <a href="http://eclipsesource.com/blogs/2015/06/18/jdt-improvements-top-eclipse-mars-feature-5/" target="_blank" rel="external">JDT Improvements</a><br>4. <a href="http://eclipsesource.com/blogs/2015/06/19/docker-tools-top-eclipse-mars-feature-4/" target="_blank" rel="external">Docker Tools</a><br>3. <a href="http://eclipsesource.com/blogs/2015/06/22/git-flow-top-eclipse-mars-feature-3/" target="_blank" rel="external">Git Flow in Eclipse</a><br>2. <a href="http://eclipsesource.com/blogs/2015/06/23/error-reporting-top-eclipse-mars-feature-2/" target="_blank" rel="external">Eclipse Automatic Error Reporting</a></p>
+<p>今年 Eclipse Mars 将完全提供一个下载和使用 IDE 新的方法。不用单独下载每个包，Oomph 的 Eclipse 安装包可以提你想要的安装包。</p>
+<p><img src="http://eclipsesource.com/blogs/wp-content/uploads/2015/06/Screen-Shot-2015-06-23-at-9.14.23-PM.png" alt="Screen Shot 2015-06-23 at 9.14.23 PM"></p>
+<p>你可以通过“<em>bundle pool</em>”在安装程序之间分享 Eclipse 插件。这就意味着如果你安装了其他的包，所有常见的位就会被共享。</p>
+<p><img src="http://eclipsesource.com/blogs/wp-content/uploads/2015/06/Screen-Shot-2015-06-23-at-9.07.21-PM.png" alt="Screen Shot 2015-06-23 at 9.07.21 PM"></p>
+<p>一旦 Eclipse 启动，你可以通过走完 Eclipse Welcome Questionnaire 流程来按你的喜好设置 Eclipse。</p>
+<p><img src="http://eclipsesource.com/blogs/wp-content/uploads/2015/06/Screen-Shot-2015-06-23-at-9.09.29-PM.png" alt="Screen Shot 2015-06-23 at 9.09.29 PM"></p>
+<p>除<br>了提供 IDE 给你，Oomph 还能安装你的工作空间。这就是说可以从 Git 中复制项目，配置你的目标平台，初始化项目设置等等。一旦<br>Eclipse 启动，选择 File -&gt; Import -&gt; Oomph -&gt; Projects 进入<br>Workspace。几个 Eclipse 项目已经配置好并且可以一键安装。</p>
+<p><img src="http://eclipsesource.com/blogs/wp-content/uploads/2015/06/Screen-Shot-2015-06-23-at-9.22.59-PM.png" alt="Screen Shot 2015-06-23 at 9.22.59 PM"></p>
+<p>Oomph 甚至提供工具帮你创作自己的安装文件。</p>
+<p><img src="http://eclipsesource.com/blogs/wp-content/uploads/2015/06/Screen-Shot-2015-06-23-at-9.58.12-PM.png" alt="Screen Shot 2015-06-23 at 9.58.12 PM"></p>
+<p>Oomph 的 Eclipse 安装器可以让安装，配置，分享 Eclipse 项目变得更容易。如果你是名使用者，你能从简单的安装过程中受益。如果你是位贡献者，你也能轻松设置你的工作空间；如果你是提交者，你可以创建配置文件，帮助他人获取你的项目。想获得最新 Eclipse Mars，可<a href="http://www.eclipse.org/downloads/installer.php" target="_blank" rel="external">点击此处下载</a>，或者选择你<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">最喜欢的安装包</a>。</p>
+<p>想获得更多有关 Eclipse Mars 的信息，请关注 <a href="http://www.eclipse.org/" target="_blank" rel="external">Eclipse 官网</a>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/06/27/Eclipse-Mars-正式版发布，列数-10-大特点/" data-id="cilw5k4wi000bu8ubl5u0pzje" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ViewHolder的简洁写法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/24/ViewHolder的简洁写法/" class="article-date">
+  <time datetime="2015-06-24T07:57:04.000Z" itemprop="datePublished">2015-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/24/ViewHolder的简洁写法/">ViewHolder的简洁写法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre class="brush:java;toolbar:false">public&nbsp;class&nbsp;ViewHolder&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;I&nbsp;added&nbsp;a&nbsp;generic&nbsp;return&nbsp;type&nbsp;to&nbsp;reduce&nbsp;the&nbsp;casting&nbsp;noise&nbsp;in&nbsp;client&nbsp;code
+&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unchecked&quot;)
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;&lt;T&nbsp;extends&nbsp;View&gt;&nbsp;T&nbsp;get(View&nbsp;view,&nbsp;int&nbsp;id)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SparseArray&lt;View&gt;&nbsp;viewHolder&nbsp;=&nbsp;(SparseArray&lt;View&gt;)&nbsp;view.getTag();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(viewHolder&nbsp;==&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewHolder&nbsp;=&nbsp;new&nbsp;SparseArray&lt;View&gt;();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view.setTag(viewHolder);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;childView&nbsp;=&nbsp;viewHolder.get(id);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(childView&nbsp;==&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childView&nbsp;=&nbsp;view.findViewById(id);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewHolder.put(id,&nbsp;childView);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(T)&nbsp;childView;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+
+<p><span style="color:#333333"><span style="font-family:Arial">ViewHolder这么写（只提供一个静态方法，其实可以加一个私有构造函数防止外部实例化），代码很简单，看过就明白了</span></span></p>
+<pre class="brush:java;toolbar:false">public&nbsp;View&nbsp;getView(int&nbsp;position,&nbsp;View&nbsp;convertView,&nbsp;ViewGroup&nbsp;parent)
+&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(convertView&nbsp;==&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convertView&nbsp;=&nbsp;LayoutInflater.from(context)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.inflate(R.layout.banana_phone,&nbsp;parent,&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;ImageView&nbsp;bananaView&nbsp;=&nbsp;ViewHolder.get(convertView,&nbsp;R.id.banana);
+&nbsp;&nbsp;&nbsp;&nbsp;TextView&nbsp;phoneView&nbsp;=&nbsp;ViewHolder.get(convertView,&nbsp;R.id.phone);
+&nbsp;&nbsp;&nbsp;&nbsp;BananaPhone&nbsp;bananaPhone&nbsp;=&nbsp;getItem(position);
+&nbsp;&nbsp;&nbsp;&nbsp;phoneView.setText(bananaPhone.getPhone());
+&nbsp;&nbsp;&nbsp;&nbsp;bananaView.setImageResource(bananaPhone.getBanana());
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;convertView;
+}</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mandroid.cn/2015/06/24/ViewHolder的简洁写法/" data-id="cilw5k4wi000du8ub55axx0id" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/test/" style="font-size: 10px;">test</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/02/29/AWS上搭建shadowsocks-免费翻墙/">AWS上搭建shadowsocks 免费翻墙</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/28/EditSpinner-一款结合EditText和Spinner的开源控件/">EditSpinner 一款结合EditText和Spinner的开源控件</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/22/微信红包随机算法初探/">微信红包随机算法初探</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/22/java的接口解耦/">java的接口解耦</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/两款Android菜单的开源ui框架/">两款Android菜单的开源ui框架</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 wangtao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
