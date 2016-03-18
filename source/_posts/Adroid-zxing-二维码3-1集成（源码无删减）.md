@@ -1,6 +1,10 @@
 ---
 title: Adroid zxing 二维码3.1集成（源码无删减）
-tags: []
+categories:
+- 开源项目
+tags: 
+- 二维码
+- zxing
 date: 2015-07-12 23:09:48
 ---
 
@@ -10,7 +14,6 @@ date: 2015-07-12 23:09:48
 
 _引子：最近项目中用到二维码，找到了最新的3.1版本_<span style="color: rgb(255, 0, 0); font-size: 20px;"> </span>[<span style="color: rgb(255, 0, 0); font-size: 20px;">zxing-GitHub</span>](https://github.com/zxing/zxing/)_，进行了集成、调整，同时笔记以备忘。_
 
-_<span style="color:#9b00d3">求点击：博客访问9.9k+了，距离初步期望1w很近了。   一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。</span>_
 
 _<span style="color:#9b00d3">    特此版本去掉了下载时需要积分的情况</span>_
 <!-- more -->

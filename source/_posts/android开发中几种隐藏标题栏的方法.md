@@ -1,6 +1,7 @@
 ---
 title: android开发中几种隐藏标题栏的方法
-tags: []
+categories:
+- 文章
 date: 2015-06-21 19:07:37
 ---
 <!-- more -->

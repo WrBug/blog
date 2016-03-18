@@ -1,6 +1,9 @@
 ---
 title: 一款WIFI下客户端和服务端互相通信的Demo（两端都是手机）
-tags: []
+categories:
+- 项目
+tags: 
+- WIFI通信
 date: 2015-07-14 11:19:08
 ---
 

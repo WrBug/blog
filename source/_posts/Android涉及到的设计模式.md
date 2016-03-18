@@ -1,6 +1,9 @@
 ---
 title: Android涉及到的设计模式
-tags: []
+categories:
+- 文章
+tags:
+- 设计模式
 date: 2015-06-29 10:43:37
 ---
 

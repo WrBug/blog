@@ -1,6 +1,7 @@
 ---
 title: android根据银行卡卡号判断银行
-tags: []
+categories:
+- 文章
 date: 2015-06-17 01:37:59
 ---
 

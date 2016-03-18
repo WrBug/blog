@@ -1,6 +1,10 @@
 ---
 title: ViewHolder的简洁写法
-tags: []
+categories:
+- 文章
+tags: 
+- ViewHolder
+- ListView
 date: 2015-06-24 15:57:04
 ---
 <!-- more -->

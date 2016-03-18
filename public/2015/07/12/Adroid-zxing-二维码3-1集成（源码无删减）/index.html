@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="二维码,zxing," />
 
 
 
@@ -59,29 +59,26 @@
 
 <meta name="description" content="Adroid zxing 二维码3.1集成文章转自：http://my.oschina.net/gluoyer/blog/315947
 引子：最近项目中用到二维码，找到了最新的3.1版本 zxing-GitHub，进行了集成、调整，同时笔记以备忘。
-求点击：博客访问9.9k+了，距离初步期望1w很近了。   一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。
-    特此版本去掉了下载时需要积">
+    特此版本去掉了下载时需要积分的情况">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Adroid zxing 二维码3.1集成（源码无删减）">
 <meta property="og:url" content="http://mandroid.cn/2015/07/12/Adroid-zxing-二维码3-1集成（源码无删减）/index.html">
 <meta property="og:site_name" content="测试">
 <meta property="og:description" content="Adroid zxing 二维码3.1集成文章转自：http://my.oschina.net/gluoyer/blog/315947
 引子：最近项目中用到二维码，找到了最新的3.1版本 zxing-GitHub，进行了集成、调整，同时笔记以备忘。
-求点击：博客访问9.9k+了，距离初步期望1w很近了。   一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。
-    特此版本去掉了下载时需要积">
+    特此版本去掉了下载时需要积分的情况">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788496442797.jpg">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788506598227.jpg">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788519124077.jpg">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788593429629.jpg">
 <meta property="og:image" content="http://mandroid.cn/upload/2015/07/201507131436788571117265.jpg">
-<meta property="og:updated_time" content="2016-03-18T02:34:16.933Z">
+<meta property="og:updated_time" content="2016-03-18T07:25:01.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adroid zxing 二维码3.1集成（源码无删减）">
 <meta name="twitter:description" content="Adroid zxing 二维码3.1集成文章转自：http://my.oschina.net/gluoyer/blog/315947
 引子：最近项目中用到二维码，找到了最新的3.1版本 zxing-GitHub，进行了集成、调整，同时笔记以备忘。
-求点击：博客访问9.9k+了，距离初步期望1w很近了。   一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。
-    特此版本去掉了下载时需要积">
+    特此版本去掉了下载时需要积分的情况">
 <meta name="twitter:image" content="http://mandroid.cn/upload/2015/07/201507131436788453805554.jpg">
 
 
@@ -194,9 +191,39 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'qdNsEWcSTkF6PQukM7N7','2.0.0');
+</script>
+
+
+
+    </div>
   
 </nav>
 
@@ -248,6 +275,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开源项目/" itemprop="url" rel="index">
+                    <span itemprop="name">开源项目</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -271,7 +317,6 @@
       
         <h1 id="Adroid-zxing-二维码3-1集成"><a href="#Adroid-zxing-二维码3-1集成" class="headerlink" title="Adroid zxing 二维码3.1集成"></a>Adroid zxing 二维码3.1集成</h1><p><strong>文章转自：<a href="http://my.oschina.net/gluoyer/blog/315947" target="_blank" rel="external">http://my.oschina.net/gluoyer/blog/315947</a></strong></p>
 <p><em>引子：最近项目中用到二维码，找到了最新的3.1版本</em><span style="color: rgb(255, 0, 0); font-size: 20px;"> </span><a href="https://github.com/zxing/zxing/" target="_blank" rel="external"><span style="color: rgb(255, 0, 0); font-size: 20px;">zxing-GitHub</span></a><em>，进行了集成、调整，同时笔记以备忘。</em></p>
-<p><em><span style="color:#9b00d3">求点击：博客访问9.9k+了，距离初步期望1w很近了。   一个多月的封闭开发也终于结束了，成都也雨后天晴出太阳。</span></em></p>
 <p><em><span style="color:#9b00d3">    特此版本去掉了下载时需要积分的情况</span></em><br><a id="more"></a><br>实现效果：</p>
 <pre><code>![19115112_23fw.png](/upload/2015/07/201507131436788417101357.png &quot;201507131436788417101357.png&quot;)
 
@@ -316,6 +361,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/二维码/" rel="tag">#二维码</a>
+          
+            <a href="/tags/zxing/" rel="tag">#zxing</a>
+          
+        </div>
       
 
       
@@ -400,7 +453,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -408,7 +461,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -417,7 +470,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

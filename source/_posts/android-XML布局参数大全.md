@@ -1,6 +1,7 @@
 ---
 title: android XML布局参数大全
-tags: []
+categories:
+- 文章
 date: 2015-07-10 23:39:38
 ---
 <!-- more -->

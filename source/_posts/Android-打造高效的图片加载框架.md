@@ -1,6 +1,7 @@
 ---
 title: Android 打造高效的图片加载框架
-tags: []
+categories:
+- 文章
 date: 2015-07-23 16:57:43
 ---
 

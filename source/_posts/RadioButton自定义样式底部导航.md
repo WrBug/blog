@@ -1,6 +1,9 @@
 ---
 title: RadioButton自定义样式底部导航
-tags: [test]
+categories:
+- 文章
+tags: 
+- 底部导航
 date: 2015-06-17 00:47:59
 ---
 

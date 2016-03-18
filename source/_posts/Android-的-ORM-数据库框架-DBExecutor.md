@@ -1,6 +1,10 @@
 ---
 title: Android 的 ORM 数据库框架 DBExecutor
-tags: []
+categories:
+- 开源项目
+tags:
+- ORM
+- sqlite
 date: 2015-06-17 20:38:37
 ---
 

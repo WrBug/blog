@@ -1,6 +1,10 @@
 ---
 title: EditSpinner 一款结合EditText和Spinner的开源控件
-tags: []
+categories:
+- 开源控件
+tags: 
+- EditSpinner
+toc: true
 date: 2016-02-28 18:05:09
 ---
 <!-- more -->

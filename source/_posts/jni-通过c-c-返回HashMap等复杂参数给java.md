@@ -1,6 +1,9 @@
 ---
 title: jni 通过c/c++返回HashMap等复杂参数给java
-tags: []
+categories:
+- 文章
+tags: 
+- jni
 date: 2015-07-02 16:15:11
 ---
 

@@ -1,6 +1,10 @@
 ---
 title: StickyListHeaders 仿QQ好友列表 ExpandableListView父列表滑动到顶端固定不动
-tags: []
+categories:
+- 文章
+tags: 
+- ExpandableListView
+- 顶端不动
 date: 2015-06-17 20:24:04
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Android 快速开发框架 ThinkAndroid
-tags: []
+categories:
+- 开源项目
 date: 2015-06-17 20:31:15
 ---
 

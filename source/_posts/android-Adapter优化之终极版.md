@@ -1,6 +1,9 @@
 ---
 title: android Adapter优化之终极版
-tags: []
+categories:
+- 文章
+tags:
+- Adapter
 date: 2015-08-25 14:09:09
 ---
 

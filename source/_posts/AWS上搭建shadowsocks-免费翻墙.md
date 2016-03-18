@@ -1,6 +1,10 @@
 ---
 title: AWS上搭建shadowsocks 免费翻墙
-tags: []
+categories:
+- 文章
+tags:
+- AWS
+- ShadowScocks
 date: 2016-02-29 14:47:07
 ---
 

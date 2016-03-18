@@ -1,6 +1,7 @@
 ---
 title: android退出所有的activity
-tags: []
+categories:
+- 文章
 date: 2015-06-22 21:35:41
 ---
 <!-- more -->

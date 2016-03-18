@@ -1,6 +1,7 @@
 ---
 title: Android高性能开发框架《KJFrameForAndroid》
-tags: []
+categories:
+- 开源项目
 date: 2015-06-17 20:29:20
 ---
 

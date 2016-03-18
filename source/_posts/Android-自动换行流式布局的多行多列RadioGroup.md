@@ -1,6 +1,7 @@
 ---
 title: Android 自动换行流式布局的多行多列RadioGroup
-tags: []
+categories:
+- 文章
 date: 2015-07-12 23:05:56
 ---
 <!-- more -->
