@@ -6,7 +6,7 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "android开发 开源项目 闪讯"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -161,7 +161,7 @@ mathjax:
 
 
 # Swiftype Search API Key
-swiftype_key: qdNsEWcSTkF6PQukM7N7
+#swiftype_key: qdNsEWcSTkF6PQukM7N7
 
 # Baidu Analytics ID
 baidu_analytics: a9787bd5df8b0335e028edc8c47da89c

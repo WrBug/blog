@@ -1,0 +1,39 @@
+fancybox: true ## If you want to use fancybox please set the value to true.
+duoshuo: mandroid
+disqus: ## Your disqus_shortname, e.g. username
+google_search: true ## Use Google search, true/false.
+baidu_search: ## Use Baidu search, true/false.
+swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
+tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
+self_search: ## Use a jQuery-based local search engine, true/false.
+google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
+baidu_analytics: a9787bd5df8b0335e028edc8c47da89c
+shareto: true 
+busuanzi: true 
+keywords: "android开发 开源项目 闪讯"
+menu:
+  - page: 主页
+    directory: .
+    icon: fa-home
+  - page: 归档
+    directory: archives/
+    icon: fa-archive
+
+widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
+  - search
+  - category
+  - tag
+  - recent_posts
+  - recent_comments
+  - links
+
+links:
+  - title: github
+    url: https://github.com/WrBug
+
+# Static files
+js: js
+css: css
+
+# Theme version
+version: 0.0.0
