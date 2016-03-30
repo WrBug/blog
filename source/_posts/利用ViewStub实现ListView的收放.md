@@ -8,11 +8,11 @@ date: 2015-07-31 00:35:02
 ---
 
 ViewStub经常用在ListView中，用来隐藏一些操作，使用起来也很简单，主要就是在ListView的Item中通过一个ViewStub来引用被隐藏的布局文件。监听用户点击Item，判断下当前是可见还是不可见，实时进行状态的转换即可。
-
+<!-- more -->
 效果图如下：
 
 ![](/upload/2015/07/201507311438274262700084.gif)
-<!-- more -->
+
 MainActivity.java: 
 <pre class="brush:java;toolbar:false">public class MainActivity extends Activity {
     private ListView lvList;

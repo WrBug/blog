@@ -7,8 +7,6 @@ tags:
 date: 2015-06-29 10:43:37
 ---
 
-<div id="article_content" class="article_content">
-
 ## 1、适配器模式：
 ListView或GridView的Adapter
 
