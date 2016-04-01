@@ -1,7 +1,7 @@
 ---
 title: 模仿QQ上线下线ImageView头像变灰
 categories:
-- 文章
+- 杂七杂八
 tags: 
 - QQ上线下线
 date: 2015-06-22 21:18:08

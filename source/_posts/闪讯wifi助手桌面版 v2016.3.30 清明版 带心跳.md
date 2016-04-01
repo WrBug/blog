@@ -2,7 +2,7 @@
 title: 闪讯wifi助手桌面版 v2016.3.30 清明版 带心跳
 tags: 闪讯
 categories:
-- 开源项目
+- 闪讯
 toc: true
 date: 2016-3-29 23:13:36
 ---

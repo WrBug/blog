@@ -1,7 +1,7 @@
 ---
 title: ViewHolder的简洁写法
 categories:
-- 文章
+- 杂七杂八
 tags: 
 - ViewHolder
 - ListView

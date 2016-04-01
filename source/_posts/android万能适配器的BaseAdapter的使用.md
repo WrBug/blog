@@ -1,7 +1,7 @@
 ---
 title: android万能适配器的BaseAdapter的使用
 categories:
-- 文章
+- 杂七杂八
 tags:
 - Adapter
 date: 2015-06-12 17:47:42

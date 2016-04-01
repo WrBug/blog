@@ -1,7 +1,7 @@
 ---
 title: 利用ViewStub实现ListView的收放
 categories:
-- 文章
+- 杂七杂八
 tags: 
 - ViewStub
 date: 2015-07-31 00:35:02

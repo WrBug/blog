@@ -1,7 +1,7 @@
 ---
 title: 高仿哔哩哔哩Android客户端
 categories:
-- 项目
+- 开源项目
 tags: 
 - 哔哩哔哩
 date: 2015-06-17 01:33:33

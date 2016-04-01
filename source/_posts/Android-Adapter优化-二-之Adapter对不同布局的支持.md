@@ -1,7 +1,7 @@
 ---
 title: Android Adapter优化(二)之Adapter对不同布局的支持
 categories:
-- 文章
+- 杂七杂八
 tags:
 - Adapter
 date: 2015-08-25 14:12:03

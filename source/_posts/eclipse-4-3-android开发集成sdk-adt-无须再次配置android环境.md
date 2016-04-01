@@ -1,7 +1,7 @@
 ---
 title: eclipse 4.3 android开发集成sdk adt 无须再次配置android环境
 categories:
-- 文章
+- 杂七杂八
 date: 2015-06-12 17:31:02
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: AWS上搭建shadowsocks 免费翻墙
 categories:
-- 文章
+- 杂七杂八
 tags:
 - AWS
 - ShadowScocks

@@ -1,7 +1,7 @@
 ---
 title: android退出所有的activity
 categories:
-- 文章
+- 杂七杂八
 date: 2015-06-22 21:35:41
 ---
 <!-- more -->

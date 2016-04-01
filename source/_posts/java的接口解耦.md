@@ -1,7 +1,7 @@
 ---
 title: java的接口解耦
 categories:
-- 文章
+- 杂七杂八
 tags: 
 - 解耦
 date: 2015-10-22 14:30:49

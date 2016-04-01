@@ -2,7 +2,7 @@
 title: 闪讯WiFi助手2.3开源版，带心跳，提供心跳接口
 tags: 闪讯
 categories:
-- 开源项目
+- 闪讯
 toc: true
 date: 2016-3-19 15:40:00
 ---
