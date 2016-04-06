@@ -22,5 +22,7 @@ Linux x86：[http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jre-8u77-linux
 ![](/upload/2016/03/20160329235451.png)![](/upload/2016/03/20160329235439.png)![](/upload/2016/03/20160329235433.png)
 ##  客户端下载地址
 直接下载：[闪讯wifi助手v2016.3.30清明版.jar](/upload/2016/03/闪讯wifi助手v2016.3.30清明版.jar)
+## 客户端使用说明
+<font color='red'>有很多朋友反映不会使用软件，特写出一个简明的教程，首先安装jre环境，下载地址上面有提供，这个比较简单也不多说，安装好jre环境以后在桌面新建一个文本文件，内容填写<font color='black'> **`java -jar 你的客户端地址路径`**</font>,如 <font color='black'>**`java -jar D:/闪讯wifi助手v2016.3.30清明版.jar`**</font>,最后保存为.bat格式的批处理文件，以后直接双击该文件即可，还有问题的请大家在下面留言，我会尽量回复的</font>
 ## 源码地址
 [https://github.com/wangtao2132/sxDesk.git](https://github.com/wangtao2132/sxDesk)
