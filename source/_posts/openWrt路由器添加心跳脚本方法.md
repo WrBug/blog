@@ -2,7 +2,7 @@
 title: OpenWrt路由器添加心跳脚本方法
 tags: 闪讯
 categories:
- - 闪讯
+ - 闪讯相关
 date: 2016-4-1 10:57:00
 ---
 
