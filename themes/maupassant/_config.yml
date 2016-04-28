@@ -31,7 +31,8 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
 links:
   - title: github
     url: https://github.com/WrBug
-
+  - title: 闪讯资源汇总
+    url: http://pan.baidu.com/s/1eSyfNZc
 # Static files
 js: js
 css: css
