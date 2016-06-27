@@ -80,9 +80,12 @@ Windows上可以使用WinSCP进入/etc/openvpn/easy-rsa/keys目录，下载ca.cr
     service openvpn start  #启动OpenVPN
     service openvpn restart  #重启OpenVPN
 
-## 9.openVPN客户端配置
+## openVPN客户端配置
  下载配置文件模板[client.ovpn](http://www.mandroid.cn/upload/2016/06/client.ovpn)，编辑文件，填写免流代码，服务器ip，CA证书（ca.crt文件里面的内容）,客户证书(client.crt文件里面-----BEGIN CERTIFICATE----- 开始，-----END CERTIFICATE-----结束的内容，包括这两行)，客户密钥（client.key的内容）。完成后发送到手机上，打开openVPN客户端载入文件连接即可
  
+## <font color='red'>注意</font>
+<font color='red'>使用时请先自行测试是否有效，避免不必要的损失！</font>
+
 ## 部分免流代码
 #### 移动
 
@@ -98,16 +101,21 @@ Windows上可以使用WinSCP进入/etc/openvpn/easy-rsa/keys目录，下载ca.cr
     http-proxy 10.0.0.172 80
 #### 联通
 
-    http-proxy-retry
-    http-proxy 10.0.0.172 80
-    http-proxy-option EXT1 "X-Online-Host: wap.10010.com"
-    http-proxy-option EXT2 "Host: wap.10010.com"
+    http-proxy-option EXT1 "POST http://wap.10010.com" 
+    http-proxy-option EXT1 "GET http://wap.10010.com" 
+    http-proxy-option EXT1 "X-Online-Host: wap.10010.com" 
+    http-proxy-option EXT1 "POST http://wap.10010.com" 
+    http-proxy-option EXT1 "X-Online-Host: wap.10010.com" 
+    http-proxy-option EXT1 "POST http://wap.10010.com" 
+    http-proxy-option EXT1 "Host: wap.10010.com" 
+    http-proxy-option EXT1 "GET http://wap.10010.com" 
+    http-proxy-option EXT1 "Host: wap.10010.com"
 
 #### 电信
 
-    http-proxy-retry
-    http-proxy 10.0.0.200 80
-    http-proxy-option EXT1 "X-Online-Host: ltetp.tv189.com"
-    http-proxy-option EXT2 "Host: ltetp.tv189.com"
+    remote cdn.4g.play.cn 80
+    http-proxy-option EXT1 POST http://cdn.4g.play.cn
+    http-proxy-option EXT1 VPN
+    http-proxy-option EXT1 Host: cdn.4g.play.cn/ HTTP/1.1
 
  
