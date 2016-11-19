@@ -1,8 +1,12 @@
 ---
-title: 解决AndroidonClick与onTouch冲突
+title: 解决Android的onClick与onTouch冲突
 categories:
 - 杂七杂八
-tags: android,事件分发,view解读,反射
+tags: 
+- android
+- 事件分发
+- view解读
+- 反射
 grammar_cjkRuby: true
 date: 2016-11-19 23:55:30
 ---
