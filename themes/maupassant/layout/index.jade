@@ -2,12 +2,15 @@ extends base
 - var current_title = page.title || tag.name || category.name || site.title
 
 block title
-  title= config.title + ' | ' + config.subtitle
+  if config.subtitle
+    title= config.title + ' | ' + config.subtitle
+  else
+    title= config.title
 block content
 
   for post in page.posts.toArray()
     .post
-      h2.post-title
+      h1.post-title
         include _partial/helpers
         a(href=url_for(post.path))
           +title(post)
@@ -23,7 +26,14 @@ block content
         .post-content
           != post.excerpt
       else if post.content
-        - var br = post.content.indexOf('\n')
+        - var br = 0
+        - for (var i = 0; i < 5; ++i) {
+          - br = post.content.indexOf('\n',br+1)
+          if br<0
+            - break
+          if br >150
+            - break
+        - }
         if br < 0
           .post-content
             != post.content
