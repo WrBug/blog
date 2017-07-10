@@ -16,7 +16,7 @@ Install theme and renderers:
 
 ```shell
 $ git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant
-$ npm install hexo-renderer-jade --save
+$ npm install hexo-renderer-jade@0.3.0 --save
 $ npm install hexo-renderer-sass --save
 ```
 
@@ -190,7 +190,7 @@ All kinds of contributions (enhancements, new features, documentation & code imp
 Looking forward to your pull request.
 
 ## Acknowledgements
-Thank [JamesPan](http://blog.jamespan.me) for his help to improve this theme
+Thanks for all the [contributors](https://github.com/tufu9441/maupassant-hexo/graphs/contributors) of this theme.
 .
 ## Maupassant on other platforms:
 + Typecho：https://github.com/pagecho/maupassant/

@@ -1,13 +1,16 @@
 fancybox: true ## If you want to use fancybox please set the value to true.
 duoshuo: ## Your duoshuo_shortname, e.g. username
 disqus: ## Your disqus_shortname, e.g. username
+uyan: ## Your uyan_id. e.g. 1234567
 gentie: ## Your gentie_productKey, e.g. fc799538c7ad4cf5a5a0c2877a90cbd7
-uyan: 2128581 ## Your uyan_id. e.g. 1234567
-google_search: true ## Use Google search, true/false.
-baidu_search: ## Use Baidu search, true/false.
+changyan: cysVR24nz ## Your changyan appid
+changyan_conf: 8c9e00806abac5b185a5778a47eaa93b ## You changyan conf
+cahngyan_donate: true ##use changyan donate
+google_search: false ## Use Google search, true/false.
+baidu_search: true ## Use Baidu search, true/false.
 swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
 tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
-self_search: ## Use a jQuery-based local search engine, true/false.
+self_search: false ## Use a jQuery-based local search engine, true/false.
 google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
 baidu_analytics: a9787bd5df8b0335e028edc8c47da89c ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
 show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
@@ -17,12 +20,18 @@ busuanzi: true ## If you want to use Busuanzi page views please set the value to
 widgets_on_small_screens: false ## Set to true to enable widgets on small screens.
 
 menu:
-  - page: 主页
+  - page: home
     directory: .
     icon: fa-home
-  - page: 归档
+  - page: archive
     directory: archives/
     icon: fa-archive
+#  - page: about
+#    directory: about/
+#    icon: fa-user
+#  - page: rss
+#    directory: atom.xml
+#    icon: fa-rss
 
 widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
   - search
@@ -38,7 +47,7 @@ links:
   - title: 闪讯资源汇总
     url: http://pan.baidu.com/s/1eSyfNZc
   - title: IntelliJ Idea 授权服务器
-    url: /2016/11/11/IntelliJ%20Idea%20授权服务器使用
+    url: /2016/11/11/IntelliJ%20Idea%20授权服务器使用/
   - title: 一时无两
     url: http://blog.shiwuliang.com/
 
