@@ -159,8 +159,9 @@ XposedHelpers.findAndHookMethod("com.ss.android.essay.base.feed.adapter.multipar
 安装后重启手机，打开app，可以发现广告已经屏蔽，log里面也有“广告已屏蔽” 的日志
 
 
-[1]: /upload/2017/07/neihanduanzi_646.apk
+
+[1]: https://pan.wrbug.com/f.php?k=de122
 [2]: http://neihanshequ.com/
 [3]: /upload/2017/07/20170710-200226@2x.png
 [4]: /upload/2017/07/20170710-181953.png
-[5]: /upload/2017/07/数据包.zip
+[5]: https://pan.wrbug.com/f.php?k=f607f
