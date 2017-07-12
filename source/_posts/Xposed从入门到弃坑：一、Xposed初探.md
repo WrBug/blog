@@ -144,7 +144,7 @@ public class XposedInit implements IXposedHookLoadPackage {
   [1]: https://github.com/rovo89
   [2]: https://pan.baidu.com/s/1pLDbymn
   [3]: http://dl-xda.xposed.info/framework/sdk21/x86/
-  [4]: https://pan.wrbug.com/f.php?k=d8c93
+  [4]: /upload/2017/04/XposedInstaller_3.1.1%20.apk
   [5]: /upload/2017/04/20170425-200857.png
   [6]: https://github.com/WrBug/XposedDemo
   [7]: /upload/2017/04/20170425-210004.png
