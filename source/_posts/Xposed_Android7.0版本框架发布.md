@@ -1,5 +1,5 @@
 ---
-title: Xposed Android 7.0/7.1 Nougat 版本框架发布
+title: Xposed Android 7.1 Nougat 版本框架发布
 date: 2017-07-20 21:03:02
 categories:
 
@@ -10,12 +10,12 @@ tags:
 
 ---
 
-期待已久的Android7.0以上的xposed框架终于发布啦！可以安心升级Android7.0系统了。感谢国外大神
+期待已久的Android7.1的xposed框架终于发布啦！可以安心升级Android7.1系统了。感谢国外大神
 <!--more-->
 
 ## 使用教程
 ### 准备工具
-Android 7.0/7.1手机，最好是原生系统，其他系统请自测
+Android 7.1手机，最好是原生系统，其他系统请自测
 
 手机已经root并且已经刷入第三方recovery
 
