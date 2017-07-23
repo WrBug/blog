@@ -55,12 +55,12 @@ uninstaller [xposed-uninstaller-20170719-x86.zip][6]
 [Xposed从入门到弃坑系列教程][9]
 
 
-[1]: /upload/2017/07/xposed/Xposed-SDK25-Nougat-ARM-by-PurifyOS.zip
-[2]: /upload/2017/07/xposed/xposed-uninstaller-20170719-arm.zip
-[3]: /upload/2017/07/xposed/Xposed-SDK25-Nougat-ARM64-by-PurifyOS.zip
-[4]: /upload/2017/07/xposed/xposed-uninstaller-20170719-arm64.zip
-[5]: /upload/2017/07/xposed/Xposed-SDK25-Nougat-X86-by-PurifyOS.zip
-[6]: /upload/2017/07/xposed/xposed-uninstaller-20170719-x86.zip
+[1]: https://pan.wrbug.com/s/c6lOko0rZAKTz6M
+[2]: https://pan.wrbug.com/s/UHqeR684N0xFg2h
+[3]: https://pan.wrbug.com/s/7mp2WcL54wwF25n
+[4]: https://pan.wrbug.com/s/UHqeR684N0xFg2h
+[5]: https://pan.wrbug.com/s/UHqeR684N0xFg2h
+[6]: https://pan.wrbug.com/s/UHqeR684N0xFg2h
 [7]: /upload/2017/07/xposed/WechatIMG17.png
 [8]: /upload/2017/04/XposedInstaller_3.1.1%20.apk
 [9]: /categories/xposed%E5%BC%80%E5%8F%91/
