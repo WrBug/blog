@@ -1,5 +1,5 @@
 ---
-title: Xposed Android 7.1 Nougat 版本框架发布
+title: Xposed Android 7.0/7.1 Nougat 版本框架发布
 date: 2017-07-20 21:03:02
 categories:
 
@@ -36,6 +36,11 @@ Android 7.1手机，最好是原生系统，其他系统请自测
 [XposedInstaller_3.1.1.apk][8]
 
 ### Framework下载
+### Android 7.0
+[https://pan.wrbug.com/s/orkIkexOyZu5wf0][10]
+
+### Android7.1
+
 #### ARM
 installer: [Xposed-SDK25-Nougat-ARM-by-PurifyOS.zip][1]
 uninstaller:	[xposed-uninstaller-20170719-arm.zip][2]
@@ -64,3 +69,4 @@ uninstaller [xposed-uninstaller-20170719-x86.zip][6]
 [7]: /upload/2017/07/xposed/WechatIMG17.png
 [8]: /upload/2017/04/XposedInstaller_3.1.1%20.apk
 [9]: /categories/xposed%E5%BC%80%E5%8F%91/
+[10]: https://pan.wrbug.com/s/orkIkexOyZu5wf0
