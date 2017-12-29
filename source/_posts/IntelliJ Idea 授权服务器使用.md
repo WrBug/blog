@@ -13,6 +13,9 @@ date: 2016-11-11 15:30:49
 
 ``` groovy
 http://intellij.mandroid.cn/
+
+备用地址
+http://idea.wrbug.com/
 ```
 
 
@@ -37,3 +40,4 @@ CLion 1.0 或更高
 该服务器仅供测试用，请购买正版软件
 
   [1]: /upload/2016/11/20161111154335.png
+
