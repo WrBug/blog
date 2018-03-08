@@ -16,8 +16,12 @@ http://intellij.mandroid.cn/
 
 备用地址
 http://idea.wrbug.com/
-```
+http://idea.wrshadow.com/
+http://idea.wrbugtest.tk/
 
+```
+地址失效请参考：
+[如何解决Idea授权服务器失效](/2018/03/08/解决Idea授权服务器失效/)
 
 ### 支持的版本
 IntelliJ IDEA 7.0 或更高
