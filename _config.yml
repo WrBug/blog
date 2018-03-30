@@ -4,15 +4,15 @@
 
 # Site
 title: 慢啄
-subtitle: 无私奉献不是天方夜谭，有时候，我们也可以做到
-description: android
-author: wangtao
+subtitle: 自从学会写bug以后，腰也不疼，手也不抖了
+description: android wrbug 慢啄博客 xposed
+author: wrbug
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ##  If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.mandroid.cn
+url: https://www.wrbug.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
