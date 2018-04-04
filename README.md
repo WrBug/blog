@@ -2,4 +2,4 @@
 
 ## 地址
 
-(https://www.wrbug.com)[https://www.wrbug.com]
+[https://www.wrbug.com](https://www.wrbug.com)
