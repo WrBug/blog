@@ -8,6 +8,7 @@ gitment:
   client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
 uyan: ## Your uyan_id. e.g. 1234567
 livere: ## Your livere data-uid, e.g. MTAyMC8zMDAxOC78NTgz
+xianliao: 13264
 changyan: cysVR24nz ## Your changyan appid, e.g. cyrALsXc8
 changyan_conf: 8c9e00806abac5b185a5778a47eaa93b ## You changyan conf, e.g. prod_d8a508c2825ab57eeb43e7c69bba0e8b
 google_search: false ## Use Google search, true/false.

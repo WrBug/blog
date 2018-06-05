@@ -50,3 +50,8 @@ block content
     script(id='dsq-count-scr', src='//#{theme.disqus}.disqus.com/count.js', async)
   if theme.changyan
     script#cy_cmt_num(src='https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId='+theme.changyan, async)
+  if theme.xianliao
+    script.
+      var xlm_wid= #{theme.xianliao}
+      var xlm_url='https://www.xianliao.me/'
+    script(type='text/javascript',charset='UTF-8',src='https://www.xianliao.me/embed.js' , async)
