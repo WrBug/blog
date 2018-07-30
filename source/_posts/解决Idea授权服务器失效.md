@@ -10,6 +10,8 @@ tags:
 ---
 
 > 最近有很多朋友反映授权服务器无法授权了，经过研究，发现是域名被屏蔽了。本文提供两种解决方案
+<font color='red'>7月30日新增两个地址，方案二教程修改</font>
+
 <!-- more -->
 
 
@@ -22,7 +24,8 @@ tags:
 ```
 http://*.idea.wrbug.com
 http://*.idea1.wrbug.com
-
+http://*.jetbrains.xyz
+http://*.jetbrains.fun
 ```
 
 
@@ -34,8 +37,11 @@ http://*.idea1.wrbug.com
 ### ip列表
 
 ```
-45.77.198.219
-45.63.16.42
+//使用ping获取
+ping www.jetbrains.fun -t 4
+
+ping www.jetbrains.xyz -t 4
+
 ```
 
 ### 设置dns解析
