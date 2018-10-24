@@ -1,5 +1,5 @@
 ---
-title: charles激活码获取_全版本通用|charles 破解
+title: charles授权码获取_全版本通用|charles 破解
 date: 2018-10-23 19:48:30
 categories:
 - 杂七杂八
@@ -8,7 +8,7 @@ tags:
 - 激活
 ---
 
-该方法支持charles全部版本，支持官网最新版激活。去掉讨厌的倒计时
+该方法支持charles全部版本，支持官网最新版授权。去掉讨厌的倒计时
 
 <!-- more -->
 
